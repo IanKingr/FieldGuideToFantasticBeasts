@@ -40,10 +40,35 @@ what you'll need to do.
   0. invoked from an API callback.
   0. `Beast` store removes `_beasts[id]` and emits change.
 
+
 ### Store Listeners
 
 * `AffinityBeastList` component listens to `Beast` store.
 * `AffinityDetails` component listens to `Beast` store.
+
+
+### Review API Request Actions
+* `fetchBeastReviews`
+  0. invoked from `ReviewList` `didMount`/`willReceiveProps`
+  0. `GET /api/reviews/:id` is called.
+  0. `receiveAllReviews` is set as the callback.
+
+* `createReview`
+  0. invoked from `create review` button onClick
+  0. `POST /api/reviews/:id` is called.
+  0. `receiveAllReviews` is set as the callback.  
+
+
+### Review API Response Actions
+
+* `receiveAllReviews`
+  0. invoked from an API callback.
+  0. `Review` store updates `_reviews` and emits change.
+
+
+### Store Listeners
+
+* `ReviewList` component listens to `Review` store.
 
 
 ## SearchSuggestion Cycles

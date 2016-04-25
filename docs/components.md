@@ -12,4 +12,5 @@
     * `Bookmark`
     * `AffinityBeastList`
       * `BeastListItem`
+        * `BeastReview`
   * `NavBar`

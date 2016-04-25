@@ -26,10 +26,11 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Create an account (MVP)
 - [ ] Log in / Log out, including as a Guest/Demo User (MVP)
 - [ ] Search, select matching search results, and autocomplete searches for Beasts (MVP)
-- [ ] Rate Beasts in terms of Danger Level (MVP)
+- [ ] Review Beasts and rate in terms of Danger rating (MVP)
 - [ ] Add Beasts to personal bookmarks (MVP)
-- [ ] Comment on Beast entries (expected feature, but not MVP)
-- [ ] Create Beast entries (expected feature, but not MVP)
+- [ ] Comment on Beast entries (MVP)
+- [ ] Create Beast entries (MVP)
+- [ ] Users can search/sort beasts by their danger rating (expected, but not MVP)
 
 ## Design Docs
 * [View Wireframes][views]
@@ -46,41 +47,45 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and User Authentication (1 days)
+### Phase 1: Backend setup and User Authentication (1.5 days)
 
-**Objective:** Functioning rails project with Authentication
+**Objective:** Functioning rails project with Front-End Authentication
 
 - [ ] create new project
 - [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
+- [ ] front-end authentication
+- [ ] CRUD API for user
+- [ ] user signup/signin forms
+- [ ] setup Webpack & Flux scaffold
+- [ ] setup `UserAPIUtil` to interact with the API
 - [ ] blank landing page after signin
+- [ ] test out API interaction in the console.
 
-### Phase 2: Beasts Model, API, and basic APIUtil (1.5 days)
+### Phase 2: Beasts Model, API, and basic BeastAPIUtil (1.5 days)
 
-**Objective:** Beasts can be created and read through
-the API.
+**Objective:** Beasts can be created and read through the API.
 
 - [ ] create `Beast` model
 - [ ] seed the database with a small amount of test data
 - [ ] CRUD API for beast (`BeastsController`)
 - [ ] jBuilder views for beasts
 - [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
+- [ ] setup `BeastAPIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (2 days)
 
-**Objective:** Beasts can be selected, bookmarked, and rated with the user interface.
+**Objective:** Beasts can be created, selected, bookmarked, and reviewed with the user interface.
 
-- [ ] setup `DangerRating` model
+- [ ] setup `Review` model
 - [ ] setup `Bookmark` model
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
 - implement each beast component, building out the flux loop as needed.
   - [ ] `BeastListItem`
   - [ ] `Beast`
-  - [ ] `DangerRating`
+  - [ ] `BeastForm`
+  - [ ] `Review`
   - [ ] `Bookmark`
 
 ### Phase 4: Start Styling (1 days)
@@ -130,6 +135,4 @@ the API.
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
-- [ ] Users can add comments to beast entries
-- [ ] Users can create beast entries
 - [ ] Users can search/sort beasts by their danger rating
