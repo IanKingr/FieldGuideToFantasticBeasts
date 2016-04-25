@@ -136,3 +136,5 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ### Bonus Features (TBD)
 - [ ] Users can search/sort beasts by their danger rating
+- [ ] Implement map with location markers to indicate where beasts live.
+- [ ] Users can select multiple beasts and create a collection out of them.
