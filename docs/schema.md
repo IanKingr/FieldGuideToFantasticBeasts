@@ -6,8 +6,6 @@ column name | data type | details
 id          | integer   | not null, primary key
 name        | string    | not null
 
-
-
 ## beasts
 column name | data type | details
 ------------|-----------|-----------------------
