@@ -1,4 +1,4 @@
-# FresherNote
+# Field Guide to Fantastic Beasts
 
 [Heroku link][heroku] **NB:** Heroku link to be added
 

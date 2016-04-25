@@ -1,13 +1,15 @@
 ## Component Hierarchy
 
 * `App`
-  * `SearchIndex`
-  * `NotebooksIndex`
-    * `NotebookIndexItem`
-  * `NotebookForm`
-  * `NotesIndex`
-    * `NoteForm`
-    * `NoteIndexItem`
-  * `NoteDetail`
-    * `NoteTags`
-    * `NoteEditArea`
+  * `FieldGuideIndex`
+    * `SearchBar`
+    * `AffinityNavBar`
+    * `AffinityItem`
+      * `AffinityDetails`
+      * `AffinityBeastList`
+        * `BeastListItem`
+  * `BeastList`
+    * `Bookmark`
+    * `AffinityBeastList`
+      * `BeastListItem`
+  * `NavBar`

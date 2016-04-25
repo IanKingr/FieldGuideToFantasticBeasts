@@ -1,22 +1,18 @@
 # View Wireframes
 
 ## New User
-![new-user]
+![sign-up]
 
 ## New Session
-![new-session]
+![sign-in]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## FieldGuideIndex / AffinityNavBar / AffinityDetails / AffinityBeastList / NavBar
+![field-guide-index]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## AffinityBeastList / BeastItem / DangerRating / Bookmark / NavBar
+![beast-list]
 
-## NotebookForm
-![notebook-form]
-
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[beast-list]: ./wireframes/BeastList.png
+[field-guide-index]: ./wireframes/FieldGuideIndex.png
+[sign-up]: ./wireframes/SignUpPage.png
+[sign-in]: ./wireframes/SignInPage.png

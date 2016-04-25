@@ -1,46 +1,40 @@
 # Schema Information
 
-## notes
+## affinities
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-title       | string    | not null
-body        | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+name        | string    | not null
 
-## notebooks
+
+
+## beasts
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    | 
+name        | string    | not null, unique
+description | string    |
+avg_height  | integer   |
+avg_weight  | integer   |
+avg_length  | integer   |
+affinity_id | integer   | not null, foreign key (references affinities), indexed
 
-## reminders
+## danger ratings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
-date        | datetime  | not null
-type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
+beast_id    | integer   | not null, foreign key (references beasts), indexed
+rating      | integer   |
 
-## tags
+## bookmarks
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
-
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
+user_id     | integer   | not null, foreign key (references users), indexed
+beast_id    | integer   | not null, foreign key (references beasts), indexed
+bookmarked  | boolean   | default: false
 
 ## users
 column name     | data type | details
