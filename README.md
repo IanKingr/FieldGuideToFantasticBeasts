@@ -65,7 +65,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Beasts can be created and read through the API.
 
-- [ ] create `Beast` model
+- [x] create `Beast` model
 - [ ] seed the database with a small amount of test data
 - [ ] CRUD API for beast (`BeastsController`)
 - [ ] jBuilder views for beasts

@@ -23,6 +23,7 @@ var style = {
     left            : '150px',
     right           : '150px',
     bottom          : '100px',
+    backgroundColor : '#FFF2E7',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex         : 11
