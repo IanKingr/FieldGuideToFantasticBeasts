@@ -13,6 +13,7 @@ UserStore.__onDispatch = function (payload) {
     	UserStore.login(payload.user);
       break;
     case UserConstants.REMOVE_USER:
+      console.log("Removing user from User Store");
     	UserStore.logout();
       break;
     case UserConstants.ERROR:

@@ -53,13 +53,13 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [x] create new project
 - [x] create `User` model
-- [ ] front-end authentication
+- [x] front-end authentication
 - [x] CRUD API for user
 - [x] user signup/signin forms
 - [x] setup Webpack & Flux scaffold
-- [ ] setup `UserAPIUtil` to interact with the API
-- [ ] blank landing page after signin
-- [ ] test out API interaction in the console.
+- [x] setup `UserAPIUtil` to interact with the API
+- [x] blank landing page after signin
+- [x] test out API interaction in the console.
 
 ### Phase 2: Beasts Model, API, and basic BeastAPIUtil (1.5 days)
 

@@ -43,7 +43,8 @@ var UserApiUtil = {
     });
   },
 
-  logout: function(data, success){
+  logout: function(success){
+    debugger;
     console.log("Logging out");
     $.ajax ({
       type: "DELETE",
