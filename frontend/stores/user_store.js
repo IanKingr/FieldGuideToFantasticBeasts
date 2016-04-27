@@ -7,7 +7,7 @@ var UserStore = new Store(Dispatcher);
 var _currentUser, _errors;
 
 UserStore.__onDispatch = function (payload) {
-  debugger;
+
   switch(payload.actionType) {
     case UserConstants.USER_RECEIVED:
     	UserStore.login(payload.user);
@@ -19,12 +19,13 @@ UserStore.__onDispatch = function (payload) {
       UserStore.setErrors(payload.errors);
       break;
   }
+  debugger;
   UserStore.__emitChange();
 };
 
 UserStore.login = function(user){
-  console.log("UserStore logging in " + user);
-	_currentUser = user;
+  console.log("UserStore logging in " + user.username);
+	_currentUser = user.username;
   _errors = null;
 };
 
@@ -35,8 +36,8 @@ UserStore.logout = function(){
 
 UserStore.currentUser = function(){
   if (_currentUser) {
-  	return $.extend({}, _currentUser);
-    //what is this extend?
+  	return _currentUser;
+    //what is this extend? $.extend({}, _currentUser);
   }
 };
 
