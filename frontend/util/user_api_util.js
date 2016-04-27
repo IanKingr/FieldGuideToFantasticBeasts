@@ -1,20 +1,17 @@
-var Dispatcher = require('../dispatcher/dispatcher.js');
-
-var UserActions = require('../actions/userActions');
-
 
 var UserApiUtil = {
-  fetchCurrentUser: function(){
+  fetchCurrentUser: function(success){
     $.ajax ({
       type: "GET",
       url: "/api/session",
-      success: function(user){
-        UserActions.receiveCurrentUser(user);
-      }
+      success: success,
+      // error: function(response){
+      //   UserActions.handleError(response);
+      // }
     });
   },
 
-  createUser: function(data){
+  createUser: function(data, success){
     console.log("posting to AJAX");
     $.ajax ({
       type: "POST",
@@ -23,38 +20,35 @@ var UserApiUtil = {
         username: data.username,
         password: data.password
       },
-      success: function(user){
-        debugger;
-        console.log("callback success");
-        UserActions.receiveCurrentUser(user);
-      },
-      error: function(response){
-        console.log("invalid user creation");
-      }
+      success: success,
+      // error: function(response){
+      //   console.log("Invalid user creation");
+      //   UserActions.handleError(response);
+      // }
     });
   },
 
-  login: function(loginData){
+  login: function(loginData, success){
     $.ajax ({
       type: "POST",
       url: "/api/session",
       data: {
         username: loginData.username,
         password: loginData.password},
-      success: function(user){
-        UserActions.receiveCurrentUser(user);
-      }
+      success: success,
+      // error: function(response){
+      //   console.log("Login failure");
+      //   UserActions.handleError(response);
+      // }
     });
   },
 
-  logout: function(data){
+  logout: function(data, success){
     console.log("Logging out");
     $.ajax ({
       type: "DELETE",
       url: "/api/session",
-      success: function(){
-        UserActions.removeCurrentUser();
-      }
+      success: success
     });
   }
 };

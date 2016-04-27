@@ -1,4 +1,4 @@
-require "byebug"
+
 
 class Api::UsersController < ApplicationController
   def new

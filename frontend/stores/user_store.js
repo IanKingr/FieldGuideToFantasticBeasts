@@ -1,5 +1,6 @@
 var Dispatcher = require('../dispatcher/dispatcher.js');
 var Store = require('flux/utils').Store;
+var UserConstants = require('../constants/user_constants');
 
 var UserStore = new Store(Dispatcher);
 
@@ -7,13 +8,13 @@ var _currentUser, _errors;
 
 UserStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
-    case "LOGIN":
+    case UserConstants.USER_RECEIVED:
     	UserStore.login(payload.user);
       break;
-    case "LOGOUT":
+    case UserConstants.REMOVE_USER:
     	UserStore.logout();
       break;
-    case "ERROR":
+    case UserConstants.ERROR:
       UserStore.setErrors(payload.errors);
       break;
   }
