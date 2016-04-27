@@ -1,8 +1,8 @@
 # Field Guide to Fantastic Beasts
 
-[Heroku link][heroku] **NB:** Heroku link to be added
+[Heroku link][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://field-guide-to-beasts.herokuapp.com/
 
 ## Minimum Viable Product
 

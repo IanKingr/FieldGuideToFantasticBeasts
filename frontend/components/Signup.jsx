@@ -32,7 +32,7 @@ var Signup = React.createClass({
       password: this.state.password
     };
     UserActions.createUser(postData);
-    this.props.callback();
+    // this.props.callback();
     this.setState({ username: "", password: "" });
   },
 

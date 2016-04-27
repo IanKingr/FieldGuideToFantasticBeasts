@@ -1,5 +1,5 @@
 var Dispatcher = require('../dispatcher/dispatcher');
-var UserConstants = require('../constants/beast_constants');
+var UserConstants = require('../constants/user_constants');
 var UserApiUtil = require('../util/user_api_util');
 
 

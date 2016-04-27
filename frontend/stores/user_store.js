@@ -7,6 +7,7 @@ var UserStore = new Store(Dispatcher);
 var _currentUser, _errors;
 
 UserStore.__onDispatch = function (payload) {
+  debugger;
   switch(payload.actionType) {
     case UserConstants.USER_RECEIVED:
     	UserStore.login(payload.user);
@@ -22,6 +23,7 @@ UserStore.__onDispatch = function (payload) {
 };
 
 UserStore.login = function(user){
+  console.log("UserStore logging in " + user);
 	_currentUser = user;
   _errors = null;
 };

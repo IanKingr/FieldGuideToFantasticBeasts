@@ -57,9 +57,10 @@ var FieldGuide = React.createClass({
   },
 
   getCurrentUser: function(){
-    this.setState({currentUser: UserStore.currentUser});
+    this.setState({currentUser: UserStore.currentUser()});
     if(this.state.currentUser){
       this.closeModal();
+      console.log("Current User is " + this.state.currentUser);
     } else {
       console.log("getCurrentUser = none");
       this.setState({errors: UserStore.errors});
@@ -68,7 +69,6 @@ var FieldGuide = React.createClass({
 
   componentDidMount: function(){
     this.storeListener = UserStore.addListener(this.getCurrentUser);
-    // UserActions.fetchCurrentUser();
   },
 
   render: function () {
@@ -76,7 +76,7 @@ var FieldGuide = React.createClass({
     return (
       <div>
         <h1>Field Guide to Fantastic Beasts</h1>
-        <div>
+        <div>{this.state.currentUser}
           <Buttons
             signed_in={this.state.currentUser}
             signOutCallback={this.handleSignout}
@@ -90,7 +90,7 @@ var FieldGuide = React.createClass({
           isOpen={this.state.SignUpModalOpen}
           onRequestClose={this.closeModal}
           style={style}>
-          <Signup callback={this.closeModal}/>
+          <Signup />
         </Modal>
 
         <Modal
