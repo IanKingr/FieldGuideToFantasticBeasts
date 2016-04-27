@@ -4,6 +4,16 @@ var UserActions = require('../actions/userActions');
 
 
 var UserApiUtil = {
+  fetchCurrentUser: function(){
+    $.ajax ({
+      type: "GET",
+      url: "/api/session",
+      success: function(user){
+        UserActions.receiveCurrentUser(user);
+      }
+    });
+  },
+
   createUser: function(data){
     console.log("posting to AJAX");
     $.ajax ({

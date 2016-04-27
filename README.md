@@ -23,7 +23,7 @@ Field Guide will allow users to do the following:
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
-- [ ] Create an account (MVP)
+- [x] Create an account (MVP)
 - [ ] Log in / Log out, including as a Guest/Demo User (MVP)
 - [ ] Search, select matching search results, and autocomplete searches for Beasts (MVP)
 - [ ] Review Beasts and rate in terms of Danger rating (MVP)
@@ -51,12 +51,12 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Functioning rails project with Front-End Authentication
 
-- [ ] create new project
-- [ ] create `User` model
+- [x] create new project
+- [x] create `User` model
 - [ ] front-end authentication
-- [ ] CRUD API for user
-- [ ] user signup/signin forms
-- [ ] setup Webpack & Flux scaffold
+- [x] CRUD API for user
+- [x] user signup/signin forms
+- [x] setup Webpack & Flux scaffold
 - [ ] setup `UserAPIUtil` to interact with the API
 - [ ] blank landing page after signin
 - [ ] test out API interaction in the console.

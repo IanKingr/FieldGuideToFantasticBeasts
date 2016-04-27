@@ -4,7 +4,8 @@ var React = require('react'),
     Signup = require('./components/Signup'),
     Signin = require('./components/Signin'),
     UserActions = require('./actions/userActions'),
-    Buttons = require('./components/buttons');
+    Buttons = require('./components/buttons'),
+    UserStore = require('./stores/user_store');
 
 var style = {
   overlay : {
@@ -33,7 +34,7 @@ var FieldGuide = React.createClass({
       return({
         SignUpModalOpen: false,
         SignInModalOpen: false,
-        SignedIn: false
+        currentUser: null
       });
     },
   closeModal: function(){
@@ -55,9 +56,18 @@ var FieldGuide = React.createClass({
     UserActions.logout();
   },
 
-  signIn: function(){
-    this.setState({SignedIn: true});
-    this.closeModal();
+  getCurrentUser: function(){
+    this.setState({currentUser: UserStore.currentUser});
+    if(this.state.currentUser){
+      this.closeModal();
+    } else {
+      console.log("getCurrentUser = none");
+    }
+  },
+
+  componentDidMount: function(){
+    this.storeListener = UserStore.addListener(this.getCurrentUser);
+    UserActions.fetchCurrentUser();
   },
 
   render: function () {
@@ -67,7 +77,7 @@ var FieldGuide = React.createClass({
         <h1>FieldGuide</h1>
         <div>
           <Buttons
-            signed_in={this.state.SignedIn}
+            signed_in={this.state.currentUser}
             signOutCallback={this.handleSignout}
             signUpCallback={this.handleSignup}
             signInCallback={this.handleSignin}/>

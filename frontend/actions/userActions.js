@@ -4,6 +4,10 @@ var UserApiUtil = require('../util/user_api_util');
 
 
 var UserActions = {
+  fetchCurrentUser: function(){
+    UserApiUtil.fetchCurrentUser();
+  },
+
   createUser: function(data){
     UserApiUtil.createUser(data);
   },
