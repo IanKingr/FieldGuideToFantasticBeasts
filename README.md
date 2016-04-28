@@ -67,11 +67,11 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [x] create `Beast` model
 - [x] seed the database with a small amount of test data
-- [ ] CRUD API for beast (`BeastsController`)
-- [ ] jBuilder views for beasts
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `BeastAPIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [x] CRUD API for beast (`BeastsController`)
+- [x] jBuilder views for beasts
+- [x] setup Webpack & Flux scaffold
+- [x] setup `BeastAPIUtil` to interact with the API
+- [x] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (2 days)
 

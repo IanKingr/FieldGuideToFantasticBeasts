@@ -5,7 +5,19 @@ var BeastStore = require('../stores/beast_store');
 
 var BeastForm = React.createClass({
   getInitialState: function (){
-    return ({ name: "", description: "" });
+    return ({ name: "", description: "", errors: "" });
+  },
+
+  getErrors: function(){
+    this.setState({errors: BeastStore.errors()});
+  },
+
+  componentDidMount: function(){
+    this.beastListener = BeastStore.addListener(this.getErrors);
+  },
+
+  componentWillUnmount: function(){
+    this.beastListener.remove();
   },
 
   nameChange: function (event) {
@@ -50,13 +62,20 @@ var BeastForm = React.createClass({
       affinity_id: parseInt(this.state.affinity_id)
     };
     BeastActions.createBeast(postData);
-    // this.props.callback();
-    // this.setState({ name: "", description: "" });
   },
 
   render: function(){
+    var errorDisplay = "";
+    if(this.state.errors){
+      errorDisplay = this.state.errors.map(function(error){
+        return <li>{error}</li>;
+      });
+    }
     return (
       <div>
+        <ul className="error">
+          {errorDisplay}
+        </ul>
         <form onSubmit={this.handleSubmit}>
           <label>Name<br />
             <input
@@ -95,7 +114,7 @@ var BeastForm = React.createClass({
          <br /><br />
          <label>Affinity
            <select onChange={this.affinityChange}>
-              <option></option>
+              <option value=""></option>
               <option value="1">Mountains</option>
               <option value="2">Waters</option>
               <option value="3">Plains</option>

@@ -10,12 +10,6 @@ class User < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :author_id,
     class_name: "Beast"
-# Replaced by User.find_by(username: ).try(:authenticate, 'password')
-  # def self.find_by_credentials username, password
-	# 	user = User.find_by(username: username)
-	# 	return nil unless user
-	# 	user.password_is?(password) ? user : nil
-	# end
 
   def reset_session_token!
 		self.session_token = new_session_token

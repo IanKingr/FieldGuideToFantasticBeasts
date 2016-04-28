@@ -87,7 +87,6 @@ var FieldGuide = React.createClass({
             signUpCallback={this.handleSignup}
             signInCallback={this.handleSignin}/>
           <br />
-          Experimental Buttons Above
         </div>
         <BeastForm />
         <Modal

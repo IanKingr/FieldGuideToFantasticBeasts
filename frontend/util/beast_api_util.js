@@ -19,7 +19,7 @@ var BeastApiUtil = {
     });
   },
 
-  createBeast: function(data, success){
+  createBeast: function(data, success, error){
     console.log("posting to AJAX [beast_api_util]");
     $.ajax ({
       type: "POST",
@@ -34,10 +34,7 @@ var BeastApiUtil = {
         affinity_id: data.affinity_id,
       },
       success: success,
-      // error: function(response){
-      //   console.log("Invalid beast creation");
-      //   BeastActions.handleError(response);
-      // }
+      error: error
     });
   }
 

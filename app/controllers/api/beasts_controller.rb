@@ -1,4 +1,5 @@
 class Api::BeastsController < ApplicationController
+
   def new
     @beast = Beast.new()
     render :new
@@ -18,8 +19,8 @@ class Api::BeastsController < ApplicationController
     if @beast.save
       render :show
     else
-      flash.now[:errors] = @beast.errors.full_messages
-      render :new
+      @errors = @beast.errors.full_messages
+      render "api/shared/error", status: 422
     end
   end
 
