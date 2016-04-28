@@ -22,6 +22,11 @@ UserStore.__onDispatch = function(payload) {
   UserStore.__emitChange();
 };
 
+UserStore.guest = function(){
+  console.log("Guest login activated!");
+  return {username: "GuestUser", password: "beourGuest2theTest"};
+};
+
 UserStore.login = function(user){
   console.log("UserStore logging in " + user.username);
 	_currentUser = user;

@@ -8,7 +8,6 @@ var _currentBeast, _errors;
 var _beasts = {};
 
 BeastStore.__onDispatch = function(payload) {
-  debugger;
   switch(payload.actionType) {
     case BeastConstants.BEAST_RECEIVED:
     	BeastStore.setCurrentBeast(payload.beast);

@@ -20,8 +20,8 @@ var Signin = React.createClass({
   guestSignIn: function(event) {
     console.log("Guest sign in clicked");
     var postData = {
-      username: this.state.username,
-      password: this.state.password
+      username: UserStore.guest().username,
+      password: UserStore.guest().password
     };
     UserActions.login(postData);
   },
@@ -78,7 +78,9 @@ var Signin = React.createClass({
           <input type="Submit" value="Sign In"/>
         </form>
         <br />
-        <button className="guest" onClick={this.guestSignIn}>Or sign in as a Guest!</button>
+        <button className="guest"
+          onClick={this.guestSignIn}>Or sign in as a Guest!
+        </button>
       </div>
     );
   }

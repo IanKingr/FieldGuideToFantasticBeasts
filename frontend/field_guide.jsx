@@ -35,14 +35,20 @@ UserActions.fetchCurrentUser();
 
 var FieldGuide = React.createClass({
   getInitialState: function(){
-      return({
-        SignUpModalOpen: false,
-        SignInModalOpen: false,
-        currentUser: null
-      });
-    },
+    return({
+      SignUpModalOpen: false,
+      SignInModalOpen: false,
+      CreateBeastModalOpen: false,
+      currentUser: null
+    });
+  },
+
   closeModal: function(){
-    this.setState({ SignUpModalOpen: false, SignInModalOpen: false });
+    this.setState({
+      SignUpModalOpen: false,
+      SignInModalOpen: false,
+      CreateBeastModalOpen: false
+    });
   },
 
   handleSignin: function(){
@@ -58,6 +64,10 @@ var FieldGuide = React.createClass({
   handleSignout: function(){
     console.log("Sign out Clicked");
     UserActions.logout();
+  },
+
+  createBeast: function(){
+    this.setState({CreateBeastModalOpen: true});
   },
 
   getCurrentUser: function(){
@@ -88,7 +98,11 @@ var FieldGuide = React.createClass({
             signInCallback={this.handleSignin}/>
           <br />
         </div>
-        <BeastForm />
+
+        <button onClick={this.createBeast}>Create Beast</button>
+
+
+
         <Modal
           isOpen={this.state.SignUpModalOpen}
           onRequestClose={this.closeModal}
@@ -101,6 +115,13 @@ var FieldGuide = React.createClass({
           onRequestClose={this.closeModal}
           style={style}>
           <Signin />
+        </Modal>
+
+        <Modal
+          isOpen={this.state.CreateBeastModalOpen}
+          onRequestClose={this.closeModal}
+          style={style}>
+          <BeastForm />
         </Modal>
       </div>
     );
