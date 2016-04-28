@@ -30,6 +30,8 @@ var style = {
   }
 };
 
+UserActions.fetchCurrentUser();
+
 var FieldGuide = React.createClass({
   getInitialState: function(){
       return({
@@ -61,7 +63,7 @@ var FieldGuide = React.createClass({
     this.setState({currentUser: UserStore.currentUser()});
     if(this.state.currentUser){
       this.closeModal();
-      console.log("Current User is " + this.state.currentUser);
+      console.log("Current User is " + this.state.currentUser.username);
     } else {
       console.log("getCurrentUser = none");
       this.setState({errors: UserStore.errors});
@@ -73,11 +75,11 @@ var FieldGuide = React.createClass({
   },
 
   render: function () {
-
+    var username = this.state.currentUser ? this.state.currentUser.username : null;
     return (
       <div>
         <h1>Field Guide to Fantastic Beasts</h1>
-        <div>{this.state.currentUser}
+        <div>{username}
           <Buttons
             signed_in={this.state.currentUser}
             signOutCallback={this.handleSignout}

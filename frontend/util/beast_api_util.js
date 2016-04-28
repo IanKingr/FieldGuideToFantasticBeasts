@@ -1,29 +1,33 @@
-
-var UserApiUtil = {
-  fetchCurrentUser: function(success){
+var BeastApiUtil = {
+  fetchBeast: function(data, success){
     $.ajax ({
       type: "GET",
-      url: "/api/session",
+      url: "/api/beasts/" + data.id,
       success: success,
       // error: function(response){
-      //   UserActions.handleError(response);
+      //   BeastActions.handleError(response);
       // }
     });
   },
 
-  createUser: function(data, success){
+  createBeast: function(data, success){
     console.log("posting to AJAX");
     $.ajax ({
       type: "POST",
-      url: "api/user",
+      url: "api/beasts",
       data: {
-        username: data.username,
-        password: data.password
+        author_id: data.author_id
+        name: data.name,
+        description: data.description,
+        avg_length: data.avg_length,
+        avg_height: data.avg_height,
+        avg_weight: data.avg_weight,
+        affinity_id: data.affinity_id,
       },
       success: success,
       // error: function(response){
-      //   console.log("Invalid user creation");
-      //   UserActions.handleError(response);
+      //   console.log("Invalid beast creation");
+      //   BeastActions.handleError(response);
       // }
     });
   },
@@ -38,7 +42,7 @@ var UserApiUtil = {
       success: success,
       // error: function(response){
       //   console.log("Login failure");
-      //   UserActions.handleError(response);
+      //   BeastActions.handleError(response);
       // }
     });
   },
@@ -53,4 +57,4 @@ var UserApiUtil = {
   }
 };
 
-module.exports = UserApiUtil;
+module.exports = BeastApiUtil;

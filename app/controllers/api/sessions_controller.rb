@@ -23,8 +23,9 @@ class Api::SessionsController < ApplicationController
 	end
 
   def show
-		if current_user
-			@user = current_user
+    token = session[:session_token]
+    @user = User.find_by({session_token: token})
+		if @user
 			render :show
 		else
 			@errors = nil

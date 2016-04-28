@@ -1,5 +1,3 @@
-
-
 class Api::UsersController < ApplicationController
   def new
     @user = User.new()
@@ -10,7 +8,6 @@ class Api::UsersController < ApplicationController
     @user = User.new(
       username: params[:username],
       password: params[:password])
-    # debugger;
     if(@user.save)
       sign_in(@user)
       render :show #We are sending back JSON data from this view as a response to the API request
@@ -23,6 +20,8 @@ class Api::UsersController < ApplicationController
   def show
     # @user = User.find(params[:id])
     @user = current_user
+    debugger;
+    render :show
   end
 
   private
