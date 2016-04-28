@@ -5,7 +5,8 @@ var React = require('react'),
     Signin = require('./components/Signin'),
     UserActions = require('./actions/userActions'),
     Buttons = require('./components/buttons'),
-    UserStore = require('./stores/user_store');
+    UserStore = require('./stores/user_store'),
+    BeastForm = require('./components/BeastForm');
 
 var style = {
   overlay : {
@@ -88,7 +89,7 @@ var FieldGuide = React.createClass({
           <br />
           Experimental Buttons Above
         </div>
-
+        <BeastForm />
         <Modal
           isOpen={this.state.SignUpModalOpen}
           onRequestClose={this.closeModal}

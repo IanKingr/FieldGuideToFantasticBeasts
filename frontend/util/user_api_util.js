@@ -11,7 +11,7 @@ var UserApiUtil = {
     });
   },
 
-  createUser: function(data, success){
+  createUser: function(data, success, error){
     console.log("posting to AJAX");
     $.ajax ({
       type: "POST",
@@ -21,14 +21,11 @@ var UserApiUtil = {
         password: data.password
       },
       success: success,
-      // error: function(response){
-      //   console.log("Invalid user creation");
-      //   UserActions.handleError(response);
-      // }
+      error: error
     });
   },
 
-  login: function(loginData, success){
+  login: function(loginData, success, error){
     $.ajax ({
       type: "POST",
       url: "/api/session",
@@ -36,10 +33,7 @@ var UserApiUtil = {
         username: loginData.username,
         password: loginData.password},
       success: success,
-      // error: function(response){
-      //   console.log("Login failure");
-      //   UserActions.handleError(response);
-      // }
+      error: error
     });
   },
 

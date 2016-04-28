@@ -20,12 +20,12 @@ var BeastApiUtil = {
   },
 
   createBeast: function(data, success){
-    console.log("posting to AJAX");
+    console.log("posting to AJAX [beast_api_util]");
     $.ajax ({
       type: "POST",
       url: "api/beasts",
       data: {
-        author_id: data.author_id
+        author_id: data.author_id,
         name: data.name,
         description: data.description,
         avg_length: data.avg_length,

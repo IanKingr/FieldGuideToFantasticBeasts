@@ -5,6 +5,7 @@
     * `SearchBar`
     * `AffinityNavBar`
     * `AffinityItem`
+    * `BeastForm`
       * `AffinityDetails`
       * `AffinityBeastList`
         * `BeastListItem`

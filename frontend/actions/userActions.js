@@ -9,11 +9,19 @@ var UserActions = {
   },
 
   createUser: function(data){
-    UserApiUtil.createUser(data, this.receiveCurrentUser);
+    UserApiUtil.createUser(
+      data,
+      this.receiveCurrentUser,
+      this.handleError
+    );
   },
 
   login: function(loginData){
-    UserApiUtil.login(loginData, this.receiveCurrentUser);
+    UserApiUtil.login(
+      loginData,
+      this.receiveCurrentUser,
+      this.handleError
+    );
   },
 
   logout: function(){
@@ -33,10 +41,10 @@ var UserActions = {
     });
   },
 
-  handleError: function(error) {
+  handleError: function(errors) {
 		Dispatcher.dispatch({
 			actionType: UserConstants.ERROR,
-			errors: error.responseJSON.errors
+			errors: errors
 		});
 	}
 };

@@ -7,7 +7,7 @@ var BeastStore = new Store(Dispatcher);
 var _currentBeast, _errors;
 var _beasts = {};
 
-BeastStore.__onDispatch = function (payload) {
+BeastStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case BeastConstants.BEAST_RECEIVED:
     	BeastStore.setCurrentBeast(payload.beast);

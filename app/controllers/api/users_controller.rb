@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
       sign_in(@user)
       render :show #We are sending back JSON data from this view as a response to the API request
     else
-      flash.now[:errors] = @user.errors.full_messages
+      @errors = @user.errors.full_messages
       render "api/shared/error", status: 422
     end
   end
@@ -20,7 +20,6 @@ class Api::UsersController < ApplicationController
   def show
     # @user = User.find(params[:id])
     @user = current_user
-    debugger;
     render :show
   end
 

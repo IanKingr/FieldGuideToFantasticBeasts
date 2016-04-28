@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       sign_in(@user)
       render :show
     else
-      @errors = ['invalid credentials']
+      @errors = ['Invalid Username or Password']
       render "api/shared/error", status: 401
     end
   end

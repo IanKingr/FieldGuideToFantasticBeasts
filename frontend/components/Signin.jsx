@@ -1,9 +1,10 @@
 var React = require('react');
 var UserActions = require('../actions/userActions');
+var UserStore = require('../stores/user_store');
 
 var Signin = React.createClass({
   getInitialState: function (){
-    return ({ username: "", password: "" });
+    return ({ username: "", password: "", errors: "" });
   },
 
   usernameChange: function (event) {
@@ -32,12 +33,32 @@ var Signin = React.createClass({
       password: this.state.password
     };
     UserActions.login(postData);
-    this.setState({ username: "", password: "" });
+  },
+
+  getErrors: function(){
+    this.setState({errors: UserStore.errors()});
+  },
+
+  componentDidMount: function(){
+    this.storeListener = UserStore.addListener(this.getErrors);
+  },
+
+  componentWillUnmount: function(){
+    this.storeListener.remove();
   },
 
   render: function(){
+    var errorDisplay = "";
+    if(this.state.errors){
+      errorDisplay = this.state.errors.map(function(error){
+        return <li>{error}</li>;
+      });
+    }
     return (
       <div>
+        <ul className="error">
+          {errorDisplay}
+        </ul>
         <form onSubmit={this.handleSubmit}>
           <label>Username<br />
             <input

@@ -1,9 +1,15 @@
 class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
-
   has_secure_password
 
+  validates :username, presence: true
+  validates :password, length: { minimum: 8 }, allow_nil: true
+
+  has_many :beasts,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: "Beast"
 # Replaced by User.find_by(username: ).try(:authenticate, 'password')
   # def self.find_by_credentials username, password
 	# 	user = User.find_by(username: username)

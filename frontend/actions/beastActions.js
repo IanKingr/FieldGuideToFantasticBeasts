@@ -1,4 +1,4 @@
-var Dispatcher = require('Dispatcher');
+var Dispatcher = require('../dispatcher/dispatcher');
 var BeastConstants = require('../constants/beast_constants');
 var BeastApiUtil = require('../util/beast_api_util');
 
@@ -12,6 +12,7 @@ var BeastActions = {
   },
 
   createBeast: function(data){
+    console.log("Attempting to create a beast...[beastActions]");
     BeastApiUtil.createBeast(data, this.receiveBeast);
   },
 
@@ -27,6 +28,8 @@ var BeastActions = {
   },
 
   receiveBeast: function(beast){
+    console.log("Receiving a beast");
+    console.log(beast);
     Dispatcher.dispatch({
       actionType: BeastConstants.BEAST_RECEIVED,
       beast: beast

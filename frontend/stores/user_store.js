@@ -6,7 +6,7 @@ var UserStore = new Store(Dispatcher);
 
 var _currentUser, _errors;
 
-UserStore.__onDispatch = function (payload) {
+UserStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case UserConstants.USER_RECEIVED:
     	UserStore.login(payload.user);
@@ -16,7 +16,7 @@ UserStore.__onDispatch = function (payload) {
     	UserStore.logout();
       break;
     case UserConstants.ERROR:
-      UserStore.setErrors(payload.errors);
+      UserStore.resetErrors(payload.errors);
       break;
   }
   UserStore.__emitChange();
@@ -39,13 +39,14 @@ UserStore.currentUser = function(){
   }
 };
 
-UserStore.setErrors = function(errors){
+UserStore.resetErrors = function(errors){
+  _errors = undefined;
   _errors = errors;
 };
 
 UserStore.errors = function(){
   if (_errors){
-    return [].slice.call(_errors);
+    return JSON.parse(_errors.responseText).errors;
   }
 };
 
