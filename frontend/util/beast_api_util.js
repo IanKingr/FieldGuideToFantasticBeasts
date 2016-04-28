@@ -10,6 +10,15 @@ var BeastApiUtil = {
     });
   },
 
+  fetchBeasts: function(data, success){
+    $.ajax ({
+      type: "GET",
+      url: "/api/beasts",
+      data: {data: data},
+      success: success
+    });
+  },
+
   createBeast: function(data, success){
     console.log("posting to AJAX");
     $.ajax ({
@@ -30,31 +39,8 @@ var BeastApiUtil = {
       //   BeastActions.handleError(response);
       // }
     });
-  },
-
-  login: function(loginData, success){
-    $.ajax ({
-      type: "POST",
-      url: "/api/session",
-      data: {
-        username: loginData.username,
-        password: loginData.password},
-      success: success,
-      // error: function(response){
-      //   console.log("Login failure");
-      //   BeastActions.handleError(response);
-      // }
-    });
-  },
-
-  logout: function(success){
-    console.log("Logging out");
-    $.ajax ({
-      type: "DELETE",
-      url: "/api/session",
-      success: success
-    });
   }
+
 };
 
 module.exports = BeastApiUtil;

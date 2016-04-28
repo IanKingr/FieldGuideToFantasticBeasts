@@ -36,7 +36,6 @@ UserStore.logout = function(){
 UserStore.currentUser = function(){
   if (_currentUser) {
   	return _currentUser;
-    //what is this extend? $.extend({}, _currentUser);
   }
 };
 

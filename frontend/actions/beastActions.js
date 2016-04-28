@@ -7,6 +7,10 @@ var BeastActions = {
     BeastApiUtil.fetchBeast(data, this.receiveBeast);
   },
 
+  fetchBeasts: function(data){
+    BeastApiUtil.fetchBeasts(data, this.receiveBeasts);
+  },
+
   createBeast: function(data){
     BeastApiUtil.createBeast(data, this.receiveBeast);
   },
@@ -15,7 +19,7 @@ var BeastActions = {
   //   BeastApiUtil.removeBeast(data);
   // },
 
-  receiveAllBeasts: function(beasts){
+  receiveBeasts: function(beasts){
     Dispatcher.dispatch({
       actionType: BeastConstants.BEASTS_RECEIVED,
       beasts: beasts
