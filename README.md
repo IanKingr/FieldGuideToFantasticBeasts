@@ -8,11 +8,11 @@
 
 "Field Guide To Fantastic Beasts" or 'Field Guide' is a web application inspired by Harry Potter, Dungeons and Dragons, and other fantasy lores. Design strives to replicate key functionalities from sites like RateMyProfessor and will be built using Ruby on Rails and React.js. By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] New account creation, login, and guest/demo login
+- [x] New account creation, login, and guest/demo login
 - [ ] Smooth, bug-free navigation
 - [ ] Adequate seed data to demonstrate the site's features
 - [ ] The minimally necessary features for a RateMyProfessor-inspired site: Rating Beasts, Search with Autocomplete, Beasts organized by affinity (biome).
-- [ ] Hosting on Heroku
+- [x] Hosting on Heroku
 - [ ] CSS styling that is satisfactorily visually appealing
 - [ ] A production README
 
@@ -24,12 +24,12 @@ Field Guide will allow users to do the following:
 progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [x] Create an account (MVP)
-- [ ] Log in / Log out, including as a Guest/Demo User (MVP)
+- [x] Log in / Log out, including as a Guest/Demo User (MVP)
 - [ ] Search, select matching search results, and autocomplete searches for Beasts (MVP)
 - [ ] Review Beasts and rate in terms of Danger rating (MVP)
 - [ ] Add Beasts to personal bookmarks (MVP)
 - [ ] Comment on Beast entries (MVP)
-- [ ] Create Beast entries (MVP)
+- [x] Create Beast entries (MVP)
 - [ ] Users can search/sort beasts by their danger rating (expected, but not MVP)
 
 ## Design Docs
@@ -77,10 +77,10 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Beasts can be created, selected, bookmarked, and reviewed with the user interface.
 
+- [ ] setup React Router
 - [ ] setup `Review` model
 - [ ] setup `Bookmark` model
 - [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
 - implement each beast component, building out the flux loop as needed.
   - [ ] `BeastIndex`
   - [ ] `AffinityBeastList`

@@ -1,21 +1,20 @@
 var BeastApiUtil = {
-  fetchBeast: function(data, success){
+  fetchBeast: function(data, success, error){
     $.ajax ({
       type: "GET",
       url: "/api/beasts/" + data.id,
       success: success,
-      // error: function(response){
-      //   BeastActions.handleError(response);
-      // }
+      error: error
     });
   },
 
-  fetchBeasts: function(data, success){
+  fetchBeasts: function(data, success, error){
     $.ajax ({
       type: "GET",
       url: "/api/beasts",
       data: {data: data},
-      success: success
+      success: success,
+      error: error
     });
   },
 
