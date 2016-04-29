@@ -51,6 +51,7 @@ BeastStore.setCurrentBeast = function(beast){
 };
 
 BeastStore.resetBeasts = function(beasts){
+  debugger;
   //Need to check and see what form the beasts are passed back as from the JSON. If they are an object or not.
   _beasts = {};
 

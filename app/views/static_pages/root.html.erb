@@ -4,16 +4,17 @@
     <meta charset="utf-8">
     <title>Field Guide</title>
     <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <div id="root"></div>
-
-    <script src="http://widget.cloudinary.com/global/all.js"/>
     <script type="text/javascript">
      window.CLOUDINARY_OPTIONS = {
        cloud_name: "<%=ENV['CLOUD_NAME']%>",
        upload_preset: "<%= ENV['UPLOAD_PRESET'] %>"
      };
     </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://widget.cloudinary.com/global/all.js"/>
+
   </body>
 </html>

@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     class_name: "Beast"
 
+  has_many :bookmarks
+
   def reset_session_token!
 		self.session_token = new_session_token
 		ensure_session_token_uniqueness

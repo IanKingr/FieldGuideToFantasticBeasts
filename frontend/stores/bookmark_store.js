@@ -4,13 +4,13 @@ var BookmarkConstants = require('../constants/bookmark_constants');
 
 var BookmarkStore = new Store(Dispatcher);
 
-var _errors;
+var _errors, _currentBookmark;
 var _bookmarks = {};
 
 BookmarkStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case BookmarkConstants.BOOKMARK_RECEIVED:
-    	BookmarkStore.addBookmark(payload.bookmark);
+    	BookmarkStore.setCurrentBookmark(payload.bookmark);
       BookmarkStore.__emitChange();
       break;
     case BookmarkConstants.BOOKMARKS_RECEIVED:
@@ -39,12 +39,21 @@ BookmarkStore.allBookmarks = function(){
   });
 };
 
+BookmarkStore.setCurrentBookmark = function(bookmark){
+  _currentBookmark = bookmark;
+};
+
+BookmarkStore.currentBookmark = function(){
+  return _currentBookmark;
+};
+
 BookmarkStore.addBookmark = function(bookmark){
   _bookmarks[bookmark.id] = bookmark;
 };
 
 BookmarkStore.removeBookmark = function(bookmark){
-  delete _bookmarks[bookmark.id];
+  _currentBookmark = null;
+  // delete _bookmarks[bookmark.id];
 };
 
 BookmarkStore.resetBookmarks = function(bookmarks){

@@ -1,5 +1,6 @@
 var BookmarkApiUtil = {
   fetchBookmark: function(data, success, error){
+    // Might not work as intended
     $.ajax ({
       type: "GET",
       url: "/api/bookmarks/" + data.id,

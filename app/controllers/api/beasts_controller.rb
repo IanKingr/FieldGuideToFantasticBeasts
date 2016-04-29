@@ -30,7 +30,7 @@ class Api::BeastsController < ApplicationController
   end
 
   def index
-    @beasts = Beast.find_by(affinity_id: params[:affinity_id])
+    @beasts = Beast.where("affinity_id = ?", params[:data][:affinity_id].to_i)
     render :index
   end
 end

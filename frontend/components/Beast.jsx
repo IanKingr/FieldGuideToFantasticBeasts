@@ -4,7 +4,6 @@ var BeastStore = require('../stores/beast_store');
 var Beast = React.createClass({
   componentDidMount: function(){
     this.beastListener = BeastStore.addListener(this.getCurrentBeast); //won't need this listener once we only have this component mount when a beast is selected
-    // debugger; //
     // this.setState({beast: BeastStore.currentBest()});
   },
 
@@ -14,7 +13,6 @@ var Beast = React.createClass({
 
   getCurrentBeast: function(){
     //won't need this once we change it so this component only mounts when selected
-    // debugger;
     this.setState({beast: BeastStore.currentBeast()});
   },
 

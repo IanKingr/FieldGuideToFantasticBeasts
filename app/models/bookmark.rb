@@ -1,5 +1,5 @@
 class Bookmark < ActiveRecord::Base
-  validates: :user_id, :beast_id, presence: true
+  validates :user_id, :beast_id, presence: true
 
   belongs_to :user
 
