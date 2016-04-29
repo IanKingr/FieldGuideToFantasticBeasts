@@ -6,7 +6,8 @@ var React = require('react'),
     UserActions = require('./actions/userActions'),
     Buttons = require('./components/buttons'),
     UserStore = require('./stores/user_store'),
-    BeastForm = require('./components/BeastForm');
+    BeastForm = require('./components/BeastForm'),
+    Beast = require('./components/Beast');
 
 var style = {
   overlay : {
@@ -102,6 +103,7 @@ var FieldGuide = React.createClass({
         <button onClick={this.createBeast}>Create Beast</button>
 
 
+        <Beast />
 
         <Modal
           isOpen={this.state.SignUpModalOpen}

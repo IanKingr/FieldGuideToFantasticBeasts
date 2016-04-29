@@ -1,17 +1,17 @@
 ## Component Hierarchy
 
 * `App`
-  * `FieldGuideIndex`
-    * `SearchBar`
-    * `AffinityNavBar`
-    * `AffinityItem`
-    * `BeastForm`
-      * `AffinityDetails`
+  * `NavBar`
+    * `FieldGuideIndex`
+      * `SearchBar`
+      * `AffinityNavBar`
+      * `AffinityItem`
+      * `BeastForm`
+        * `AffinityDetails`
+        * `AffinityBeastList`
+          * `BeastListItem`
+    * `BeastIndex`
+      * `Bookmark`
       * `AffinityBeastList`
         * `BeastListItem`
-  * `BeastList`
-    * `Bookmark`
-    * `AffinityBeastList`
-      * `BeastListItem`
-        * `BeastReview`
-  * `NavBar`
+          * `BeastReview`

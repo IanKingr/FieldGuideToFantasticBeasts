@@ -82,9 +82,11 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
 - implement each beast component, building out the flux loop as needed.
+  - [ ] `BeastIndex`
+  - [ ] `AffinityBeastList`
   - [ ] `BeastListItem`
-  - [ ] `Beast`
-  - [ ] `BeastForm`
+  - [x] `Beast`
+  - [x] `BeastForm`
   - [ ] `Review`
   - [ ] `Bookmark`
 

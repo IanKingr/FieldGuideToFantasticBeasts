@@ -60,3 +60,11 @@ button:hover {
   background: #FAA96B;
   /*text-decoration: none;*/
 }
+
+.BeastInfo{
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.
