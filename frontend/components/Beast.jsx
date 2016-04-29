@@ -14,7 +14,7 @@ var Beast = React.createClass({
 
   getCurrentBeast: function(){
     //won't need this once we change it so this component only mounts when selected
-    debugger;
+    // debugger;
     this.setState({beast: BeastStore.currentBeast()});
   },
 

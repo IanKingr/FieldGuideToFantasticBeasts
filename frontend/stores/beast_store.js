@@ -11,19 +11,22 @@ BeastStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case BeastConstants.BEAST_RECEIVED:
     	BeastStore.setCurrentBeast(payload.beast);
+      BeastStore.__emitChange();
       break;
     case BeastConstants.BEASTS_RECEIVED:
       BeastStore.resetBeasts(payload.beasts);
+      BeastStore.__emitChange();
       break;
     case BeastConstants.REMOVE_BEAST:
       console.log("Removing beast from Beast Store");
+      BeastStore.__emitChange();
     	// BeastStore.logout();
       break;
     case BeastConstants.ERROR:
       BeastStore.resetErrors(payload.errors);
+      BeastStore.__emitChange();
       break;
   }
-  BeastStore.__emitChange();
 };
 
 BeastStore.currentBeast = function(){
@@ -43,6 +46,7 @@ BeastStore.allStored = function(){
 };
 
 BeastStore.setCurrentBeast = function(beast){
+  _errors = null;
   _currentBeast = beast;
 };
 
@@ -56,11 +60,13 @@ BeastStore.resetBeasts = function(beasts){
 };
 
 BeastStore.resetErrors = function(errors){
-  _errors = undefined;
+  _errors = null;
   _errors = errors;
+  debugger;
 };
 
 BeastStore.errors = function(){
+  debugger;
   if (_errors){
     return JSON.parse(_errors.responseText).errors;
   }

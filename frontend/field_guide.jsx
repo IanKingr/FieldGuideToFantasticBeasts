@@ -45,9 +45,15 @@ var FieldGuide = React.createClass({
   },
 
   closeModal: function(){
+    console.log("Closing User Modal in FieldGuideIndex");
     this.setState({
       SignUpModalOpen: false,
       SignInModalOpen: false,
+    });
+  },
+
+  closeBeastModal: function(){
+    this.setState({
       CreateBeastModalOpen: false
     });
   },
@@ -121,9 +127,9 @@ var FieldGuide = React.createClass({
 
         <Modal
           isOpen={this.state.CreateBeastModalOpen}
-          onRequestClose={this.closeModal}
+          onRequestClose={this.closeBeastModal}
           style={style}>
-          <BeastForm />
+          <BeastForm closeModal={this.closeBeastModal}/>
         </Modal>
       </div>
     );

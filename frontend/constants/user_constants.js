@@ -1,7 +1,7 @@
 var UserConstants = {
   USER_RECEIVED: "LOGIN",
   REMOVE_USER: "LOGOUT",
-  ERROR: "ERROR"
+  ERROR: "USER_AUTH_ERROR"
 };
 
 module.exports = UserConstants;

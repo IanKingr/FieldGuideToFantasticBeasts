@@ -10,16 +10,18 @@ UserStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case UserConstants.USER_RECEIVED:
     	UserStore.login(payload.user);
+      UserStore.__emitChange();
       break;
     case UserConstants.REMOVE_USER:
       console.log("Removing user from User Store");
     	UserStore.logout();
+      UserStore.__emitChange();
       break;
     case UserConstants.ERROR:
       UserStore.resetErrors(payload.errors);
+      UserStore.__emitChange();
       break;
   }
-  UserStore.__emitChange();
 };
 
 UserStore.guest = function(){
