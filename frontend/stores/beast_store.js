@@ -48,10 +48,14 @@ BeastStore.allStored = function(){
 BeastStore.setCurrentBeast = function(beast){
   _errors = null;
   _currentBeast = beast;
+  BeastStore.addBeast(beast);
 };
 
+BeastStore.addBeast = function(beast){
+  _beasts[beast.id] = beast;
+},
+
 BeastStore.resetBeasts = function(beasts){
-  debugger;
   //Need to check and see what form the beasts are passed back as from the JSON. If they are an object or not.
   _beasts = {};
 
@@ -63,11 +67,9 @@ BeastStore.resetBeasts = function(beasts){
 BeastStore.resetErrors = function(errors){
   _errors = null;
   _errors = errors;
-  debugger;
 };
 
 BeastStore.errors = function(){
-  debugger;
   if (_errors){
     return JSON.parse(_errors.responseText).errors;
   }

@@ -17,7 +17,6 @@ var BeastIndex = React.createClass({
 
   componentDidMount: function(){
     this.beastListener = BeastStore.addListener(this.getBeasts);
-    var affinityId = 3; //temp variable
     BeastActions.fetchBeasts({affinity_id: this.state.currentBeast.affinity_id }); // will probably be passed in as a prop or a derived value of a prop from the FieldGuideIndex components
   },
 
@@ -28,7 +27,7 @@ var BeastIndex = React.createClass({
   getBeasts: function(){
     this.setState({beasts: BeastStore.allStored()});
     console.log("The beasts have been stored [BeastIndex]");
-    console.log(this.state.beasts + " the beasts");
+    // console.log(this.state.beasts + " the beasts");
   },
 
   render: function(){

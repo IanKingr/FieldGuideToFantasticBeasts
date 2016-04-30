@@ -14,6 +14,7 @@ var Buttons = React.createClass({
 
     return(
       <div>
+        {this.props.username}
         {buttons}
       </div>
     );

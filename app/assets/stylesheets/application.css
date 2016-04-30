@@ -13,16 +13,23 @@
  *= require_tree .
  *= require_self
  */
-h1 {
+.nav {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   font-family: 'Fjalla One', sans-serif;
+  font-size: 20px;
   color: white;
   background-color: #c7ad88;
+  /*background-color: white;*/
   /*border: 1px solid #64706c;*/
   border-radius: 5px;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 1px #4b4d52;
   flex-wrap: nowrap;
+  /*margin: 10px;*/
+  padding: 10px;
 }
 
 body {
@@ -45,6 +52,7 @@ input {
 }
 
 button {
+  justify-content:flex-end;
   border-radius: 3px;
   border: 0px;
   font-family: 'Arial';

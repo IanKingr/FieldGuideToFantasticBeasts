@@ -100,18 +100,19 @@ var FieldGuide = React.createClass({
     var username = this.state.currentUser ? this.state.currentUser.username : null;
     return (
       <div>
-        <h1>Field Guide to Fantastic Beasts</h1>
-        <div>{username}
-          <Buttons
-            signed_in={this.state.currentUser}
-            signOutCallback={this.handleSignout}
-            signUpCallback={this.handleSignup}
-            signInCallback={this.handleSignin}/>
-          <br />
+
+        <div className="nav"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1461973955/field_guide_logo3_tojbyd.png"/>
+
+        <Buttons
+          signed_in={this.state.currentUser}
+          signOutCallback={this.handleSignout}
+          signUpCallback={this.handleSignup}
+          signInCallback={this.handleSignin}
+          username={username}/>
         </div>
+        <br />
 
         <button onClick={this.createBeast}>Create Beast</button>
-
 
         <Beast />
 
