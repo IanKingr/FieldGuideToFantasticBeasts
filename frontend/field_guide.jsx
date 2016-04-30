@@ -9,9 +9,11 @@ var React = require('react'),
     BeastForm = require('./components/BeastForm'),
     Beast = require('./components/Beast'),
     BeastActions = require('./actions/beastActions'),
+    BeastStore = require('./stores/beast_store'),
     BeastIndex = require('./components/BeastIndex');
 
 window.BeastActions = BeastActions;
+window.BeastStore = BeastStore;
 
 var style = {
   overlay : {
@@ -84,7 +86,7 @@ var FieldGuide = React.createClass({
   getCurrentUser: function(){
     this.setState({currentUser: UserStore.currentUser()});
     if(this.state.currentUser){
-      this.closeModal();
+      // this.closeModal(); //
       console.log("Current User is " + this.state.currentUser.username);
     } else {
       console.log("getCurrentUser = none");

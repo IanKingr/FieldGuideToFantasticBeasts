@@ -24,21 +24,27 @@ var BeastIndex = React.createClass({
   },
 
   componentWillUnmount: function(){
+    console.log("BeastIndex UNMOUNTED");
     this.beastListener.remove();
   },
 
   getBeast: function(){
-    if(BeastStore.currentBeast() !== this.state.currentBeast){
+    console.log("Triggered getBeast callback [BeastIndex]");
+    var currentBeast = BeastStore.currentBeast();
+
+    if(currentBeast !== this.state.currentBeast) {
       this.setState({
         // beasts: BeastStore.allStored(),
-        currentBeast: BeastStore.currentBeast()
+        currentBeast: currentBeast
       });
-      console.log("The currentBeast has been stored [BeastIndex]" + this.state.currentBeast);
+      console.log("The currentBeast has been stored [BeastIndex]" + this.state.currentBeast.name);
     }
+    console.log("But may not have triggered setting currentBeast");
     // console.log(this.state.beasts + " the beasts");
   },
 
   render: function(){
+
     // var beasts;
     // if(this.state.beasts){
     //   beasts = this.state.beasts.map(function(beast){
@@ -47,6 +53,7 @@ var BeastIndex = React.createClass({
     // }
     var currentBeast = this.state.currentBeast;
 
+    console.log("Rendering BeastIndex now with current beast: " + currentBeast);
     return (
       <div className="BeastIndex">
         <AffinityBeastList currentBeast={currentBeast}/>

@@ -16,16 +16,22 @@ var Beast = React.createClass({
   //   this.setState({beast: BeastStore.currentBeast()});
   // },
 
-  getInitialState: function(){
-    return {
-      beast: this.props.currentBeast
-    };
+  componentWillReceiveProps: function(){
+    console.log("ReceivedProps [Beast]" + this.props);
   },
+  //
+  // getInitialState: function(){
+  //   return {
+  //     beast: this.props.currentBeast
+  //   };
+  // },
 
   render: function(){
-    if(this.state && this.state.beast){
-      var beast = this.state.beast;
-      
+    console.log("Rendering Beast");
+    debugger;
+    if(this.props && this.props.currentBeast){
+      var beast = this.props.currentBeast;
+
       var beastInfo = <div className="BeastInfo">
         <div className="BeastInfoHeader">
           <h2>{beast.name}</h2>
@@ -43,6 +49,7 @@ var Beast = React.createClass({
       beastInfo = <div></div>;
     }
 
+    debugger;
     return (
       <div className="BeastContainer">
         {beastInfo}

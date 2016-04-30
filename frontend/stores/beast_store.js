@@ -10,10 +10,12 @@ var _beasts = {};
 BeastStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case BeastConstants.BEAST_RECEIVED:
+      console.log("BEAST_RECEIVED [BeastStore]");
     	BeastStore.setCurrentBeast(payload.beast);
       BeastStore.__emitChange();
       break;
     case BeastConstants.BEASTS_RECEIVED:
+      console.log("BEASTS_RECEIVED [BeastStore]");
       BeastStore.resetBeasts(payload.beasts);
       BeastStore.__emitChange();
       break;
@@ -23,6 +25,7 @@ BeastStore.__onDispatch = function(payload) {
     	// BeastStore.logout();
       break;
     case BeastConstants.ERROR:
+      console.log("BEAST_ERROR [BeastStore]");
       BeastStore.resetErrors(payload.errors);
       BeastStore.__emitChange();
       break;

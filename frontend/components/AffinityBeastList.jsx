@@ -11,11 +11,19 @@ var AffinityBeastList = React.createClass({
   },
 
 
-  componentDidMount: function(){
-    this.beastListener = BeastStore.addListener(this.getBeasts);
+  componentWillReceiveProps: function(){
+    console.log("AffinityBeastList received props and is rendering" + this.props);
 
-    console.log("Requesting fetchBeasts [AffinityBeastList]");
-    BeastActions.fetchBeasts({affinity_id: this.props.currentBeast.affinity_id }); // will probably be passed in as a prop or a derived value of a prop from the FieldGuideIndex components
+    BeastActions.fetchBeasts({affinity_id: this.props.currentBeast.affinity_id });
+
+    this.getBeasts();
+  },
+
+  componentDidMount: function(){
+    // this.beastListener = BeastStore.addListener(this.getBeasts);
+
+    // console.log("Requesting fetchBeasts [AffinityBeastList]");
+    // BeastActions.fetchBeasts({affinity_id: this.props.currentBeast.affinity_id }); // will probably be passed in as a prop or a derived value of a prop from the FieldGuideIndex components
   },
 
   componentWillUnmount: function(){
@@ -27,11 +35,12 @@ var AffinityBeastList = React.createClass({
       beasts: BeastStore.allStored(),
       // currentBeast: BeastStore.currentBeast()
     });
-    console.log("The beasts have been stored [AffinityBeast]");
+    console.log("The beasts have been set to AffinityBeast [AffinityBeast]");
     // console.log(this.state.beasts + " the beasts");
   },
 
   render: function(){
+    console.log("rendering AffinityBeastList");
     var beasts;
     if(this.state.beasts){
       beasts = this.state.beasts.map(function(beast){

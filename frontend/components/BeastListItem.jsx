@@ -1,8 +1,11 @@
 var React = require('react');
-var BeastStore = require('../stores/beast_store');
-var BeastActions = require('../actions/beastActions');
 
 var BeastListItem = React.createClass({
+
+  componentWillReceiveProps: function(){
+    console.log("ReceivedProps [BeastListItem]");
+    this.render();
+  },
 
   render: function(){
     var beast = this.props.beast;
