@@ -9,7 +9,7 @@ var BeastApiUtil = {
   },
 
   fetchBeasts: function(data, success, error){
-    debugger;
+    console.log("issuing fetchBeasts api GET request");
     $.ajax ({
       type: "GET",
       url: "/api/beasts",

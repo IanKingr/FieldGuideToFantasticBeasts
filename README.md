@@ -82,7 +82,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] setup `Bookmark` model
 - [ ] setup the flux loop with skeleton files
 - implement each beast component, building out the flux loop as needed.
-  - [ ] `BeastIndex`
+  - [x] `BeastIndex`
   - [ ] `AffinityBeastList`
   - [ ] `BeastListItem`
   - [x] `Beast`

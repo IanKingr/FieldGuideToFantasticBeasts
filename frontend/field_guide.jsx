@@ -114,7 +114,6 @@ var FieldGuide = React.createClass({
 
         <button onClick={this.createBeast}>Create Beast</button>
 
-        <Beast />
 
         <BeastIndex />
 
