@@ -1,4 +1,5 @@
 var React = require('react');
+var Beast = require('../components/Beast');
 var BeastStore = require('../stores/beast_store');
 var BeastActions = require('../actions/beastActions');
 var AffinityBeastList = require('../components/AffinityBeastList');
@@ -11,7 +12,7 @@ var BeastIndex = React.createClass({
         description: "A Troll is a magical creature of prodigious strength and little intelligence - a trait which giants seem to have more of.",
         avg_height: 150,
         avg_weight: 116,
-        affinity_id: 2
+        affinity_id: 1
       } // this beast object will be passed in as a prop
     };
   },
@@ -44,11 +45,12 @@ var BeastIndex = React.createClass({
     //       return <li>{beast.name} Affinity: {beast. affinity_id}</li>;
     //   });
     // }
+    var currentBeast = this.state.currentBeast;
 
     return (
-      <div>
-        <h3>Related Beasts</h3>
-        <AffinityBeastList currentBeast={this.state.currentBeast}/>
+      <div className="BeastIndex">
+        <AffinityBeastList currentBeast={currentBeast}/>
+        <Beast currentBeast={currentBeast}/>
       </div>
     );
   }

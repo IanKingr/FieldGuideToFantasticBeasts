@@ -1,6 +1,7 @@
 var React = require('react');
 var BeastStore = require('../stores/beast_store');
 var BeastActions = require('../actions/beastActions');
+var BeastListItem = require('../components/BeastListItem');
 
 var AffinityBeastList = React.createClass({
   getInitialState: function(){
@@ -34,13 +35,13 @@ var AffinityBeastList = React.createClass({
     var beasts;
     if(this.state.beasts){
       beasts = this.state.beasts.map(function(beast){
-          return <li>{beast.name} Affinity: {beast. affinity_id}</li>;
+        return <BeastListItem beast={beast}/>;
       });
     }
 
-
     return (
-      <div>
+      <div className="AffinityBeastList">
+        <h3>Related Beasts</h3>
         {beasts}
       </div>
     );

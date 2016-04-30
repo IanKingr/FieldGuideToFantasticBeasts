@@ -25,7 +25,6 @@ var BeastActions = {
   // },
 
   receiveBeasts: function(beasts){
-    debugger;
     Dispatcher.dispatch({
       actionType: BeastConstants.BEASTS_RECEIVED,
       beasts: beasts
