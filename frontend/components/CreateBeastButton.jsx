@@ -48,7 +48,7 @@ var CreateBeastButton = React.createClass({
   },
 
   getBeast: function(){
-    debugger;
+    console.log("getBeast [CreateBeastButton]");
     if(!BeastStore.errors){
       this.closeBeastModal();
     } else {

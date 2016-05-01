@@ -1,45 +1,37 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
     Modal = require("react-modal"),
-    CreateBeastButton = require('./components/CreateBeastButton'),
     BeastActions = require('./actions/beastActions'),
-    BeastStore = require('./stores/beast_store'),
     BeastIndex = require('./components/BeastIndex'),
     AffinityBeastList = require('./components/AffinityBeastList'),
     NavBar = require('./components/NavBar'),
-    AffinityFilterBar = require('./components/AffinityFilterBar');
+    AffinityFilterBar = require('./components/AffinityFilterBar'),
+    FieldGuideIndex = require('./components/FieldGuideIndex'),
+    CreateBeastButton = require('./components/CreateBeastButton'),
+    BeastStore = require('./stores/beast_store'),
+    BeastForm = require('./components/BeastForm');
 
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var Link = require('react-router').Link;
+var IndexRoute = require('react-router').IndexRoute;
 var BrowserHistory = require('react-router').browserHistory;
 
-//Windows purely for testing
-window.BeastActions = BeastActions;
-window.BeastStore = BeastStore;
 
-var style = {
-  overlay : {
-    position        : 'fixed',
-    top             : 0,
-    left            : 0,
-    right           : 0,
-    bottom          : 0,
-    backgroundColor : 'rgba(255, 255, 255, 0.75)',
-    zIndex         : 10
-  },
-  content : {
-    position        : 'fixed',
-    top             : '100px',
-    left            : '150px',
-    right           : '150px',
-    bottom          : '100px',
-    backgroundColor : '#FFF2E7',
-    border          : '1px solid #ccc',
-    padding         : '20px',
-    zIndex         : 11
+//Windows purely for testing
+// window.BeastActions = BeastActions;
+// window.BeastStore = BeastStore;
+
+var App = React.createClass({
+  render: function () {
+    return (
+      <div>
+        <NavBar />
+        {this.props.children}
+      </div>
+    );
   }
-};
+});
 
 var FieldGuide = React.createClass({
   getInitialState: function(){
@@ -71,24 +63,29 @@ var FieldGuide = React.createClass({
   render: function () {
     return (
       <div>
-        <NavBar />
-
-          <CreateBeastButton />
-
-          <AffinityFilterBar />
-
-          <AffinityBeastList beasts={this.state.beasts}/>
-
-          <BeastIndex beast={this.state.currentBeast} />
-
+        <li><Link to="/beasts">BeastForm</Link></li>
+        <li><Link to="/beasts/1">Beast #1</Link></li>
+        <FieldGuideIndex />
       </div>
     );
   }
 });
 
+var routes = (
+  <Route path="/" component={App}>
+    <IndexRoute component={FieldGuide} />
+    <Route path="beasts" component={BeastForm} />
+    <Route path="beasts/:id" component={BeastIndex} />
+  </Route>
+);
+
+// BeastIndex beast={this.state.currentBeast} // need to pass this as a prop somehow in react router
+
+// BrowserHistory
 
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
   Modal.setAppElement(document.body);
-  ReactDOM.render(<FieldGuide/>, root);
+  ReactDOM.render(
+    <Router history={BrowserHistory} routes={routes}/>, root);
 });

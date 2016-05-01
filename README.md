@@ -80,7 +80,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] setup React Router
 - [ ] setup `Review` model
 - [ ] setup `Bookmark` model
-- [ ] setup the flux loop with skeleton files
+- [x] setup the flux loop with skeleton files
 - implement each beast component, building out the flux loop as needed.
   - [x] `BeastIndex`
   - [x] `AffinityBeastList`
@@ -102,12 +102,12 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Beasts belong to an Affinity, and can be viewed by Affinity.
 
-- [ ] create `Affinity` model
+- [x] create `Affinity` model
 - build out API, Flux loop, and components for:
-  - [ ] Affinity CRUD
-  - [ ] Sorting beasts by affinity
-  - [ ] Viewing beasts by affinity
-- Use CSS to style new views
+  - [x] Affinity CRUD
+  - [x] Sorting beasts by affinity
+  - [x] Viewing beasts by affinity
+- [ ] Use CSS to style new views
 
 ### Phase 6: Search (2 days)
 

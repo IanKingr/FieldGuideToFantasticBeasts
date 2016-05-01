@@ -20,6 +20,7 @@ var BeastIndex = React.createClass({
   },
 
   componentDidMount: function(){
+    debugger;
     this.beastListener = BeastStore.addListener(this.getBeast);
     // BeastActions.fetchBeasts({affinity_id: this.state.currentBeast.affinity_id });
     // will probably be passed in as a prop or a derived value of a prop from the FieldGuideIndex components
