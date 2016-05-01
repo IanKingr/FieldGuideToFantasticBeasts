@@ -59,8 +59,10 @@ var BeastForm = React.createClass({
 
   handleSubmit: function (event) {
     event.preventDefault();
+    var userId = UserStore.currentUser() ? UserStore.currentUser().id : null;
+    //Remove the above line once we implement onEnter for ReactRouter
     var postData = {
-      author_id: UserStore.currentUser().id, //~maybe pass in as a prop when the add beast button is clicked
+      author_id: userId, //~maybe pass in as a prop when the add beast button is clicked
       name: this.state.name,
       description: this.state.description,
       avg_height: this.state.height,

@@ -77,7 +77,7 @@ var NavBar = React.createClass({
   getCurrentUser: function(){
     this.setState({currentUser: UserStore.currentUser()});
     if(this.state.currentUser){
-      this.closeModal(); 
+      this.closeModal();
       console.log("Current User is " + this.state.currentUser.username);
     } else {
       console.log("getCurrentUser = none");
@@ -98,7 +98,7 @@ var NavBar = React.createClass({
     var username = this.state.currentUser ? this.state.currentUser.username : null;
 
     return (
-      <div className="BeastContainer">
+      <div className="NavBar">
         <div className="nav"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1461973955/field_guide_logo3_tojbyd.png"/>
 
         <Buttons

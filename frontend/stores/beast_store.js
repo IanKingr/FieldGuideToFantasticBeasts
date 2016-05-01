@@ -17,7 +17,7 @@ BeastStore.__onDispatch = function(payload) {
       break;
     case BeastConstants.CREATED_BEAST_RECEIVED:
       console.log("CREATED_BEAST_RECEIVED [BeastStore]");
-      BeastStore.addBeast(payload.beast);
+      BeastStore.setCurrentBeast(payload.beast);
       BeastStore.__emitChange();
       break;
     case BeastConstants.BEASTS_RECEIVED:

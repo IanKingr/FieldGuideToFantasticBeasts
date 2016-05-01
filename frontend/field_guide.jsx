@@ -6,6 +6,7 @@ var React = require('react'),
     // UserActions = require('./actions/userActions'),
     // Buttons = require('./components/buttons'),
     // UserStore = require('./stores/user_store'),
+    CreateBeastButton = require('./components/CreateBeastButton'),
     BeastForm = require('./components/BeastForm'),
     Beast = require('./components/Beast'),
     BeastActions = require('./actions/beastActions'),
@@ -46,15 +47,10 @@ var style = {
   }
 };
 
-// UserActions.fetchCurrentUser();
-
 var FieldGuide = React.createClass({
   getInitialState: function(){
     return({
-      // SignUpModalOpen: false,
-      // SignInModalOpen: false,
-      CreateBeastModalOpen: false,
-      // currentUser: null,
+      // CreateBeastModalOpen: false,
       currentBeast:{author_id: 1,
         name: "Mountain Troll",
         description: "A Troll is a magical creature of prodigious strength and little intelligence - a trait which giants seem to have more of.",
@@ -64,50 +60,16 @@ var FieldGuide = React.createClass({
       }
     });
   },
-  //
-  // closeModal: function(){
-  //   console.log("Closing User Modal in FieldGuideIndex");
+
+  // closeBeastModal: function(){
+  //   console.log("Closing Beast Modal");
   //   this.setState({
-  //     SignUpModalOpen: false,
-  //     SignInModalOpen: false,
+  //     CreateBeastModalOpen: false
   //   });
   // },
-
-  closeBeastModal: function(){
-    console.log("Closing Beast Modal");
-    this.setState({
-      CreateBeastModalOpen: false
-    });
-  },
-
-  // handleSignin: function(){
-  //   console.log("Sign In Clicked");
-  //   this.setState({SignInModalOpen: true});
-  // },
   //
-  // handleSignup: function(){
-  //   console.log("Sign Up Clicked");
-  //   this.setState({SignUpModalOpen: true});
-  // },
-
-  // handleSignout: function(){
-  //   console.log("Sign out Clicked");
-  //   UserActions.logout();
-  // },
-
-  createBeast: function(){
-    this.setState({CreateBeastModalOpen: true});
-  },
-  //
-  // getCurrentUser: function(){
-  //   this.setState({currentUser: UserStore.currentUser()});
-  //   if(this.state.currentUser){
-  //     // this.closeModal(); //
-  //     console.log("Current User is " + this.state.currentUser.username);
-  //   } else {
-  //     console.log("getCurrentUser = none");
-  //     this.setState({errors: UserStore.errors});
-  //   }
+  // createBeast: function(){
+  //   this.setState({CreateBeastModalOpen: true});
   // },
 
   getMountainAffinity: function(){
@@ -135,15 +97,12 @@ var FieldGuide = React.createClass({
   },
 
   render: function () {
-    // var username = this.state.currentUser ? this.state.currentUser.username : null;
     return (
       <div>
-
         <NavBar />
         <br />
 
-        <button onClick={this.createBeast}>Create Beast</button>
-
+        <CreateBeastButton />
           <div className="MountainSorter" onClick={this.getMountainAffinity}>Mountain</div>
 
           <div className="WaterSorter" onClick={this.getWaterAffinity}>Water</div>
@@ -152,13 +111,6 @@ var FieldGuide = React.createClass({
 
           <BeastIndex beast={this.state.currentBeast} />
 
-
-        <Modal
-          isOpen={this.state.CreateBeastModalOpen}
-          onRequestClose={this.closeBeastModal}
-          style={style}>
-          <BeastForm closeModal={this.closeBeastModal}/>
-        </Modal>
       </div>
     );
   }
