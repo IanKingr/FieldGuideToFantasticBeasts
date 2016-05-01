@@ -1,17 +1,24 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
     Modal = require("react-modal"),
-    Signup = require('./components/Signup'),
-    Signin = require('./components/Signin'),
-    UserActions = require('./actions/userActions'),
-    Buttons = require('./components/buttons'),
-    UserStore = require('./stores/user_store'),
+    // Signup = require('./components/Signup'),
+    // Signin = require('./components/Signin'),
+    // UserActions = require('./actions/userActions'),
+    // Buttons = require('./components/buttons'),
+    // UserStore = require('./stores/user_store'),
     BeastForm = require('./components/BeastForm'),
     Beast = require('./components/Beast'),
     BeastActions = require('./actions/beastActions'),
     BeastStore = require('./stores/beast_store'),
     BeastIndex = require('./components/BeastIndex'),
-    AffinityBeastList = require('./components/AffinityBeastList');
+    AffinityBeastList = require('./components/AffinityBeastList'),
+    NavBar = require('./components/NavBar');
+
+var Router = require('react-router').Router;
+var Route = require('react-router').Route;
+var Link = require('react-router').Link;
+var BrowserHistory = require('react-router').browserHistory;
+
 
 window.BeastActions = BeastActions;
 window.BeastStore = BeastStore;
@@ -39,15 +46,15 @@ var style = {
   }
 };
 
-UserActions.fetchCurrentUser();
+// UserActions.fetchCurrentUser();
 
 var FieldGuide = React.createClass({
   getInitialState: function(){
     return({
-      SignUpModalOpen: false,
-      SignInModalOpen: false,
+      // SignUpModalOpen: false,
+      // SignInModalOpen: false,
       CreateBeastModalOpen: false,
-      currentUser: null,
+      // currentUser: null,
       currentBeast:{author_id: 1,
         name: "Mountain Troll",
         description: "A Troll is a magical creature of prodigious strength and little intelligence - a trait which giants seem to have more of.",
@@ -57,50 +64,51 @@ var FieldGuide = React.createClass({
       }
     });
   },
-
-  closeModal: function(){
-    console.log("Closing User Modal in FieldGuideIndex");
-    this.setState({
-      SignUpModalOpen: false,
-      SignInModalOpen: false,
-    });
-  },
+  //
+  // closeModal: function(){
+  //   console.log("Closing User Modal in FieldGuideIndex");
+  //   this.setState({
+  //     SignUpModalOpen: false,
+  //     SignInModalOpen: false,
+  //   });
+  // },
 
   closeBeastModal: function(){
+    console.log("Closing Beast Modal");
     this.setState({
       CreateBeastModalOpen: false
     });
   },
 
-  handleSignin: function(){
-    console.log("Sign In Clicked");
-    this.setState({SignInModalOpen: true});
-  },
+  // handleSignin: function(){
+  //   console.log("Sign In Clicked");
+  //   this.setState({SignInModalOpen: true});
+  // },
+  //
+  // handleSignup: function(){
+  //   console.log("Sign Up Clicked");
+  //   this.setState({SignUpModalOpen: true});
+  // },
 
-  handleSignup: function(){
-    console.log("Sign Up Clicked");
-    this.setState({SignUpModalOpen: true});
-  },
-
-  handleSignout: function(){
-    console.log("Sign out Clicked");
-    UserActions.logout();
-  },
+  // handleSignout: function(){
+  //   console.log("Sign out Clicked");
+  //   UserActions.logout();
+  // },
 
   createBeast: function(){
     this.setState({CreateBeastModalOpen: true});
   },
-
-  getCurrentUser: function(){
-    this.setState({currentUser: UserStore.currentUser()});
-    if(this.state.currentUser){
-      // this.closeModal(); //
-      console.log("Current User is " + this.state.currentUser.username);
-    } else {
-      console.log("getCurrentUser = none");
-      this.setState({errors: UserStore.errors});
-    }
-  },
+  //
+  // getCurrentUser: function(){
+  //   this.setState({currentUser: UserStore.currentUser()});
+  //   if(this.state.currentUser){
+  //     // this.closeModal(); //
+  //     console.log("Current User is " + this.state.currentUser.username);
+  //   } else {
+  //     console.log("getCurrentUser = none");
+  //     this.setState({errors: UserStore.errors});
+  //   }
+  // },
 
   getMountainAffinity: function(){
     BeastActions.fetchBeasts({affinity_id: 1});
@@ -117,29 +125,21 @@ var FieldGuide = React.createClass({
   },
 
   componentDidMount: function(){
-    this.userListener = UserStore.addListener(this.getCurrentUser);
+
     this.beastListener = BeastStore.addListener(this.getBeasts);
   },
 
   componentWillUnmount: function(){
-    this.userListener.remove();
+    // this.userListener.remove();
     this.beastListener.remove();
   },
 
   render: function () {
-    var username = this.state.currentUser ? this.state.currentUser.username : null;
+    // var username = this.state.currentUser ? this.state.currentUser.username : null;
     return (
       <div>
 
-        <div className="nav"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1461973955/field_guide_logo3_tojbyd.png"/>
-
-        <Buttons
-          signed_in={this.state.currentUser}
-          signOutCallback={this.handleSignout}
-          signUpCallback={this.handleSignup}
-          signInCallback={this.handleSignin}
-          username={username}/>
-        </div>
+        <NavBar />
         <br />
 
         <button onClick={this.createBeast}>Create Beast</button>
@@ -152,19 +152,6 @@ var FieldGuide = React.createClass({
 
           <BeastIndex beast={this.state.currentBeast} />
 
-        <Modal
-          isOpen={this.state.SignUpModalOpen}
-          onRequestClose={this.closeModal}
-          style={style}>
-          <Signup />
-        </Modal>
-
-        <Modal
-          isOpen={this.state.SignInModalOpen}
-          onRequestClose={this.closeModal}
-          style={style}>
-          <Signin />
-        </Modal>
 
         <Modal
           isOpen={this.state.CreateBeastModalOpen}
