@@ -1,5 +1,4 @@
 var React = require('react');
-var BeastStore = require('../stores/beast_store');
 
 var Beast = React.createClass({
   // componentDidMount: function(){
@@ -27,9 +26,9 @@ var Beast = React.createClass({
   // },
 
   render: function(){
-    console.log("Rendering Beast");
-    debugger;
-    if(this.props && this.props.currentBeast){
+    console.log("Rendering Beast" + this.props.currentBeast);
+
+    if(this.props && Boolean(this.props.currentBeast)){
       var beast = this.props.currentBeast;
 
       var beastInfo = <div className="BeastInfo">
@@ -49,7 +48,6 @@ var Beast = React.createClass({
       beastInfo = <div></div>;
     }
 
-    debugger;
     return (
       <div className="BeastContainer">
         {beastInfo}

@@ -4,7 +4,8 @@ var BeastConstants = require('../constants/beast_constants');
 
 var BeastStore = new Store(Dispatcher);
 
-var _currentBeast, _errors;
+var _currentBeast = [];
+var _errors;
 var _beasts = {};
 
 BeastStore.__onDispatch = function(payload) {
@@ -12,6 +13,11 @@ BeastStore.__onDispatch = function(payload) {
     case BeastConstants.BEAST_RECEIVED:
       console.log("BEAST_RECEIVED [BeastStore]");
     	BeastStore.setCurrentBeast(payload.beast);
+      BeastStore.__emitChange();
+      break;
+    case BeastConstants.CREATED_BEAST_RECEIVED:
+      console.log("CREATED_BEAST_RECEIVED [BeastStore]");
+      BeastStore.addBeast(payload.beast);
       BeastStore.__emitChange();
       break;
     case BeastConstants.BEASTS_RECEIVED:
@@ -33,8 +39,8 @@ BeastStore.__onDispatch = function(payload) {
 };
 
 BeastStore.currentBeast = function(){
-  if (_currentBeast) {
-  	return _currentBeast;
+  if (_currentBeast[0]) {
+  	return _currentBeast.slice()[0];
   }
 };
 
@@ -50,8 +56,7 @@ BeastStore.allStored = function(){
 
 BeastStore.setCurrentBeast = function(beast){
   _errors = null;
-  _currentBeast = beast;
-  BeastStore.addBeast(beast);
+  _currentBeast[0] = beast;
 };
 
 BeastStore.addBeast = function(beast){

@@ -7,13 +7,15 @@ var AffinityBeastList = require('../components/AffinityBeastList');
 var BeastIndex = React.createClass({
   getInitialState: function(){
     return {
-      currentBeast: {author_id: 1,
-        name: "Mountain Troll",
-        description: "A Troll is a magical creature of prodigious strength and little intelligence - a trait which giants seem to have more of.",
-        avg_height: 150,
-        avg_weight: 116,
-        affinity_id: 1
-      } // this beast object will be passed in as a prop
+      currentBeast: this.props.beast,
+      // currentBeast: {author_id: 1,
+      //   name: "Mountain Troll",
+      //   description: "A Troll is a magical creature of prodigious strength and little intelligence - a trait which giants seem to have more of.",
+      //   avg_height: 150,
+      //   avg_weight: 116,
+      //   affinity_id: 1
+      // }, // this beast object will be passed in as a prop
+      beasts: BeastStore.allStored()
     };
   },
 
@@ -21,6 +23,7 @@ var BeastIndex = React.createClass({
     this.beastListener = BeastStore.addListener(this.getBeast);
     // BeastActions.fetchBeasts({affinity_id: this.state.currentBeast.affinity_id });
     // will probably be passed in as a prop or a derived value of a prop from the FieldGuideIndex components
+    // BeastActions.fetchBeasts(this.props.);
   },
 
   componentWillUnmount: function(){
@@ -35,9 +38,10 @@ var BeastIndex = React.createClass({
     if(currentBeast !== this.state.currentBeast) {
       this.setState({
         // beasts: BeastStore.allStored(),
-        currentBeast: currentBeast
+        currentBeast: currentBeast,
+        beasts: BeastStore.allStored()
       });
-      console.log("The currentBeast has been stored [BeastIndex]" + this.state.currentBeast.name);
+      console.log("The currentBeast has been stored [BeastIndex]" );
     }
     console.log("But may not have triggered setting currentBeast");
     // console.log(this.state.beasts + " the beasts");
@@ -56,7 +60,7 @@ var BeastIndex = React.createClass({
     console.log("Rendering BeastIndex now with current beast: " + currentBeast);
     return (
       <div className="BeastIndex">
-        <AffinityBeastList currentBeast={currentBeast}/>
+        <AffinityBeastList beasts={this.state.beasts}/>
         <Beast currentBeast={currentBeast}/>
       </div>
     );

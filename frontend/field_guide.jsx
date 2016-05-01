@@ -10,7 +10,8 @@ var React = require('react'),
     Beast = require('./components/Beast'),
     BeastActions = require('./actions/beastActions'),
     BeastStore = require('./stores/beast_store'),
-    BeastIndex = require('./components/BeastIndex');
+    BeastIndex = require('./components/BeastIndex'),
+    AffinityBeastList = require('./components/AffinityBeastList');
 
 window.BeastActions = BeastActions;
 window.BeastStore = BeastStore;
@@ -46,7 +47,14 @@ var FieldGuide = React.createClass({
       SignUpModalOpen: false,
       SignInModalOpen: false,
       CreateBeastModalOpen: false,
-      currentUser: null
+      currentUser: null,
+      currentBeast:{author_id: 1,
+        name: "Mountain Troll",
+        description: "A Troll is a magical creature of prodigious strength and little intelligence - a trait which giants seem to have more of.",
+        avg_height: 150,
+        avg_weight: 116,
+        affinity_id: 1
+      }
     });
   },
 
@@ -94,8 +102,28 @@ var FieldGuide = React.createClass({
     }
   },
 
+  getMountainAffinity: function(){
+    BeastActions.fetchBeasts({affinity_id: 1});
+  },
+
+  getWaterAffinity: function(){
+    BeastActions.fetchBeasts({affinity_id: 2});
+  },
+
+  getBeasts: function(){
+    this.setState({
+      beasts: BeastStore.allStored()
+    });
+  },
+
   componentDidMount: function(){
-    this.storeListener = UserStore.addListener(this.getCurrentUser);
+    this.userListener = UserStore.addListener(this.getCurrentUser);
+    this.beastListener = BeastStore.addListener(this.getBeasts);
+  },
+
+  componentWillUnmount: function(){
+    this.userListener.remove();
+    this.beastListener.remove();
   },
 
   render: function () {
@@ -116,8 +144,13 @@ var FieldGuide = React.createClass({
 
         <button onClick={this.createBeast}>Create Beast</button>
 
+          <div className="MountainSorter" onClick={this.getMountainAffinity}>Mountain</div>
 
-        <BeastIndex />
+          <div className="WaterSorter" onClick={this.getWaterAffinity}>Water</div>
+
+          <AffinityBeastList beasts={this.state.beasts}/>
+
+          <BeastIndex beast={this.state.currentBeast} />
 
         <Modal
           isOpen={this.state.SignUpModalOpen}

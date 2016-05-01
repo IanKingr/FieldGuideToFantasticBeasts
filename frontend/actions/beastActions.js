@@ -15,7 +15,7 @@ var BeastActions = {
     console.log("Attempting to create a beast...[beastActions]");
     BeastApiUtil.createBeast(
       data,
-      this.receiveBeast,
+      this.receiveCreatedBeast,
       this.handleError
     );
   },
@@ -28,6 +28,13 @@ var BeastActions = {
     Dispatcher.dispatch({
       actionType: BeastConstants.BEASTS_RECEIVED,
       beasts: beasts
+    });
+  },
+
+  receiveCreatedBeast: function(beast){
+    Dispatcher.dispatch({
+      actionType: BeastConstants.CREATED_BEAST_RECEIVED,
+      beast: beast
     });
   },
 
