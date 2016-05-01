@@ -1,26 +1,20 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
     Modal = require("react-modal"),
-    // Signup = require('./components/Signup'),
-    // Signin = require('./components/Signin'),
-    // UserActions = require('./actions/userActions'),
-    // Buttons = require('./components/buttons'),
-    // UserStore = require('./stores/user_store'),
     CreateBeastButton = require('./components/CreateBeastButton'),
-    BeastForm = require('./components/BeastForm'),
-    Beast = require('./components/Beast'),
     BeastActions = require('./actions/beastActions'),
     BeastStore = require('./stores/beast_store'),
     BeastIndex = require('./components/BeastIndex'),
     AffinityBeastList = require('./components/AffinityBeastList'),
-    NavBar = require('./components/NavBar');
+    NavBar = require('./components/NavBar'),
+    AffinityFilterBar = require('./components/AffinityFilterBar');
 
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var Link = require('react-router').Link;
 var BrowserHistory = require('react-router').browserHistory;
 
-
+//Windows purely for testing
 window.BeastActions = BeastActions;
 window.BeastStore = BeastStore;
 
@@ -50,7 +44,6 @@ var style = {
 var FieldGuide = React.createClass({
   getInitialState: function(){
     return({
-      // CreateBeastModalOpen: false,
       currentBeast:{author_id: 1,
         name: "Mountain Troll",
         description: "A Troll is a magical creature of prodigious strength and little intelligence - a trait which giants seem to have more of.",
@@ -61,25 +54,6 @@ var FieldGuide = React.createClass({
     });
   },
 
-  // closeBeastModal: function(){
-  //   console.log("Closing Beast Modal");
-  //   this.setState({
-  //     CreateBeastModalOpen: false
-  //   });
-  // },
-  //
-  // createBeast: function(){
-  //   this.setState({CreateBeastModalOpen: true});
-  // },
-
-  getMountainAffinity: function(){
-    BeastActions.fetchBeasts({affinity_id: 1});
-  },
-
-  getWaterAffinity: function(){
-    BeastActions.fetchBeasts({affinity_id: 2});
-  },
-
   getBeasts: function(){
     this.setState({
       beasts: BeastStore.allStored()
@@ -87,12 +61,10 @@ var FieldGuide = React.createClass({
   },
 
   componentDidMount: function(){
-
     this.beastListener = BeastStore.addListener(this.getBeasts);
   },
 
   componentWillUnmount: function(){
-    // this.userListener.remove();
     this.beastListener.remove();
   },
 
@@ -100,12 +72,10 @@ var FieldGuide = React.createClass({
     return (
       <div>
         <NavBar />
-        <br />
 
-        <CreateBeastButton />
-          <div className="MountainSorter" onClick={this.getMountainAffinity}>Mountain</div>
+          <CreateBeastButton />
 
-          <div className="WaterSorter" onClick={this.getWaterAffinity}>Water</div>
+          <AffinityFilterBar />
 
           <AffinityBeastList beasts={this.state.beasts}/>
 

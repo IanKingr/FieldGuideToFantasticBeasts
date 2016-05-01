@@ -83,8 +83,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] setup the flux loop with skeleton files
 - implement each beast component, building out the flux loop as needed.
   - [x] `BeastIndex`
-  - [ ] `AffinityBeastList`
-  - [ ] `BeastListItem`
+  - [x] `AffinityBeastList`
+  - [x] `BeastListItem`
   - [x] `Beast`
   - [x] `BeastForm`
   - [ ] `Review`
@@ -121,9 +121,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ### Phase 7: Affinity NavBar (1.5 day)
 
-**objective:** Implement Affinity NavBar and associated components on FieldGuideIndex.
+**objective:** Implement AffinityFilterBar and associated components on FieldGuideIndex.
 
-- [ ] build out AffinityNavBar Flux loop and components for:
+- [ ] build out AffinityFilterBar Flux loop and components for:
   - [ ] displaying AffinityDetails.
   - [ ] displaying AffinityBeastList and BeastListItems.
 - [ ] Style new elements
