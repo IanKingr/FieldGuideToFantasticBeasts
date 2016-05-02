@@ -8,6 +8,7 @@ var BeastActions = {
   },
 
   fetchBeasts: function(data){
+    console.log("Fetching Beasts [beastActions]");
     BeastApiUtil.fetchBeasts(data, this.receiveBeasts, this.handleError);
   },
 
@@ -48,6 +49,7 @@ var BeastActions = {
   },
 
   handleError: function(errors) {
+    console.log("Handling Error callback [beastActions]");
     Dispatcher.dispatch({
       actionType: BeastConstants.ERROR,
       errors: errors

@@ -3,28 +3,44 @@ var Beast = require('../components/Beast');
 var BeastStore = require('../stores/beast_store');
 var BeastActions = require('../actions/beastActions');
 var AffinityBeastList = require('../components/AffinityBeastList');
+var BrowserHistory = require('react-router').browserHistory;
+
+window.BeastStore = BeastStore;
 
 var BeastIndex = React.createClass({
-  getInitialState: function(){
-    return {
-      currentBeast: this.props.beast,
-      // currentBeast: {author_id: 1,
-      //   name: "Mountain Troll",
-      //   description: "A Troll is a magical creature of prodigious strength and little intelligence - a trait which giants seem to have more of.",
-      //   avg_height: 150,
-      //   avg_weight: 116,
-      //   affinity_id: 1
-      // }, // this beast object will be passed in as a prop
+
+  handleClickOnBeast: function(){
+    console.log("History Pushing the following beast Id " + this.props.beast.id);
+
+    BrowserHistory.push("/beasts/" + this.props.beast.id);
+  },
+
+  componentWillMount: function(){
+    console.log("Component Will Mount [BeastIndex]");
+    var beastId = parseInt(this.props.params.id);
+    // debugger;
+    BeastActions.fetchBeast({id: beastId});
+
+    this.setState({
+      currentBeast: BeastStore.currentBeast(),
       beasts: BeastStore.allStored()
-    };
+    });
+  },
+
+  componentWillReceiveProps: function(nextProps){
+    console.log("Receiving Props [BeastIndex]");
+    var beastId = parseInt(this.props.params.id);
+    var beast = BeastStore.find(nextProps.params.id);
+    // debugger;
+    this.setState({
+      currentBeast: beast
+    });
   },
 
   componentDidMount: function(){
-    debugger;
+    console.log("Component Did Mount [BeastIndex]");
     this.beastListener = BeastStore.addListener(this.getBeast);
-    // BeastActions.fetchBeasts({affinity_id: this.state.currentBeast.affinity_id });
-    // will probably be passed in as a prop or a derived value of a prop from the FieldGuideIndex components
-    // BeastActions.fetchBeasts(this.props.);
+    // BeastActions.fetchBeasts({affinity_id: this.state.currentBeast}); //Sunday: Need to write this somewhere so we can fetch when we load a page with the url id rather than through the FieldGuideIndex
   },
 
   componentWillUnmount: function(){
@@ -38,7 +54,6 @@ var BeastIndex = React.createClass({
 
     if(currentBeast !== this.state.currentBeast) {
       this.setState({
-        // beasts: BeastStore.allStored(),
         currentBeast: currentBeast,
         beasts: BeastStore.allStored()
       });
@@ -49,13 +64,6 @@ var BeastIndex = React.createClass({
   },
 
   render: function(){
-
-    // var beasts;
-    // if(this.state.beasts){
-    //   beasts = this.state.beasts.map(function(beast){
-    //       return <li>{beast.name} Affinity: {beast. affinity_id}</li>;
-    //   });
-    // }
     var currentBeast = this.state.currentBeast;
 
     console.log("Rendering BeastIndex now with current beast: " + currentBeast);
@@ -67,5 +75,7 @@ var BeastIndex = React.createClass({
     );
   }
 });
+
+window.BeastIndex = BeastIndex;
 
 module.exports = BeastIndex;

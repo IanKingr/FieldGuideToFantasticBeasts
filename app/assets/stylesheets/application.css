@@ -45,32 +45,16 @@
 
 .BeastIndex {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
 }
 
 .BeastInfo{
+  align-content: flex-start;
   border: 1px solid gray;
   border-radius: 10px;
   padding: 5%;
-}
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 20px;
-  color: white;
-  background-color: #c7ad88;
-  /*background-color: white;*/
-  /*border: 1px solid #64706c;*/
-  border-radius: 5px;
-  text-shadow: 1px 1px 1px #4b4d52;
-  flex-wrap: nowrap;
-  /*margin: 10px;*/
-  padding: 10px;
+  width: 50%;
+  margin-left: auto;
 }
 
 body {
@@ -108,4 +92,23 @@ button {
 button:hover {
   background: #FAA96B;
   /*text-decoration: none;*/
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #c7ad88;
+  /*background-color: white;*/
+  /*border: 1px solid #64706c;*/
+  border-radius: 5px;
+  text-shadow: 1px 1px 1px #4b4d52;
+  flex-wrap: nowrap;
+  /*margin: 10px;*/
+  padding: 10px;
 }

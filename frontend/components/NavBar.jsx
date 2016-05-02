@@ -5,7 +5,7 @@ var UserActions = require('../actions/userActions');
 var Buttons = require('./buttons');
 var UserStore = require('../stores/user_store');
 var Modal = require("react-modal");
-
+var Link = require('react-router').Link;
 
 var style = {
   overlay : {
@@ -41,14 +41,6 @@ var NavBar = React.createClass({
   componentWillUnmount: function(){
     this.userListener.remove();
   },
-  // componentWillUnmount: function(){
-  //   this.beastListener.remove();
-  // },
-
-  // getCurrentBeast: function(){
-
-  //   this.setState({beast: BeastStore.currentBeast()});
-  // },
 
   getInitialState: function(){
     return {
@@ -99,8 +91,10 @@ var NavBar = React.createClass({
 
     return (
       <div className="NavBar">
-        <div className="nav"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1461973955/field_guide_logo3_tojbyd.png"/>
-
+        <div className="nav">
+          <Link to="/" class="active">
+            <img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1461973955/field_guide_logo3_tojbyd.png"/>
+          </Link>
         <Buttons
           signed_in={this.state.currentUser}
           signOutCallback={this.handleSignout}

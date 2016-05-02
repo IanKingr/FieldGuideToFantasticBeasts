@@ -47,6 +47,10 @@ var CreateBeastButton = React.createClass({
     this.beastListener = BeastStore.addListener(this.getBeast);
   },
 
+  componentWillUnmount: function(){
+    this.beastListener.remove();
+  },
+
   getBeast: function(){
     console.log("getBeast [CreateBeastButton]");
     if(!BeastStore.errors){

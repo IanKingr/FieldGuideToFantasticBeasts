@@ -1,5 +1,6 @@
 var BeastApiUtil = {
   fetchBeast: function(data, success, error){
+    console.log("Fetching a beast [beastApi]");
     $.ajax ({
       type: "GET",
       url: "/api/beasts/" + data.id,
