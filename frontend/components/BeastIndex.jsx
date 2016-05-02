@@ -54,11 +54,18 @@ var BeastIndex = React.createClass({
     if(currentBeast !== this.state.currentBeast) {
       this.setState({
         currentBeast: currentBeast,
-        beasts: BeastStore.allStored()
       });
       console.log("The currentBeast has been stored [BeastIndex]" );
     }
-    console.log("But may not have triggered setting currentBeast");
+
+    if(this.state.beasts !== BeastStore.allStored()){
+      this.setState({
+        beasts: BeastStore.allStored()
+      });
+      console.log("AllBeasts have been stored [BeastIndex]" );
+    }
+
+    console.log("But may not have triggered setting currentBeast or beasts : allStored");
     // console.log(this.state.beasts + " the beasts");
   },
 
