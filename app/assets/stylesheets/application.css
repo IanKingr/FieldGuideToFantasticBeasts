@@ -26,6 +26,15 @@
    /*margin: 10px;*/
  }
 
+.AffinityFilterBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /*border: 1px solid;*/
+  margin: 10px;
+  padding: 15px 10px 15px 10px;
+}
+
 .AffinityListHeader {
   background-color: gray;
   border-radius: 5px 0px 5px 0px;
@@ -60,12 +69,13 @@
 .BeastContainer {
   display: flex;
   /*height: 100%;*/
-  width: 100%
+  width: 100%;
 }
 
 .BeastIndex {
   display: flex;
   flex-direction: row-reverse;
+  background-image: url("http://res.cloudinary.com/flyingonclouds/image/upload/v1462187890/ricepaper_v3_zb5rto.png");
 }
 
 .BeastInfo{
@@ -133,4 +143,32 @@ button:hover {
   flex-wrap: nowrap;
   /*margin: 10px;*/
   padding: 10px;
+}
+
+
+.AffinitySorter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: tan;
+  color: white;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.mountain {
+  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462185217/mountain_nudkki.jpg');
+}
+
+.water {
+  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462186941/waters_real1_sb6tnm.jpg');
+}
+
+.plain {
+  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462186958/plains_real2_dafsql.jpg');
+}
+
+.forest {
+  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462186080/forest_obumu2.jpg');
 }

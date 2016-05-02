@@ -63,8 +63,6 @@ var FieldGuide = React.createClass({
   render: function () {
     return (
       <div>
-        <li><Link to="/beasts">BeastForm</Link></li>
-        <li><Link to="/beasts/1">Beast #1</Link></li>
         <FieldGuideIndex />
       </div>
     );

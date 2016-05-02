@@ -18,7 +18,6 @@ var BeastIndex = React.createClass({
   componentWillMount: function(){
     console.log("Component Will Mount [BeastIndex]");
     var beastId = parseInt(this.props.params.id);
-    // debugger;
     BeastActions.fetchBeast({id: beastId});
 
     this.setState({
@@ -31,7 +30,6 @@ var BeastIndex = React.createClass({
     console.log("Receiving Props [BeastIndex]");
     var beastId = parseInt(this.props.params.id);
     var beast = BeastStore.find(nextProps.params.id);
-    // debugger;
     this.setState({
       currentBeast: beast
     });
@@ -67,7 +65,6 @@ var BeastIndex = React.createClass({
     var currentBeast = this.state.currentBeast;
 
     console.log("Rendering BeastIndex now with current beast: " + currentBeast);
-    debugger;
     return (
       <div className="BeastIndex">
         <AffinityBeastList beasts={this.state.beasts}/>
