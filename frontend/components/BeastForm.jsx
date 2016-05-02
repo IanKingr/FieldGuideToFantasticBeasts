@@ -82,6 +82,7 @@ var BeastForm = React.createClass({
     }
     return (
       <div>
+        <h3>Create a Beast</h3>
         <ul className="error">
           {errorDisplay}
         </ul>
@@ -123,7 +124,7 @@ var BeastForm = React.createClass({
          </label>
          <br /><br />
          <label>Affinity
-           <select onChange={this.affinityChange}>
+           <select className="SelectAffinity" onChange={this.affinityChange}>
               <option value=""></option>
               <option value="1">Mountains</option>
               <option value="2">Waters</option>
@@ -133,7 +134,7 @@ var BeastForm = React.createClass({
          </label>
          <br /><br />
 
-          <input type="Submit" value="Create the Beast"/>
+          <input className="OrangeButton" type="Submit" value="Create the Beast"/>
         </form>
       </div>
     );

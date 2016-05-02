@@ -4,11 +4,11 @@ var Buttons = React.createClass({
   render: function () {
     var buttons;
     if (this.props.signed_in){
-        buttons = <button onClick={this.props.signOutCallback}>Sign Out</button>;
+        buttons = <button className="OrangeButton" onClick={this.props.signOutCallback}>Sign Out</button>;
     } else {
         buttons = <div>
-          <button onClick={this.props.signInCallback}>Sign In</button>
-          <button onClick={this.props.signUpCallback}>Sign Up</button>
+          <button className="OrangeButton" onClick={this.props.signInCallback}>Sign In</button>
+          <button className="OrangeButton" onClick={this.props.signUpCallback}>Sign Up</button>
         </div>;
     }
 

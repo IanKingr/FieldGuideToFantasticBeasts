@@ -69,12 +69,12 @@ var CreateBeastButton = React.createClass({
 
     return (
       <div className="CreateBeastButton">
-        <button onClick={this.createBeast}>Create Beast</button>
+        <button className="OrangeButton" onClick={this.createBeast}>Create Beast</button>
 
         <Modal
           isOpen={this.state.CreateBeastModalOpen}
           onRequestClose={this.closeBeastModal}
-          style={style}>
+          className="Modal">
           <BeastForm closeModal={this.closeBeastModal}/>
         </Modal>
       </div>
