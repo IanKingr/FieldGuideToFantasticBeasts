@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429180806) do
+ActiveRecord::Schema.define(version: 20160502090038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160429180806) do
     t.integer  "affinity_id", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "image_url"
   end
 
   add_index "beasts", ["author_id", "affinity_id"], name: "index_beasts_on_author_id_and_affinity_id", using: :btree
@@ -39,13 +40,6 @@ ActiveRecord::Schema.define(version: 20160429180806) do
   end
 
   add_index "bookmarks", ["user_id", "beast_id"], name: "index_bookmarks_on_user_id_and_beast_id", using: :btree
-
-  create_table "images", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

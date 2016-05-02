@@ -1,29 +1,10 @@
 var React = require('react');
 
 var Beast = React.createClass({
-  // componentDidMount: function(){
-  //   this.beastListener = BeastStore.addListener(this.getCurrentBeast); //won't need this listener once we only have this component mount when a beast is selected
-  //   // this.setState({beast: BeastStore.currentBest()});
-  // },
-
-  // componentWillUnmount: function(){
-  //   this.beastListener.remove();
-  // },
-
-  // getCurrentBeast: function(){
-  //   //won't need this once we change it so this component only mounts when selected
-  //   this.setState({beast: BeastStore.currentBeast()});
-  // },
 
   componentWillReceiveProps: function(){
     console.log("ReceivedProps [Beast]" + this.props);
   },
-  //
-  // getInitialState: function(){
-  //   return {
-  //     beast: this.props.currentBeast
-  //   };
-  // },
 
   render: function(){
     console.log("Rendering Beast" + this.props.currentBeast);

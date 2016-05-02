@@ -67,6 +67,7 @@ var BeastIndex = React.createClass({
     var currentBeast = this.state.currentBeast;
 
     console.log("Rendering BeastIndex now with current beast: " + currentBeast);
+    debugger;
     return (
       <div className="BeastIndex">
         <AffinityBeastList beasts={this.state.beasts}/>
