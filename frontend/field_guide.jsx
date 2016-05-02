@@ -34,17 +34,6 @@ var App = React.createClass({
 });
 
 var FieldGuide = React.createClass({
-  // getInitialState: function(){
-  //   return({
-  //     currentBeast:{author_id: 1,
-  //       name: "Mountain Troll",
-  //       description: "A Troll is a magical creature of prodigious strength and little intelligence - a trait which giants seem to have more of.",
-  //       avg_height: 150,
-  //       avg_weight: 116,
-  //       affinity_id: 1
-  //     }
-  //   });
-  // },
 
   getBeasts: function(){
     this.setState({
@@ -72,14 +61,10 @@ var FieldGuide = React.createClass({
 var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={FieldGuide} />
-
     <Route path="beasts/:affinity_id/:id" component={BeastIndex} />
   </Route>
 );
 
-// BeastIndex beast={this.state.currentBeast} // need to pass this as a prop somehow in react router
-
-// BrowserHistory
 
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");

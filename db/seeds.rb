@@ -78,6 +78,49 @@ Beast.create(
   avg_weight: 1400,
   affinity_id: 4)
 
+Beast.create(
+  author_id: 1,
+  name: "Waterdog",
+  description: "Affectionately called "waterpups" by locals, these playful creatures live near large bodies of water and subsist mostly on fish and kelp. Their fur is thickly coated with oils in order to reduce drag when diving.",
+  avg_height: 40,
+  avg_weight: 80,
+  affinity_id: 2)
+
+Beast.create(
+  author_id: 1,
+  name: "Kracken",
+  description: "The Kracken is a large, ocean-dwelling magical beast. It is akin to a squid the size of a house measuring over 60 feet tall and wide. Its body is similar to that of a squid, with a ring of tentacles surrounding a mouth connected to a conical central body. Two of its 10 tentacles are longer than the rest, and bear deadly barbs. The kraken has very large eyes, and fins protrude from the upper part of its elongated central body.
+
+  Krakens are highly destructive and evil creatures. With their strong tentacles and massive strength, they can pull an entire ship down into the ocean. They have often completely wiped tropical islands of all life, and deep beneath the ocean, they have cavernous lairs where they breed human slaves to feed and tend them. Krakens were supposedly once the rulers of the sea, but eventually the forces of good drove them back, though legends say they will one day rise again. Krakens attack predominantly with their tentacles. They can both constrict opponents, and bring them into the reaches of the creature's huge jaws. In addition, Krakens can also release an enormous cloud of jet-black ink, and can even cast spells. It also regenerates severed limbs.
+
+  Krakens cannot speak the languages of surface dwelling races, but might speak Aquan, or a language of their own similar to that of whales.",
+  avg_height: 720,
+  affinity_id: 2)
+
+Beast.create(
+  author_id: 1,
+  name: "Roc",
+  description: "A roc’s plumage is either dark brown or golden from head to tail. These enormous creatures are 30 feet long from the beak to the base of the tail, with wingspans as wide as 80 feet. A roc weighs about 8,000 pounds.
+
+  A roc attacks from the air, swooping earthward to snatch prey in its powerful talons and carry it off for itself and its young. A solitary roc is typically hunting and will attack any medium-sized or larger creature that appears edible. A mated pair of rocs attack in concert, fighting to the death to defend their nests or hatchlings.",
+  avg_height: 300,
+  avg_length: 360,
+  avg_weight: 8000,
+  affinity_id: 3)
+
+Beast.create(
+  author_id: 1,
+  name: "Hippocampus",
+  description: "The pegasus is a magnificent winged horse that inhabit valleys and bordering forests. At first glance, they resemble mere horses with large bird-like wings. Despite this, they have other avian features as well, their lower legs are feathered instead of furred and their manes and tails are also of feathers.
+
+  Along with their physical attributes, pegasi are also like birds in that they lay eggs rather than giving birth to live young. A pegasus will mature at the same rate as a horse, however, and have somewhat similar habits.
+
+  Though highly prized as aerial steeds, pegasi are wild and shy creatures that are not easily tamed. It is also believed that pegasi can sense a person's nature and will only allow the good-hearted near.",
+  avg_height: 69,
+  avg_weight: 1500,
+  avg_length: 240,
+  affinity_id: 3)
+
 # componentDidMount --> fetchCurrentUser
 #
 # check if user is logged in with componentWillMount(occurs before render and before DidMount)

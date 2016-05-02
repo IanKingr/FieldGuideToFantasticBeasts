@@ -20,13 +20,17 @@
    align-items: center;
    /*border: 1px dotted black;*/
    margin-top: 15px;
-   border-radius: 15px 0px 15px 0px;
+   border-radius: 15px 15px 15px 15px;
    width: 20%;
    margin: auto;
    z-index: 1;
-   background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
-   /*margin: 10px;*/
+   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
  }
+
+.AffinityBeastListIndex {
+  width: 50%;
+}
+
 
 .AffinityFilterBar {
   display: flex;
@@ -38,8 +42,10 @@
 }
 
 .AffinityListHeader {
-  background-color: #b9b1a8;
-  border-radius: 15px 0px 15px 0px;
+  /*background-color: #b9b1a8;*/
+  background-repeat: repeat;
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224961/7f6be3d2743ad84cac47652ad19bc4e9_zi1h8v.jpg');
+  border-radius: 15px 15px 0px 0px;
   text-align: center;
   width: 100%;
   border: 1px solid;
@@ -54,6 +60,10 @@
        1px 1px 0 #000;*/
 }
 
+.AffinityListFooter {
+  border-radius: 0px 0px 15px 15px;
+}
+
 .BeastListItem {
   display: flex;
   flex-wrap: nowrap;
@@ -63,7 +73,9 @@
   margin: 1px;
   padding: 7px;
   width: 100%;
-  background-color: #b9b1a8;
+  /*background-color: #b9b1a8;*/
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224540/subtle_white_mini_waves_f7qx08.png');
+  background-repeat: repeat;
   border-radius: 2px;
   border: 0.5px solid black;
 }
@@ -81,7 +93,7 @@
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 5px;
-  background-image: url("http://res.cloudinary.com/flyingonclouds/image/upload/v1462187890/ricepaper_v3_zb5rto.png");
+  background-image: url("https://res.cloudinary.com/flyingonclouds/image/upload/v1462187890/ricepaper_v3_zb5rto.png");
 }
 
 .BeastInfo{
@@ -93,14 +105,15 @@
   margin-left: auto;
   margin-top: 35px;
   margin-bottom: 15px;
-  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
 }
 
 body {
   background-repeat:repeat;
   background-color: #FFF2E7;
   font-family: 'Fjalla One', sans-serif;
-  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462207270/tj-foo-grand-library_soujcw.jpg');
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462207270/tj-foo-grand-library_soujcw.jpg');
+
 }
 
 input {
@@ -158,7 +171,7 @@ button:hover {
 }
 
 .NavBar {
-  /*background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462207871/lightleather_fpxlal.jpg');*/
+  /*background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462207871/lightleather_fpxlal.jpg');*/
   margin-bottom: 10px;
 }
 
@@ -174,17 +187,17 @@ button:hover {
 }
 
 .mountain {
-  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462185217/mountain_nudkki.jpg');
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462185217/mountain_nudkki.jpg');
 }
 
 .water {
-  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462186941/waters_real1_sb6tnm.jpg');
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462186941/waters_real1_sb6tnm.jpg');
 }
 
 .plain {
-  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462186958/plains_real2_dafsql.jpg');
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462186958/plains_real2_dafsql.jpg');
 }
 
 .forest {
-  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462186080/forest_obumu2.jpg');
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462186080/forest_obumu2.jpg');
 }
