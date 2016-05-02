@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   root "static_pages#root"
+  get "/beasts/:id", to: "static_pages#root"
+  get "/beasts/:affinity_id/:id", to: "static_pages#root"
 end

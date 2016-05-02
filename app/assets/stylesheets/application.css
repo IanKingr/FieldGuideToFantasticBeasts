@@ -20,7 +20,9 @@
    align-items: center;
    /*border: 1px dotted black;*/
    margin-top: 15px;
+   border-radius: 15px 0px 15px 0px;
    width: 20%;
+   margin: auto;
    z-index: 1;
    background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
    /*margin: 10px;*/
@@ -36,8 +38,8 @@
 }
 
 .AffinityListHeader {
-  background-color: gray;
-  border-radius: 5px 0px 5px 0px;
+  background-color: #b9b1a8;
+  border-radius: 15px 0px 15px 0px;
   text-align: center;
   width: 100%;
   border: 1px solid;
@@ -75,6 +77,7 @@
 .BeastIndex {
   display: flex;
   flex-direction: row-reverse;
+  margin-top: 30px;
   background-image: url("http://res.cloudinary.com/flyingonclouds/image/upload/v1462187890/ricepaper_v3_zb5rto.png");
 }
 
@@ -94,6 +97,7 @@ body {
   background-repeat:repeat;
   background-color: #FFF2E7;
   font-family: 'Fjalla One', sans-serif;
+  background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462207270/tj-foo-grand-library_soujcw.jpg');
 }
 
 input {
@@ -136,7 +140,6 @@ button:hover {
   font-size: 20px;
   color: white;
   background-color: #c7ad88;
-  /*background-color: white;*/
   /*border: 1px solid #64706c;*/
   border-radius: 5px;
   text-shadow: 1px 1px 1px #4b4d52;
@@ -145,6 +148,16 @@ button:hover {
   padding: 10px;
 }
 
+.logo {
+  position: fixed;
+  left: 20px;
+  top: 3px;
+}
+
+.NavBar {
+  /*background-image: url('http://res.cloudinary.com/flyingonclouds/image/upload/v1462207871/lightleather_fpxlal.jpg');*/
+  margin-bottom: 10px;
+}
 
 .AffinitySorter {
   display: flex;

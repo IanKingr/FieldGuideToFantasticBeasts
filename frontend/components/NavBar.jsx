@@ -93,7 +93,7 @@ var NavBar = React.createClass({
       <div className="NavBar">
         <div className="nav">
           <Link to="/" class="active">
-            <img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1461973955/field_guide_logo3_tojbyd.png"/>
+            <img className="logo" src="http://res.cloudinary.com/flyingonclouds/image/upload/v1462209268/field_guide_logo4_lrwlzw.png"/>
           </Link>
         <Buttons
           signed_in={this.state.currentUser}

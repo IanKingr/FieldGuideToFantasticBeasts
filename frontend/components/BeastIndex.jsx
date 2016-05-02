@@ -11,15 +11,16 @@ var BeastIndex = React.createClass({
 
   handleClickOnBeast: function(){
     console.log("History Pushing the following beast Id " + this.props.beast.id);
-
-    BrowserHistory.push("/beasts/" + this.props.beast.id);
+    BrowserHistory.push("/beasts/"+this.props.beast.affinity_id+"/"+this.props.beast.id);
   },
 
   componentWillMount: function(){
     console.log("Component Will Mount [BeastIndex]");
     var beastId = parseInt(this.props.params.id);
+    var affinityId = parseInt(this.props.params.affinity_id);
+    // debugger;
     BeastActions.fetchBeast({id: beastId});
-
+    BeastActions.fetchBeasts({affinity_id: affinityId});
     this.setState({
       currentBeast: BeastStore.currentBeast(),
       beasts: BeastStore.allStored()

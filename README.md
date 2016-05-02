@@ -77,7 +77,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Beasts can be created, selected, bookmarked, and reviewed with the user interface.
 
-- [ ] setup React Router
+- [x] setup React Router
 - [ ] setup `Review` model
 - [ ] setup `Bookmark` model
 - [x] setup the flux loop with skeleton files
@@ -94,9 +94,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [x] create a basic style guide
+- [x] position elements on the page
+- [x] add basic colors & styles
 
 ### Phase 5: Affinity (1 day)
 

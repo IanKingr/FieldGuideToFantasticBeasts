@@ -94,8 +94,9 @@ var BeastForm = React.createClass({
           </label>
          <br /><br />
          <label>Description<br />
-         <input
-           type="textarea"
+         <textarea
+           rows={6}
+           cols={50}
            value={this.state.description}
            onChange={this.descriptionChange} />
          </label>
