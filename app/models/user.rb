@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     class_name: "Beast"
 
+  has_many :reviews
   has_many :bookmarks
 
   def reset_session_token!

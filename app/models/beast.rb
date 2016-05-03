@@ -6,6 +6,8 @@ class Beast < ActiveRecord::Base
     message: "is required"
   }
 
+  has_many :reviews
+
   belongs_to :author,
     foreign_key: :author_id,
     primary_key: :id,

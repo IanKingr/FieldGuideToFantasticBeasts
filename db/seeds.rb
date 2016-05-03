@@ -91,7 +91,7 @@ Beast.create(
   name: "Kracken",
   description: "The Kracken is a large, ocean-dwelling magical beast. It is akin to a squid the size of a house measuring over 60 feet tall and wide. Its body is similar to that of a squid, with a ring of tentacles surrounding a mouth connected to a conical central body. Two of its 10 tentacles are longer than the rest, and bear deadly barbs. The kraken has very large eyes, and fins protrude from the upper part of its elongated central body.
 
-  Krakens are highly destructive and evil creatures. With their strong tentacles and massive strength, they can pull an entire ship down into the ocean. They have often completely wiped tropical islands of all life, and deep beneath the ocean, they have cavernous lairs where they breed human slaves to feed and tend them. Krakens were supposedly once the rulers of the sea, but eventually the forces of good drove them back, though legends say they will one day rise again. Krakens attack predominantly with their tentacles. They can both constrict opponents, and bring them into the reaches of the creature's huge jaws. In addition, Krakens can also release an enormous cloud of jet-black ink, and can even cast spells. It also regenerates severed limbs.
+  Krakens are highly destructive and evil creatures. With their strong tentacles and massive strength, they can pull an entire ship down into the ocean. They have often completely wiped tropical islands of all life, and deep beneath the ocean, they have cavernous lairs where they keep human slaves to feed and tend them. Krakens were supposedly once the rulers of the sea, but eventually the forces of good drove them back, though legends say they will one day rise again. Krakens attack predominantly with their tentacles. They can both constrict opponents, and bring them into the reaches of the creature's huge jaws. In addition, Krakens can also release an enormous cloud of jet-black ink, and can even cast spells. It also regenerates severed limbs.
 
   Krakens cannot speak the languages of surface dwelling races, but might speak Aquan, or a language of their own similar to that of whales.",
   avg_height: 720,
@@ -110,7 +110,7 @@ Beast.create(
 
 Beast.create(
   author_id: 1,
-  name: "Hippocampus",
+  name: "Pegasus",
   description: "The pegasus is a magnificent winged horse that inhabit valleys and bordering forests. At first glance, they resemble mere horses with large bird-like wings. Despite this, they have other avian features as well, their lower legs are feathered instead of furred and their manes and tails are also of feathers.
 
   Along with their physical attributes, pegasi are also like birds in that they lay eggs rather than giving birth to live young. A pegasus will mature at the same rate as a horse, however, and have somewhat similar habits.

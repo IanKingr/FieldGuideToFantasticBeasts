@@ -9,8 +9,8 @@
 "Field Guide To Fantastic Beasts" or 'Field Guide' is a web application inspired by Harry Potter, Dungeons and Dragons, and other fantasy lores. Design strives to replicate key functionalities from sites like RateMyProfessor and will be built using Ruby on Rails and React.js. By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [x] New account creation, login, and guest/demo login
-- [ ] Smooth, bug-free navigation
-- [ ] Adequate seed data to demonstrate the site's features
+- [x] Smooth, bug-free navigation
+- [x] Adequate seed data to demonstrate the site's features
 - [ ] The minimally necessary features for a RateMyProfessor-inspired site: Rating Beasts, Search with Autocomplete, Beasts organized by affinity (biome).
 - [x] Hosting on Heroku
 - [ ] CSS styling that is satisfactorily visually appealing
@@ -123,10 +123,10 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **objective:** Implement AffinityFilterBar and associated components on FieldGuideIndex.
 
-- [ ] build out AffinityFilterBar Flux loop and components for:
+- [x] build out AffinityFilterBar Flux loop and components for:
   - [ ] displaying AffinityDetails.
-  - [ ] displaying AffinityBeastList and BeastListItems.
-- [ ] Style new elements
+  - [x] displaying AffinityBeastList and BeastListItems.
+- [x] Style new elements
 
 ### Phase 8: Styling Cleanup and Seeding (3 days)
 
