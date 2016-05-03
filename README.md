@@ -26,11 +26,12 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [x] Create an account (MVP)
 - [x] Log in / Log out, including as a Guest/Demo User (MVP)
 - [ ] Search, select matching search results, and autocomplete searches for Beasts (MVP)
-- [ ] Review Beasts and rate in terms of Danger rating (MVP)
-- [ ] Add Beasts to personal bookmarks (MVP)
-- [ ] Comment on Beast entries (MVP)
+- [ ] Rate Beasts in terms of Danger rating (MVP)
+- [ ] Write full review on Beast entries (MVP)
+- [ ] Like reviews by other users (MVP)
 - [x] Create Beast entries (MVP)
-- [ ] Users can search/sort beasts by their danger rating (expected, but not MVP)
+- [ ] Search/sort beasts by their danger rating (expected, but not MVP)
+- [ ] Add Beasts to personal bookmarks (bonus, not MVP)
 
 ## Design Docs
 * [View Wireframes][views]
@@ -79,7 +80,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [x] setup React Router
 - [ ] setup `Review` model
-- [ ] setup `Bookmark` model
+- [ ] setup `Like` model
 - [x] setup the flux loop with skeleton files
 - implement each beast component, building out the flux loop as needed.
   - [x] `BeastIndex`
@@ -88,7 +89,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
   - [x] `Beast`
   - [x] `BeastForm`
   - [ ] `Review`
-  - [ ] `Bookmark`
+  - [ ] `Like`
 
 ### Phase 4: Start Styling (1 days)
 
@@ -138,5 +139,6 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ### Bonus Features (TBD)
 - [ ] Users can search/sort beasts by their danger rating
+- [ ] Users can bookmark beasts for a collection
 - [ ] Implement map with location markers to indicate where beasts live.
 - [ ] Users can select multiple beasts and create a collection out of them.

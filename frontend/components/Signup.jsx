@@ -75,10 +75,10 @@ var Signup = React.createClass({
          </label>
          <br /><br />
 
-          <input type="Submit" value="Create Account"/>
+          <input className="OrangeButton" type="Submit" value="Create Account" readOnly/>
         </form>
-        
-        <button className="guest"
+
+        <button className="OrangeButton GuestSignIn"
           onClick={this.guestSignIn}>Or sign in as a Guest!
         </button>
       </div>

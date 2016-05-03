@@ -13,7 +13,7 @@ var Buttons = React.createClass({
     }
 
     return(
-      <div>
+      <div className="ButtonsComponent">
         {this.props.username}
         {buttons}
       </div>

@@ -79,6 +79,7 @@
   margin: 1px;
   padding: 7px;
   width: 100%;
+  min-width: 100px;
   /*background-color: #b9b1a8;*/
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224540/subtle_white_mini_waves_f7qx08.png');
   background-repeat: repeat;
@@ -93,8 +94,13 @@
 }
 
 .BeastIndex {
+
+}
+
+.BeastIndexInfo {
   display: flex;
   flex-direction: row-reverse;
+  min-width: 200px;
   margin-top: 30px;
   margin-left: 20px;
   margin-right: 20px;
@@ -108,6 +114,7 @@
   border-radius: 10px;
   padding: 5%;
   width: 50%;
+  min-width: 100px;
   margin-left: auto;
   margin-top: 35px;
   margin-bottom: 15px;
@@ -120,6 +127,16 @@ body {
   font-family: 'Fjalla One', sans-serif;
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462207270/tj-foo-grand-library_soujcw.jpg');
 
+}
+
+.ButtonsComponent {
+  display:flex;
+  min-height: 40px;
+  align-items: center;
+}
+
+.CreateBeastButton {
+  display: flex;
 }
 
 input {
@@ -137,8 +154,8 @@ input {
 textarea {
   font-family: 'Lora', serif;
   font-size: 15px;
-  padding: 10px 20px 10px 20px;
-  margin: 3px;
+  /*padding: 10px 20px 10px 20px;*/
+  margin: 10px 20px 10px 20px;
   border-radius: 3px;
 }
 
@@ -147,9 +164,9 @@ textarea {
 }
 
 .logo {
-  position: fixed;
-  left: 20px;
-  top: 3px;
+  float: left;
+  /*left: 20px;
+  top: 3px;*/
 }
 
 .Modal {
@@ -173,6 +190,7 @@ textarea {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 40px;
   font-family: 'Fjalla One', sans-serif;
   font-size: 20px;
   color: white;
@@ -183,6 +201,28 @@ textarea {
   flex-wrap: nowrap;
   /*margin: 10px;*/
   padding: 10px;
+}
+
+@media (max-width: 450px) {
+  .nav{ flex-direction: column; }
+  .CreateBeastButton{ margin-top: 80px; justify-content: center;}
+}
+
+@media (max-width: 600px) {
+  .BeastIndexInfo{ flex-direction: column; }
+  .ReviewFormSpecific.flexoveride{ flex-direction: column; align-items: flex-start; padding: 2px; min-width: 100px;}
+  .Description{width:100%;}
+  .BeastInfo{ margin-right: auto;}
+}
+
+@media (max-width: 750px) {
+  .ReviewFormSpecific.flexoveride{ flex-direction: column; align-items: flex-start; padding: 2px; min-width: 100px;}
+  .Description{width:100%;}
+  .BeastInfo{ margin-right: auto;}
+}
+
+.SelectRating {
+  margin-left: 20px;
 }
 
 .NavBar {
@@ -203,9 +243,35 @@ textarea {
   margin: 3px 10px 3px 10px;
 }
 
+.OrangeButton.Centered {
+  align-items: baseline;
+}
+
+.Description {
+  /*margin: 30px 30px 10px 0px;*/
+}
+
 .OrangeButton:hover {
   background: #FAA96B;
   /*text-decoration: none;*/
+}
+
+.ReviewForm {
+  display: flex;
+  flex-direction: row;
+  min-width: 200px;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px 15px 15px 5px;
+  background-image: url("https://res.cloudinary.com/flyingonclouds/image/upload/v1462187890/ricepaper_v3_zb5rto.png");
+}
+
+.ReviewFormSpecific {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
 }
 
 .AffinitySorter {

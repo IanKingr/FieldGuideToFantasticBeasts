@@ -4,6 +4,7 @@ var BeastApiUtil = require('../util/beast_api_util');
 
 var BeastActions = {
   fetchBeast: function(data){
+    console.log("Fetching Beast [beastActions]");
     BeastApiUtil.fetchBeast(data, this.receiveBeast, this.handleError);
   },
 

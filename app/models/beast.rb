@@ -8,6 +8,10 @@ class Beast < ActiveRecord::Base
 
   has_many :reviews
 
+  has_many :reviewers,
+    through: :reviews,
+    source: :user
+
   belongs_to :author,
     foreign_key: :author_id,
     primary_key: :id,

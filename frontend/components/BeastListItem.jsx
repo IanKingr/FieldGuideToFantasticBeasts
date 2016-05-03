@@ -10,6 +10,9 @@ var BeastListItem = React.createClass({
 
   handleClick: function(){
     console.log("History Pushing the following beast Id " + this.props.beast.id);
+
+    BeastActions.fetchBeast({id: this.props.beast.id});
+
     BrowserHistory.push("/beasts/" + this.props.beast.affinity_id + "/" + this.props.beast.id);
   },
 

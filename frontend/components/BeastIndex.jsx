@@ -4,13 +4,20 @@ var BeastStore = require('../stores/beast_store');
 var BeastActions = require('../actions/beastActions');
 var AffinityBeastList = require('../components/AffinityBeastList');
 var BrowserHistory = require('react-router').browserHistory;
+var ReviewForm = require('../components/ReviewForm');
+var ReviewStore = require('../stores/review_store');
+var ReviewActions = require('../actions/reviewActions');
+var ReviewList = require('../components/ReviewList');
+
 
 window.BeastStore = BeastStore;
+window.ReviewStore = ReviewStore;
 
 var BeastIndex = React.createClass({
 
   handleClickOnBeast: function(){
     console.log("History Pushing the following beast Id " + this.props.beast.id);
+    
     BrowserHistory.push("/beasts/"+this.props.beast.affinity_id+"/"+this.props.beast.id);
   },
 
@@ -31,6 +38,7 @@ var BeastIndex = React.createClass({
     console.log("Receiving Props [BeastIndex]");
     var beastId = parseInt(this.props.params.id);
     var beast = BeastStore.find(nextProps.params.id);
+    ReviewActions.resetReviewErrors();
     this.setState({
       currentBeast: beast
     });
@@ -75,8 +83,16 @@ var BeastIndex = React.createClass({
     console.log("Rendering BeastIndex now with current beast: " + currentBeast);
     return (
       <div className="BeastIndex">
-        <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList"/>
-        <Beast currentBeast={currentBeast}/>
+        <div className="BeastIndexInfo">
+          <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList"/>
+          <Beast currentBeast={currentBeast}/>
+        </div>
+        <div>
+          <ReviewForm className="ReviewForm"/>
+        </div>
+        <div>
+
+        </div>
       </div>
     );
   }
