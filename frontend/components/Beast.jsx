@@ -11,6 +11,15 @@ var Beast = React.createClass({
 
     if(this.props && Boolean(this.props.currentBeast)){
       var beast = this.props.currentBeast;
+      // var result = "<p>" + beast.description + "</p>";
+      // result = result.replace(/\r\n\r\n/g, "</p><p>").replace(/\n\n/g, "</p><p>");
+      // result = result.replace(/\r\n/g, "<br />").replace(/\n/g, "<br />");
+      //
+      // var temp = document.createElement('div');
+      // temp.innerHTML = result;
+      // var htmlObject = temp.firstChild;
+
+
 
       var beastInfo = <div className="BeastInfo">
         <div className="BeastInfoHeader">

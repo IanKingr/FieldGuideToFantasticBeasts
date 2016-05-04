@@ -25,6 +25,8 @@
    /*border-radius: 15px 15px 15px 15px;*/
    width: 90%;
    margin: auto;
+   margin-top: 0px;
+   margin-bottom: 0px;
    z-index: 4;
    background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
 

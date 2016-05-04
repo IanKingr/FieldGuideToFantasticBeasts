@@ -6,11 +6,122 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+#1
+User.create(
+  username: "VeteranHunter42",
+  password: "2hunt2live"
+)
+
+#2
+User.create(
+  username: "TheGloriousSun",
+  password: "praise2thesun"
+)
+
+#3
+User.create(
+  username: "ScaredAndRunning",
+  password: "runnnnnnnnnnn!"
+)
+
+#4
+User.create(
+  username: "StalwartHeartx",
+  password: "headstrongheartstrong"
+)
+
+#5
+User.create(
+  username: "MarvelousMage",
+  password: "magicIsmagic"
+)
+
+#6
+User.create(
+  username: "whichisthepointyend",
+  password: "new2thegig"
+)
+
+#7
 User.create(
   username: "GuestUser",
   password: "beourGuest2theTest"
 )
 
+#8
+User.create(
+  username: "LagunaBlade",
+  password: "boomboomboom"
+)
+
+#9
+User.create(
+  username: "CrystalMaiden",
+  password: "beourGuest2theTest"
+)
+
+#10
+User.create(
+  username: "Rexxar2face",
+  password: "faceistheplace"
+)
+
+#11
+User.create(
+  username: "JainaLetsItGo",
+  password: "icewalled"
+)
+
+#12
+User.create(
+  username: "DevoutUther",
+  password: "faithinthelight"
+)
+
+#13
+User.create(
+  username: "Malfurious",
+  password: "imustprotectthewild"
+)
+
+#14
+User.create(
+  username: "GrimPatron9001",
+  password: "everybodygetinhere"
+)
+
+#15
+User.create(
+  username: "GrimPatron1381",
+  password: "everybodygetinhere2"
+)
+
+#16
+User.create(
+  username: "GrimPatron4512",
+  password: "everybodygetinhere"
+)
+
+#17
+User.create(
+  username: "GrimPatron9341",
+  password: "everybodygetinhere"
+)
+
+#18
+User.create(
+  username: "GrimPatron7427",
+  password: "everybodygetinhere"
+)
+
+#19
+User.create(
+  username: "MadScholar",
+  password: "2science4u"
+)
+
+#1
 Beast.create(
   author_id: 1,
   name: "Mountain Troll",
@@ -23,6 +134,56 @@ Beast.create(
   avg_weight: 1160,
   affinity_id: 1)
 
+Review.create(
+  user_id: 1,
+  beast_id: 1,
+  rating: 3,
+  description: "A hardy and tough brute, luckily they are easily outsmarted."
+)
+
+Review.create(
+  user_id: 6,
+  beast_id: 1,
+  rating: 5,
+  description: "The WORST! My blade only glanced off his hide - I mind have well been hitting it with a spoon!"
+)
+
+Review.create(
+  user_id: 14,
+  beast_id: 1,
+  rating: 2,
+  description: "One troll is no match for me and the boys! Everybody get in here!"
+)
+
+Review.create(
+  user_id: 15,
+  beast_id: 1,
+  rating: 2,
+  description: "One troll is no match for me and the boys! Everybody get in here!"
+)
+
+Review.create(
+  user_id: 16,
+  beast_id: 1,
+  rating: 2,
+  description: "One troll is no match for me and the boys! Everybody get in here!"
+)
+
+Review.create(
+  user_id: 17,
+  beast_id: 1,
+  rating: 2,
+  description: "One troll is no match for me and the boys! Everybody get in here!"
+)
+
+Review.create(
+  user_id: 18,
+  beast_id: 1,
+  rating: 2,
+  description: "One troll is no match for me and the boys! Everybody get in here!"
+)
+
+#2
 Beast.create(
   author_id: 1,
   name: "Griffin",
@@ -31,6 +192,28 @@ Beast.create(
   avg_weight: 500,
   affinity_id: 3)
 
+Review.create(
+  user_id: 12,
+  beast_id: 2,
+  rating: 4,
+  description: "A noble beast and elegant stead."
+)
+
+Review.create(
+  user_id: 9,
+  beast_id: 2,
+  rating: 4,
+  description: "Such a fascinating creature! Beware the talons though!"
+)
+
+Review.create(
+  user_id: 8,
+  beast_id: 2,
+  rating: 1,
+  description: "Note to future riders, do not eat beforehand..."
+)
+
+#3
 Beast.create(
   author_id: 1,
   name: "Gnoll",
@@ -43,6 +226,21 @@ Beast.create(
   avg_weight: 240,
   affinity_id: 1)
 
+Review.create(
+  user_id: 1,
+  beast_id: 3,
+  rating: 3,
+  description: "A lone gnoll. Not a problem. A pack. Problem."
+)
+
+Review.create(
+  user_id: 2,
+  beast_id: 3,
+  rating: 3,
+  description: "Creatures of darkness cannot stand before the light, praise the sun!"
+)
+
+#4
 Beast.create(
   author_id: 1,
   name: "Kobold",
@@ -57,7 +255,14 @@ Beast.create(
   avg_weight: 42,
   affinity_id: 1)
 
+Review.create(
+  user_id: 19,
+  beast_id: 4,
+  rating: 3,
+  description: "Entry #34: Cultural note. They do not like to be called lizards. Not one bit."
+)
 
+#5
 Beast.create(
   author_id: 1,
   name: "Goblin",
@@ -68,6 +273,14 @@ Beast.create(
   avg_weight: 58,
   affinity_id: 1)
 
+  Review.create(
+    user_id: 19,
+    beast_id: 4,
+    rating: 2,
+    description: "Entry #6: Future note, bartering with Goblins should be done in a public location and without much coin on hand. Ancillary reminder, acquire new pants."
+  )
+
+#6
 Beast.create(
   author_id: 1,
   name: "Hippocampus",
@@ -78,14 +291,16 @@ Beast.create(
   avg_weight: 1400,
   affinity_id: 2)
 
+#7
 Beast.create(
   author_id: 1,
   name: "Waterdog",
-  description: "Affectionately called "waterpups" by locals, these playful creatures live near large bodies of water and subsist mostly on fish and kelp. Their fur is thickly coated with oils in order to reduce drag when diving.",
+  description: "Affectionately called \"waterpups\" by locals, these playful creatures live near large bodies of water and subsist mostly on fish and kelp. Their fur is thickly coated with oils in order to reduce drag when diving.",
   avg_height: 40,
   avg_weight: 80,
   affinity_id: 2)
 
+#8
 Beast.create(
   author_id: 1,
   name: "Kracken",
@@ -97,6 +312,7 @@ Beast.create(
   avg_height: 720,
   affinity_id: 2)
 
+#9
 Beast.create(
   author_id: 1,
   name: "Roc",
@@ -133,6 +349,7 @@ Beast.create(
   avg_weight: 8000,
   affinity_id: 1)
 
+#10
 Beast.create(
   author_id: 1,
   name: "Pegasus",
@@ -146,6 +363,7 @@ Beast.create(
   avg_length: 240,
   affinity_id: 3)
 
+#11
 Beast.create(
   author_id: 1,
   name: "Red Dragon",
@@ -186,7 +404,7 @@ every item in its hoard, along with each item's exact location. It might notice 
 goes on a rampage, laying waste to towns and villages in an attempt to sate its wrath.",
 affinity_id: 1)
 
-
+#12
 Beast.create(
   author_id: 1,
   name: "Silver Dragon",
@@ -261,6 +479,13 @@ Beast.create(
   avg_weight: 300,
   affinity_id: 4)
 
+  Review.create(
+    user_id: 19,
+    beast_id: 4,
+    rating: 3,
+    description: "Entry #12: Attempts to domesticate were not well received."
+  )
+
 Beast.create(
   author_id: 1,
   name: "Cockatrice",
@@ -296,6 +521,13 @@ Beast.create(
   avg_height: 88,
   avg_weight: 1400,
   affinity_id: 4)
+
+  Review.create(
+    user_id: 19,
+    beast_id: 4,
+    rating: 5,
+    description: "Entry #49: While fresh Owlbear feathers make the best quills, I will strongly consider alternative means of acquiring such penning implements."
+  )
 
 Beast.create(
   author_id: 1,
@@ -574,6 +806,9 @@ then suddenly see nothing but the wild woods",
     avg_length: 96,
     avg_weight: 1200,
     affinity_id: 4)
+
+
+
 
 # componentDidMount --> fetchCurrentUser
 #

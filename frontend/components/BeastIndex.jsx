@@ -47,12 +47,21 @@ var BeastIndex = React.createClass({
   componentDidMount: function(){
     console.log("Component Did Mount [BeastIndex]");
     this.beastListener = BeastStore.addListener(this.getBeast);
+    this.reviewListener = ReviewStore.addListener(this.getReviews);
     // BeastActions.fetchBeasts({affinity_id: this.state.currentBeast}); //Sunday: Need to write this somewhere so we can fetch when we load a page with the url id rather than through the FieldGuideIndex
   },
 
   componentWillUnmount: function(){
     console.log("BeastIndex UNMOUNTED");
     this.beastListener.remove();
+  },
+
+  getReviews: function(){
+    console.log("Get Reviews Callback triggered [BeastIndex]");
+    this.setState({
+      reviews: this.state.currentBeast.reviews
+    });
+    debugger;
   },
 
   getBeast: function(){
@@ -93,7 +102,7 @@ var BeastIndex = React.createClass({
           <div className="BeastImage"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.png"></img></div>
         </div>
         <div>
-          <ReviewList />
+          <ReviewList currentBeast={this.state.currentBeast}/>
         </div>
       </div>
     );

@@ -6,58 +6,62 @@ var ReviewActions = require('../actions/reviewActions');
 var ReviewForm = require('../components/ReviewForm');
 
 var ReviewList = React.createClass({
-  // componentWillReceiveProps: function(){
-  //   console.log("ReviewList received props and is rendering" + this.props);
-  //
+  componentWillReceiveProps: function(){
+    console.log("ReviewList received props and is rendering" + this.props);
+  },
+
+  // getInitialState: function(){
+  //   return ({
+  //     reviews: null
+  //   });
   // },
-  getInitialState: function(){
-    return ({
-      reviews: {}
-    });
-  },
 
-  componentDidMount: function(){
-    console.log("Component Did Mount [ReviewList]");
-    this.reviewListener = ReviewStore.addListener(this.getReviews);
-  },
+  // componentDidMount: function(){
+  //   console.log("Component Did Mount [ReviewList]");
+  //   this.reviewListener = ReviewStore.addListener(this.getReviews);
+  // },
 
-  componentWillUnmount: function(){
-    console.log("ReviewList UNMOUNTED");
-    this.reviewListener.remove();
-  },
-
-  getReviews: function(){
-    console.log("Triggered getReview callback [ReviewList]");
-
-    if(this.state.reviews !== ReviewStore.allStored()){
-      this.setState({
-        reviews: ReviewStore.allStored()
-      });
-      console.log("AllReviews have been stored [ReviewList]" );
-    }
-
-    console.log("But may not have triggered setting currentReview or reviews : allStored");
-    // console.log(this.state.reviews + " the reviews");
-  },
+  // componentWillUnmount: function(){
+  //   console.log("ReviewList UNMOUNTED");
+  //   this.reviewListener.remove();
+  // },
+  //
+  // getReviews: function(){
+  //   console.log("Triggered getReview callback [ReviewList]");
+  //
+  //   if(this.state.reviews !== ReviewStore.allStored()){
+  //     this.setState({
+  //       reviews: ReviewStore.allStored()
+  //     });
+  //     console.log("AllReviews have been stored [ReviewList]" );
+  //   }
+  //
+  //   console.log("But may not have triggered setting currentReview or reviews : allStored");
+  //   // console.log(this.state.reviews + " the reviews");
+  // },
 
   render: function(){
     console.log("rendering ReviewList");
     // var reviews = ReviewStore.allStored();
-    var beast = BeastStore.currentBeast();
-    if(beast){
+    // var beast = BeastStore.currentBeast();
+    var currentBeast = this.props.currentBeast;
+    if(currentBeast){
+      var reviews = currentBeast.reviews;
+      // debugger;
       console.log("There are reviews! [ReviewList]");
-      var reviews = beast.reviews;
-      reviews = reviews.map(function(review){
+      // var reviews = beast.reviews;
+      var reviewList = reviews.map(function(review){
         return <ReviewListItem key={review.id} review={review}/>;
       });
     }
+
 
     return (
       <div className="ReviewList">
         <div className="ReviewLabel"><h2>Reviews</h2></div>
         <div className="ReviewListHeader">&nbsp;</div>
           <ReviewForm className="ReviewForm"/>
-          {reviews}
+          {reviewList}
         <div className="ReviewListHeader">&nbsp;</div>
       </div>
     );
