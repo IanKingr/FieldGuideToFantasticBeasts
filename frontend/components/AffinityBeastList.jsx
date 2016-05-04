@@ -20,9 +20,7 @@ var AffinityBeastList = React.createClass({
 
     return (
       <div className={this.props.className}>
-        <div className="AffinityListHeader">&nbsp;</div>
         {beasts}
-        <div className="AffinityListHeader AffinityListFooter">&nbsp;</div>
       </div>
     );
   }

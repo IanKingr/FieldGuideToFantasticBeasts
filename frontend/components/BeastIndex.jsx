@@ -17,7 +17,7 @@ var BeastIndex = React.createClass({
 
   handleClickOnBeast: function(){
     console.log("History Pushing the following beast Id " + this.props.beast.id);
-    
+
     BrowserHistory.push("/beasts/"+this.props.beast.affinity_id+"/"+this.props.beast.id);
   },
 
@@ -84,14 +84,15 @@ var BeastIndex = React.createClass({
     return (
       <div className="BeastIndex">
         <div className="BeastIndexInfo">
-          <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList"/>
+          <div className="AffinityBeastListBeast">
+            <div className="AffinityListHeader">&nbsp;</div>
+            <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList"/>
+            <div className="AffinityListHeader AffinityListFooter">&nbsp;</div>
+          </div>
           <Beast currentBeast={currentBeast}/>
         </div>
         <div>
-          <ReviewForm className="ReviewForm"/>
-        </div>
-        <div>
-
+          <ReviewList />
         </div>
       </div>
     );

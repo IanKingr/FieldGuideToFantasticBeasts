@@ -1,6 +1,9 @@
 var React = require('react');
 var ReviewListItem = require('./ReviewListItem');
 var ReviewStore = require('../stores/review_store');
+var BeastStore = require('../stores/beast_store');
+var ReviewActions = require('../actions/reviewActions');
+var ReviewForm = require('../components/ReviewForm');
 
 var ReviewList = React.createClass({
   // componentWillReceiveProps: function(){
@@ -39,19 +42,23 @@ var ReviewList = React.createClass({
 
   render: function(){
     console.log("rendering ReviewList");
-    var reviews = ReviewStore.allStored();
-    // debugger;
-    if(reviews){
+    // var reviews = ReviewStore.allStored();
+    var beast = BeastStore.currentBeast();
+    if(beast){
+      console.log("There are reviews! [ReviewList]");
+      var reviews = beast.reviews;
       reviews = reviews.map(function(review){
         return <ReviewListItem key={review.id} review={review}/>;
       });
     }
 
     return (
-      <div>
-        <div className="AffinityListHeader">&nbsp;</div>
-        {reviews}
-        <div className="AffinityListHeader AffinityListFooter">&nbsp;</div>
+      <div className="ReviewList">
+        <div className="ReviewLabel"><h2>Reviews</h2></div>
+        <div className="ReviewListHeader">&nbsp;</div>
+          <ReviewForm className="ReviewForm"/>
+          {reviews}
+        <div className="ReviewListHeader">&nbsp;</div>
       </div>
     );
   }

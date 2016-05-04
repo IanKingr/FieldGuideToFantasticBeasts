@@ -18,8 +18,8 @@ var ReviewListItem = React.createClass({
     var review = this.props.review;
     return (
       <div className="ReviewListItem" >
-        <div>{review.description}</div>
         <div>{review.rating}</div>
+        <div>{review.description}</div>
       </div>
     );
   }
