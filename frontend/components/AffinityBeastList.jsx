@@ -16,6 +16,8 @@ var AffinityBeastList = React.createClass({
       beasts = beasts.map(function(beast){
         return <BeastListItem key={beast.id} beast={beast}/>;
       });
+    } else {
+      beasts = <div className="BeastListItem Center">Select an Affinity Above</div>;
     }
 
     return (

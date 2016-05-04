@@ -87,9 +87,10 @@ var BeastIndex = React.createClass({
           <div className="AffinityBeastListBeast">
             <div className="AffinityListHeader">&nbsp;</div>
             <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList"/>
-            <div className="AffinityListHeader AffinityListFooter">&nbsp;</div>
+            <div className="AffinityListHeader AffinityListFooter"></div>
           </div>
           <Beast currentBeast={currentBeast}/>
+          <div className="BeastImage"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.png"></img></div>
         </div>
         <div>
           <ReviewList />
