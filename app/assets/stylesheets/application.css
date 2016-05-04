@@ -389,6 +389,7 @@ textarea {
   flex-direction: row;
   min-width: 200px;
   width: 89%;
+  justify-content: space-between;
   box-sizing: border-box;
   padding: 40px;
   border: 5px solid #4b4d52;

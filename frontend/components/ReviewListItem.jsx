@@ -19,7 +19,8 @@ var ReviewListItem = React.createClass({
     debugger;
     return (
       <div className="ReviewListItem" >
-        <div>{review.rating}</div>
+        <div>{review.user}</div>
+        <div>Rating: {review.rating}</div>
         <div>{review.description}</div>
       </div>
     );
