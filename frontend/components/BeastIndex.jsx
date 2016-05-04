@@ -25,7 +25,7 @@ var BeastIndex = React.createClass({
     console.log("Component Will Mount [BeastIndex]");
     var beastId = parseInt(this.props.params.id);
     var affinityId = parseInt(this.props.params.affinity_id);
-    // debugger;
+
     BeastActions.fetchBeast({id: beastId});
     BeastActions.fetchBeasts({affinity_id: affinityId});
     this.setState({
@@ -38,9 +38,11 @@ var BeastIndex = React.createClass({
     console.log("Receiving Props [BeastIndex]");
     var beastId = parseInt(this.props.params.id);
     var beast = BeastStore.find(nextProps.params.id);
+    debugger;
     ReviewActions.resetReviewErrors();
     this.setState({
-      currentBeast: beast
+      currentBeast: beast,
+      reviews: ReviewActions.fetchReviews({beast_id: nextProps.params.id})
     });
   },
 
@@ -48,7 +50,7 @@ var BeastIndex = React.createClass({
     console.log("Component Did Mount [BeastIndex]");
     this.beastListener = BeastStore.addListener(this.getBeast);
     this.reviewListener = ReviewStore.addListener(this.getReviews);
-    // BeastActions.fetchBeasts({affinity_id: this.state.currentBeast}); //Sunday: Need to write this somewhere so we can fetch when we load a page with the url id rather than through the FieldGuideIndex
+    ReviewActions.fetchReviews({beast_id: this.props.params.id});
   },
 
   componentWillUnmount: function(){
@@ -57,7 +59,7 @@ var BeastIndex = React.createClass({
   },
 
   getReviews: function(){
-    debugger;
+
     console.log("Get Reviews Callback triggered [BeastIndex]");
     this.setState({
       reviews: ReviewStore.allStored()
@@ -88,7 +90,7 @@ var BeastIndex = React.createClass({
 
   render: function(){
     var currentBeast = this.state.currentBeast;
-
+    // debugger;
     console.log("Rendering BeastIndex now with current beast: " + currentBeast);
     return (
       <div className="BeastIndex">
@@ -102,7 +104,7 @@ var BeastIndex = React.createClass({
           <div className="BeastImage"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.png"></img></div>
         </div>
         <div>
-          <ReviewList currentBeast={this.state.reviews}/>
+          <ReviewList reviews={this.state.reviews}/>
         </div>
       </div>
     );

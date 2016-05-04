@@ -17,12 +17,12 @@ var ReviewListItem = React.createClass({
   render: function(){
     console.log("RevewListItem rendering");
     var review = this.props.review;
-    debugger;
+    // debugger;
     return (
       <div className="ReviewListItem" >
-        <div>{review.user}</div>
-        <div>Rating: {review.rating}</div>
-        <div>{review.description}</div>
+        <div className="ReviewUser">{review.username}</div>
+        <div className="ReviewRating">Rating: {review.rating}</div>
+        <div className="ReviewDescription">{review.description}</div>
       </div>
     );
   }

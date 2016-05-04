@@ -42,12 +42,8 @@ var ReviewList = React.createClass({
 
   render: function(){
     console.log("rendering ReviewList");
-    // var reviews = ReviewStore.allStored();
-    // var beast = BeastStore.currentBeast();
-    var currentBeast = this.props.currentBeast;
-    if(currentBeast){
-      var reviews = currentBeast;
-      // debugger;
+    var reviews = this.props.reviews;
+    if(reviews){
       console.log("There are reviews! [ReviewList]");
       // var reviews = beast.reviews;
       var reviewList = reviews.map(function(review){

@@ -72,7 +72,7 @@ ReviewStore.addReview = function(review){
 ReviewStore.resetReviews = function(reviews){
   //Need to check and see what form the reviews are passed back as from the JSON. If they are an object or not.
   _reviews = {};
-
+  // debugger;
   reviews.forEach(function (review) {
     _reviews[review.id] = review;
   });

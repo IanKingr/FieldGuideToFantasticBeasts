@@ -21,8 +21,8 @@ var ReviewApiUtil = {
   },
 
   createReview: function(data, success, error){
-    debugger;
     console.log("posting to AJAX [review_api_util]");
+    debugger;
     $.ajax ({
       type: "POST",
       url: "/api/reviews",

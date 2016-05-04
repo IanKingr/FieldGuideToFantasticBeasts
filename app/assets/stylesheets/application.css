@@ -104,6 +104,10 @@
   z-index: 2;
 }
 
+.ReviewListItem div {
+  display: flex;
+  min-width: 200px;
+}
 
 @-webkit-keyframes glow {
     from {

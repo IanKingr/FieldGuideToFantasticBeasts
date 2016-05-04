@@ -44,7 +44,4 @@ var FieldGuideIndex = React.createClass({
   }
 });
 
-
-//AffinityBeastList beasts={this.state.beasts}/>
-
 module.exports = FieldGuideIndex;

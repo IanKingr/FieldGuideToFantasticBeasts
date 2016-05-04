@@ -36,7 +36,7 @@ var Bookmark = React.createClass({
   },
 
   createBookmark: function(){
-    debugger;
+
     var postData = {
       user_id: UserStore.currentUser().id,
       beast_id: this.props.beastId
