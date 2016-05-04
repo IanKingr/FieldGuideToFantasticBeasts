@@ -15,6 +15,7 @@ var ReviewListItem = React.createClass({
   // },
 
   render: function(){
+    console.log("RevewListItem rendering");
     var review = this.props.review;
     debugger;
     return (

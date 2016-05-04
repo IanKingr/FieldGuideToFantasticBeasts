@@ -72,6 +72,8 @@
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224961/7f6be3d2743ad84cac47652ad19bc4e9_zi1h8v.jpg');
   border-radius: 3px 3px 3px 3px;
   margin: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
   width: 55%;
   border: 1px solid;
   height: 25px;
@@ -94,6 +96,7 @@
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224961/7f6be3d2743ad84cac47652ad19bc4e9_zi1h8v.jpg');
   border-radius: 3px 3px 3px 3px;
   margin: auto;
+  margin-bottom: 0px;
   width: 90%;
   border: 1px solid;
   height: 25px;

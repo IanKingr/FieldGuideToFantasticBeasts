@@ -46,7 +46,7 @@ var ReviewList = React.createClass({
     // var beast = BeastStore.currentBeast();
     var currentBeast = this.props.currentBeast;
     if(currentBeast){
-      var reviews = currentBeast.reviews;
+      var reviews = currentBeast;
       // debugger;
       console.log("There are reviews! [ReviewList]");
       // var reviews = beast.reviews;

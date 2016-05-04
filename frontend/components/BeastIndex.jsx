@@ -57,11 +57,11 @@ var BeastIndex = React.createClass({
   },
 
   getReviews: function(){
+    debugger;
     console.log("Get Reviews Callback triggered [BeastIndex]");
     this.setState({
-      reviews: this.state.currentBeast.reviews
+      reviews: ReviewStore.allStored()
     });
-    debugger;
   },
 
   getBeast: function(){
@@ -102,7 +102,7 @@ var BeastIndex = React.createClass({
           <div className="BeastImage"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.png"></img></div>
         </div>
         <div>
-          <ReviewList currentBeast={this.state.currentBeast}/>
+          <ReviewList currentBeast={this.state.reviews}/>
         </div>
       </div>
     );
