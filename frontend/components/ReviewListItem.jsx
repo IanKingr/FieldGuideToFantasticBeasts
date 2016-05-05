@@ -17,7 +17,6 @@ var ReviewListItem = React.createClass({
   render: function(){
     console.log("RevewListItem rendering");
     var review = this.props.review;
-    debugger;
     return (
       <div className="ReviewListItem" >
         <div className="ReviewUser">{review.username}</div>

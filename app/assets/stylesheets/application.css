@@ -27,7 +27,7 @@
    margin: auto;
    margin-top: 0px;
    margin-bottom: 0px;
-   z-index: 4;
+   /*z-index: 4;*/
    background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
 
    /*Shadow Transition*/
@@ -78,7 +78,7 @@
   border: 1px solid;
   height: 25px;
   box-shadow: 6px 8px 5px rgba(0,0,0,0.75);
-  z-index: 2;
+  /*z-index: 2;*/
 
   /*transition: 1s ease;*/
 }
@@ -124,8 +124,8 @@
 .AffinityBeastListIndex:hover {
     background-color: #ccc;
     /*border: 0px 1px 0px 1px solid transparent;*/
-    /*-webkit-animation: glow 0.7s ease-in infinite alternate linear;
-    animation: glow 0.7s ease-in infinite alternate;*/
+    -webkit-animation: glow 0.7s ease-in infinite alternate linear;
+    animation: glow 0.7s ease-in infinite alternate;
 }
 
 
@@ -133,7 +133,7 @@
 .AffinityListFooter {
   border-radius: 3px 3px 3px 3px;
   box-shadow: 11px 8px 7px rgba(0,0,0,0.75);
-  z-index: 1;
+  /*z-index: 1;*/
 }
 
 .BeastListItem {
@@ -260,6 +260,11 @@ textarea {
   margin-left: 10px
 }
 
+.FieldGuideIndex {
+  display: flex;
+  flex-direction: column;
+}
+
 .logo {
   float: left;
   transition: all .2s ease-in-out;
@@ -274,6 +279,7 @@ textarea {
   margin: auto;
   margin-top: 100px;
   width: 50%;
+  height: 80%;
   border: 1px solid rgb(204, 204, 204);
   overflow: auto;
   border-radius: 4px;
@@ -426,7 +432,7 @@ textarea {
   border-radius: 15px 15px 15px 15px;
   width: 20%;
   margin: auto;
-  z-index: 1;
+  /*z-index: 1;*/
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
 }
 
@@ -442,9 +448,29 @@ textarea {
 
 }
 
+@-webkit-keyframes glowfade {
+    0% {
+      /*border-color: black;*/
+      box-shadow: 0 0 5px 5px #FFE993;
+    }
+    50% {
+      /*border-color: black;*/
+      box-shadow: 0 0 4px 3px #FFE993;
+    }
+    90% {
+      /*border-color: #black;*/
+      box-shadow: 0 0 3px 1px #FFE993;
+    }
+    100% {
+      /*border-color: #black;*/
+      box-shadow: 0 0 1px 0px #FFE993;
+    }
+}
+
+
 .AnimateOnce {
-  -webkit-animation: glow 0.7s ease-in alternate linear;
-  animation: glow 2s 1 ease-in alternate;
+  -webkit-animation: glowfade 2s ease-in alternate linear;
+  animation: glowfade 2s 1 ease-in alternate;
 }
 
 .AffinitySorter:hover {

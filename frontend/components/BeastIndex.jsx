@@ -38,7 +38,7 @@ var BeastIndex = React.createClass({
     console.log("Receiving Props [BeastIndex]");
     var beastId = parseInt(this.props.params.id);
     var beast = BeastStore.find(nextProps.params.id);
-    debugger;
+    
     ReviewActions.resetReviewErrors();
     this.setState({
       currentBeast: beast,

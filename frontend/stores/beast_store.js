@@ -7,6 +7,7 @@ var BeastStore = new Store(Dispatcher);
 var _currentBeast = [];
 var _errors;
 var _beasts = {};
+var _searchbeasts = {};
 
 BeastStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
@@ -24,6 +25,11 @@ BeastStore.__onDispatch = function(payload) {
       console.log("BEASTS_RECEIVED [BeastStore]");
       BeastStore.resetBeasts(payload.beasts);
       BeastStore.__emitChange();
+      break;
+    case BeastConstants.ALL_BEASTS_RECEIVED:
+      console.log("ALL_BEASTS_RECEIVED [BeastStore]");
+      BeastStore.searchStoreBeasts(payload.beasts);
+      // BeastStore.__emitChange();
       break;
     case BeastConstants.REMOVE_BEAST:
       console.log("Removing beast from Beast Store");
@@ -71,6 +77,22 @@ BeastStore.resetBeasts = function(beasts){
     _beasts[beast.id] = beast;
   });
 };
+
+//Will be depricated when we switch to single store
+BeastStore.searchStoreBeasts = function(beasts){
+  _searchbeasts = {};
+
+  beasts.forEach(function (beast) {
+    _searchbeasts[beast.id] = beast;
+  });
+};
+
+BeastStore.queryStore = function(){
+  return Object.keys(_searchbeasts).map(function(key){
+    return _searchbeasts[key];
+  });
+};
+
 
 BeastStore.resetErrors = function(errors){
   _errors = null;

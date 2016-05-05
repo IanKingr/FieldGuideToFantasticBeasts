@@ -8,6 +8,11 @@ var AffinityBeastList = React.createClass({
 
   },
 
+  AnimateOnce: function(event){
+    $(event.target).addClass("AnimateOnce");
+  },
+
+
   render: function(){
     console.log("rendering AffinityBeastList");
     var beasts = this.props.beasts;
@@ -21,7 +26,7 @@ var AffinityBeastList = React.createClass({
     }
 
     return (
-      <div className={this.props.className}>
+      <div onMouseLeave={this.AnimateOnce} className={this.props.className}>
         {beasts}
       </div>
     );

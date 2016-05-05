@@ -2,7 +2,8 @@ var React = require('react'),
     BeastStore = require('../stores/beast_store'),
     AffinityBeastList = require('../components/AffinityBeastList'),
     AffinityFilterBar = require('./AffinityFilterBar'),
-    CreateBeastButton = require('./CreateBeastButton');
+    CreateBeastButton = require('./CreateBeastButton'),
+    SearchBar = require('./SearchBar');
 
 var FieldGuideIndex = React.createClass({
   getInitialState: function(){
@@ -34,6 +35,7 @@ var FieldGuideIndex = React.createClass({
   render: function () {
     return (
       <div className="FieldGuideIndex">
+        <SearchBar beasts={this.state.beasts} />
         <CreateBeastButton />
         <AffinityFilterBar />
         <div className="AffinityListHeader AffinityListFooter">&nbsp;</div>

@@ -20,6 +20,18 @@ var BeastApiUtil = {
     });
   },
 
+  fetchAllBeastsForSearch: function(data, success, error){
+    console.log("issuing fetchAllSearchBeasts api GET request");
+    $.ajax ({
+      type: "GET",
+      url: "/api/beasts",
+      data: {data: data},
+      success: success,
+      error: error
+    });
+  },
+
+
   createBeast: function(data, success, error){
     console.log("posting to AJAX [beast_api_util]");
     $.ajax ({

@@ -13,6 +13,11 @@ var BeastActions = {
     BeastApiUtil.fetchBeasts(data, this.receiveBeasts, this.handleError);
   },
 
+  fetchAllBeastsForSearch: function(data){
+    console.log("Fetching all Beasts for Search [beastActions]");
+    BeastApiUtil.fetchBeasts(data, this.receiveSearchBeasts, this.handleError);
+  },
+
   createBeast: function(data){
     console.log("Attempting to create a beast...[beastActions]");
     BeastApiUtil.createBeast(
@@ -29,6 +34,13 @@ var BeastActions = {
   receiveBeasts: function(beasts){
     Dispatcher.dispatch({
       actionType: BeastConstants.BEASTS_RECEIVED,
+      beasts: beasts
+    });
+  },
+
+  receiveSearchBeasts: function(beasts){
+    Dispatcher.dispatch({
+      actionType: BeastConstants.ALL_BEASTS_RECEIVED,
       beasts: beasts
     });
   },
