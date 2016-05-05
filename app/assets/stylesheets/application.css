@@ -107,6 +107,7 @@
 .ReviewListItem div {
   display: flex;
   min-width: 200px;
+  max-width: 200px;
 }
 
 @-webkit-keyframes glow {
@@ -123,8 +124,8 @@
 .AffinityBeastListIndex:hover {
     background-color: #ccc;
     /*border: 0px 1px 0px 1px solid transparent;*/
-    -webkit-animation: glow 0.7s ease-in infinite alternate linear;
-    animation: glow 0.7s ease-in infinite alternate;
+    /*-webkit-animation: glow 0.7s ease-in infinite alternate linear;
+    animation: glow 0.7s ease-in infinite alternate;*/
 }
 
 
@@ -394,7 +395,8 @@ textarea {
 .ReviewListItem {
   display: flex;
   flex-direction: row;
-  min-width: 200px;
+  flex-wrap: wrap;
+  min-width: 270px;
   width: 89%;
   justify-content: space-between;
   box-sizing: border-box;
@@ -438,10 +440,11 @@ textarea {
   width: 200px;
   height: 200px;
 
-  /*transition: 1s;
-  -webkit-transition: 1s;*/
-  /*-webkit-animation: 0.7s glow;
-  animation: 0.7s glow;*/
+}
+
+.AnimateOnce {
+  -webkit-animation: glow 0.7s ease-in alternate linear;
+  animation: glow 2s 1 ease-in alternate;
 }
 
 .AffinitySorter:hover {

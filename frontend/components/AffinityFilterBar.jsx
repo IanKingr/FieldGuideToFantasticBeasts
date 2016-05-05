@@ -23,16 +23,20 @@ var AffinityFilterBar = React.createClass({
     BeastActions.fetchBeasts({affinity_id: 4});
   },
 
+  AnimateOnce: function(event){
+    $(event.target).addClass("AnimateOnce");
+  },
+
   render: function(){
     return (
       <div className="AffinityFilterBar">
-        <div className="AffinitySorter mountain" onClick={this.getMountainAffinity}>Mountains</div>
+        <div className="AffinitySorter mountain" onMouseLeave={this.AnimateOnce} onClick={this.getMountainAffinity}>Mountains</div>
 
-        <div className="AffinitySorter water" onClick={this.getWaterAffinity}>Waters</div>
+        <div className="AffinitySorter water" onMouseLeave={this.AnimateOnce} onClick={this.getWaterAffinity}>Waters</div>
 
-        <div className="AffinitySorter plain" onClick={this.getPlainAffinity}>Plains</div>
+        <div className="AffinitySorter plain" onMouseLeave={this.AnimateOnce} onClick={this.getPlainAffinity}>Plains</div>
 
-        <div className="AffinitySorter forest" onClick={this.getForestAffinity}>Forests</div>
+        <div className="AffinitySorter forest" onMouseLeave={this.AnimateOnce} onClick={this.getForestAffinity}>Forests</div>
       </div>
     );
   }
