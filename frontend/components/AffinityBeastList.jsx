@@ -16,11 +16,15 @@ var AffinityBeastList = React.createClass({
   render: function(){
     console.log("rendering AffinityBeastList");
     var beasts = this.props.beasts;
+    var itemclass = this.props.itemclass;
 
     if(beasts){
+      debugger;
       beasts = beasts.map(function(beast){
-        return <BeastListItem key={beast.id} beast={beast}/>;
+        return <BeastListItem key={beast.id} itemclass={itemclass} beast={beast}/>;
       });
+    } else if (itemclass === "SearchListItem") {
+      beasts = <div></div>;
     } else {
       beasts = <div className="BeastListItem Center">Select an Affinity Above</div>;
     }

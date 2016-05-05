@@ -38,7 +38,7 @@ var BeastIndex = React.createClass({
     console.log("Receiving Props [BeastIndex]");
     var beastId = parseInt(this.props.params.id);
     var beast = BeastStore.find(nextProps.params.id);
-    
+
     ReviewActions.resetReviewErrors();
     this.setState({
       currentBeast: beast,
@@ -97,7 +97,8 @@ var BeastIndex = React.createClass({
         <div className="BeastIndexInfo">
           <div className="AffinityBeastListBeast">
             <div className="AffinityListHeader">&nbsp;</div>
-            <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList"/>
+            <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList"
+              itemclass="BeastListItem"/>
             <div className="AffinityListHeader AffinityListFooter"></div>
           </div>
           <Beast currentBeast={currentBeast}/>

@@ -19,7 +19,7 @@ var BeastListItem = React.createClass({
   render: function(){
     var beast = this.props.beast;
     return (
-      <div  onClick={this.handleClick} className="BeastListItem" >
+      <div  onClick={this.handleClick} className={this.props.itemclass} >
         <div>{beast.name}</div>
         <div>Not rated</div>
       </div>

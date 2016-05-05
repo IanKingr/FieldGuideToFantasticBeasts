@@ -59,7 +59,7 @@ var SearchBar = React.createClass({
     return (
       <div className="SearchContainer" >
         <input className="SearchBar" onChange={this.queryChange} type="text" value={this.state.query}></input>
-        <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList AffinityBeastListIndex"/>
+        <AffinityBeastList beasts={this.state.beasts} itemclass={"SearchListItem"} className="SearchResultList"/>
       </div>
     );
   }

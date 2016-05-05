@@ -256,6 +256,49 @@ textarea {
   border-radius: 3px;
 }
 
+.SearchContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /*background-color: beige;*/
+  align-items: center;
+  /*justify-content: space-between;*/
+  box-sizing: border-box;
+  padding: 0px 20px 0px 20px;
+  align-items: center;
+}
+
+.SearchBar {
+  display: flex;
+  width: 40%;
+}
+
+.SearchResultList {
+  /*display: flex;
+  flex-direction: column;*/
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  right: 0;
+  left: 0;
+  width: 60%;
+  /*margin: auto;*/
+  /*align-items: center;*/
+
+}
+
+.SearchListItem {
+  display: flex;
+  width: 100%;
+  background-color: beige;
+  height: 60px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 20px 0 20px;
+}
+
 .SelectAffinity {
   margin-left: 10px
 }
