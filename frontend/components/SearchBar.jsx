@@ -7,7 +7,7 @@ var SearchBar = React.createClass({
 
   getInitialState: function(){
     return({
-      query: "",
+      query: "Search for a beast here!",
       beasts: "",
     });
   },
@@ -16,6 +16,14 @@ var SearchBar = React.createClass({
     BeastActions.fetchAllBeastsForSearch({affinity_id: 0});
   },
 
+
+  clickQuery: function(event){
+    event.preventDefault();
+
+    this.setState({
+      query: "",
+    });
+  },
 
   queryChange: function(event){
     event.preventDefault();
@@ -52,7 +60,7 @@ var SearchBar = React.createClass({
 
     return (
       <div className="SearchContainer" >
-        <input className="SearchBar" onChange={this.queryChange} type="text" value={this.state.query}></input>
+        <input className="SearchBar" onClick={this.clickQuery} onChange={this.queryChange} type="text" value={this.state.query}></input>
         <AffinityBeastList beasts={this.state.beasts} itemclass={"SearchListItem"} className="SearchResultList"/>
       </div>
     );
