@@ -18,7 +18,7 @@ var BeastIndex = React.createClass({
 
 
   toggleFavorite: function(){
-    // debugger;
+    debugger;
     var data = {beast_id: this.state.currentBeast.id};
 
     if(this._isLiked() === "Like") {
@@ -30,13 +30,14 @@ var BeastIndex = React.createClass({
   },
 
   _isLiked: function(){
-
+    debugger;
+    console.log("Checking _isLiked");
     var likeText = "Like";
     var currentUser = UserStore.currentUser();
-
+    var beastId = parseInt(this.props.params.id);
     if (currentUser) {
       var currentUserLikes = currentUser.liked_beasts;
-      if(currentUserLikes.indexOf(this.state.currentBeast.id) !== -1){
+      if(currentUserLikes.indexOf(beastId) !== -1){
         likeText = "Unlike";
       }
     }
@@ -78,13 +79,25 @@ var BeastIndex = React.createClass({
   componentDidMount: function(){
     console.log("Component Did Mount [BeastIndex]");
     this.beastListener = BeastStore.addListener(this.getBeast);
-    this.reviewListener = ReviewStore.addListener(this.getReviews);
+
+    this.reviewListener =
+    ReviewStore.addListener(this.getReviews);
     ReviewActions.fetchReviews({beast_id: this.props.params.id});
+
+    this.userListener = UserStore.addListener(this.getCurrentUser);
+  },
+
+  getCurrentUser: function(){
+    this.setState({
+      currentUser: UserStore.currentUser()
+    });
   },
 
   componentWillUnmount: function(){
     console.log("BeastIndex UNMOUNTED");
     this.beastListener.remove();
+    this.userListener.remove();
+    this.reviewListener.remove();
   },
 
   getReviews: function(){
@@ -120,7 +133,16 @@ var BeastIndex = React.createClass({
 
   render: function(){
     var currentBeast = this.state.currentBeast;
+    var beast_image;
     console.log("Rendering BeastIndex now with current beast: " + currentBeast);
+    if(currentBeast){
+      beast_image= <img src={currentBeast.image_url}></img>;
+    } else {
+      beast_image= <div></div>
+    }
+
+    //<button className="Like" onClick={this.toggleFavorite}> {this._isLiked()}</button>
+
     return (
       <div className="BeastIndex">
         <div className="BeastIndexInfo">
@@ -135,7 +157,7 @@ var BeastIndex = React.createClass({
             <div>
               <button className="Like" onClick={this.toggleFavorite}> {this._isLiked()}</button>
             </div>
-            <div className="BeastImage"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.png"></img></div>
+            <div className="BeastImage">{beast_image}</div>
           </div>
         </div>
         <div>

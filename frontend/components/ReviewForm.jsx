@@ -19,17 +19,9 @@ var ReviewForm = React.createClass({
   getErrors: function(){
     console.log("ReviewStore beckons and ReviewForm stands at the ready");
     var errors = ReviewStore.errors();
-    // if(errors){
-      this.setState({
-        errors: errors,
-        // success: ""
-      });
-    // } else {
-    //   this.setState({
-    //     success: "Review submitted!"
-    //   });
-    // }
-        // this.setState({errors: ["Review Submitted!"]});
+    this.setState({
+      errors: errors,
+    });
   },
 
   componentDidMount: function(){
@@ -64,6 +56,10 @@ var ReviewForm = React.createClass({
       rating: parseInt(this.state.rating)
     };
     ReviewActions.createReview(postData);
+    this.setState({
+      description: "",
+      rating: ""
+    });
   },
 
   render: function(){

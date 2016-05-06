@@ -6,7 +6,7 @@ var ReviewListItem = React.createClass({
 
   componentWillReceiveProps: function(){
     console.log("ReceivedProps [ReviewListItem]");
-    this.render();
+    // this.render();
   },
 
   // handleClick: function(){
@@ -17,6 +17,7 @@ var ReviewListItem = React.createClass({
   render: function(){
     console.log("RevewListItem rendering");
     var review = this.props.review;
+    
     return (
       <div className="ReviewListItem" >
         <div className="ReviewUser">{review.username}</div>

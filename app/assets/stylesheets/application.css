@@ -294,7 +294,7 @@ textarea {
   margin-left: auto;
   right: 0;
   left: 0;
-  width: 60%;
+  width: 50%;
 
   /*margin: auto;*/
   /*align-items: center;*/
@@ -304,7 +304,6 @@ textarea {
 .SearchListItem {
   display: flex;
   flex-direction: row;
-  width: 80%;
   min-width: 200px;
   height: 60px;
   margin-bottom: 2px;

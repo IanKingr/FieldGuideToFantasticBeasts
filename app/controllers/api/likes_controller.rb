@@ -19,7 +19,6 @@ class Api::LikesController < ApplicationController
 
 
   def destroy
-    debugger;
     like = Like.find_by(
       user_id: current_user.id,
       beast_id: like_params[:beast_id].to_i

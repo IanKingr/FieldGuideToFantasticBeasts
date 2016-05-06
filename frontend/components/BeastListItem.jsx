@@ -19,8 +19,19 @@ var BeastListItem = React.createClass({
   render: function(){
     var beast = this.props.beast;
     var beastimage;
+
+
+
     if (this.props.itemclass === "SearchListItem") {
-      beastimage = <div className="SearchBeastImage">&nbsp;</div>;
+      if(beast){
+        // var divStyle= {
+        //   backgroundImage: 'url('+beast.image_url+')',
+        // };
+        // beastimage = <div style={divStyle}>&nbsp;</div>;
+        // // beastimage = <img src={beast.image_url}></img>;
+      } else {
+        beastimage = <div className="SearchBeastImage">&nbsp;</div>;
+      }
     }
 
     return (
