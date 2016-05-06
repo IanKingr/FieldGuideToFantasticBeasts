@@ -19,8 +19,11 @@ var BeastListItem = React.createClass({
   render: function(){
     var beast = this.props.beast;
     var beastimage;
+    var average;
 
-
+    if(beast){
+      average = beast.average ? beast.average : "Not Rated";
+    }
 
     if (this.props.itemclass === "SearchListItem") {
       if(beast){
@@ -37,7 +40,7 @@ var BeastListItem = React.createClass({
     return (
       <div  onClick={this.handleClick} className={this.props.itemclass} >
         <div className="left">{beast.name}</div>
-        <div>Not rated</div>
+        <div>{average}</div>
         {beastimage}
       </div>
     );

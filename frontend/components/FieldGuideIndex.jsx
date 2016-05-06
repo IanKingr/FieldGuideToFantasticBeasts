@@ -8,27 +8,25 @@ var React = require('react'),
 var FieldGuideIndex = React.createClass({
   getInitialState: function(){
     return({
-      currentBeast:{author_id: 1,
-        name: "Mountain Troll",
-        description: "A Troll is a magical creature of prodigious strength and little intelligence - a trait which giants seem to have more of.",
-        avg_height: 150,
-        avg_weight: 116,
-        affinity_id: 1
+      currentBeast:{
       }
     });
   },
 
   getBeasts: function(){
+    console.log("getBeasts [FieldGuideIndex]");
     this.setState({
       beasts: BeastStore.allStored()
     });
   },
 
   componentDidMount: function(){
+    console.log("mounted [FieldGuideIndex]");
     this.beastListener = BeastStore.addListener(this.getBeasts);
   },
 
   componentWillUnmount: function(){
+    console.log("UNMOUNTED [FieldGuideIndex]");
     this.beastListener.remove();
   },
 

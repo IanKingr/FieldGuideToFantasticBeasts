@@ -50,37 +50,41 @@ var Signup = React.createClass({
   render: function(){
     var errorDisplay = "";
     if(this.state.errors){
-      errorDisplay = this.state.errors.map(function(error){
-        return <li>{error}</li>;
+      errorDisplay = [];
+      this.state.errors.forEach(function(error, idx){
+        errorDisplay.unshift(<li key={idx}>{error}</li>);
       });
     }
     return (
-      <div>
-        <ul className="error">
-          {errorDisplay}
-        </ul>
-        <form onSubmit={this.handleSubmit}>
-          <label>Username<br />
-            <input
-             type="text"
-             value={this.state.username}
-             onChange={this.usernameChange} />
-          </label>
-         <br /><br />
-         <label>Password<br />
-         <input
-           type="password"
-           value={this.state.password}
-           onChange={this.passwordChange} />
-         </label>
-         <br /><br />
+      <div className="SignUpInForm">
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <label>Username<br />
+              <input
+               type="text"
+               value={this.state.username}
+               onChange={this.usernameChange} />
+            </label>
+           <br /><br />
+           <label>Password<br />
+           <input
+             type="password"
+             value={this.state.password}
+             onChange={this.passwordChange} />
+           </label>
+           <br /><br />
 
-          <input className="OrangeButton" type="Submit" value="Create Account" readOnly/>
-        </form>
-
-        <button className="OrangeButton GuestSignIn"
-          onClick={this.guestSignIn}>Or sign in as a Guest!
-        </button>
+            <input className="OrangeButton" type="Submit" value="Create Account" readOnly/>
+          </form>
+          <button className="OrangeButton GuestSignIn"
+            onClick={this.guestSignIn}>Or sign in as a Guest!
+          </button>
+        </div>
+        <div>
+          <ul className="error">
+            {errorDisplay}
+          </ul>
+        </div>
       </div>
     );
   }

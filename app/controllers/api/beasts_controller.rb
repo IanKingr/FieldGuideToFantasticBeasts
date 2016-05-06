@@ -35,6 +35,8 @@ class Api::BeastsController < ApplicationController
     else
       @beasts = Beast.where("affinity_id = ?", params[:data][:affinity_id].to_i)
     end
+    @averages = @beasts.joins(:reviews).group("beasts.id").average("reviews.rating")
+    # @averages = Beast.find_by_sql("SELECT BEAST_ID, ROUND(AVG(RATING), 2) FROM REVIEWS JOIN BEASTS ON BEASTS.id =  REVIEWS.BEAST_ID GROUP BY REVIEWS.BEAST_ID")
     render :index
   end
 end

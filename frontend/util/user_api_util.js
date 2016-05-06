@@ -15,7 +15,7 @@ var UserApiUtil = {
     console.log("posting to AJAX");
     $.ajax ({
       type: "POST",
-      url: "api/user",
+      url: "/api/user",
       data: {
         username: data.username,
         password: data.password

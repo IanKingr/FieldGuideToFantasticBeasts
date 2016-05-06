@@ -18,7 +18,7 @@ var BeastIndex = React.createClass({
 
 
   toggleFavorite: function(){
-    debugger;
+    // debugger;
     var data = {beast_id: this.state.currentBeast.id};
 
     if(this._isLiked() === "Like") {
@@ -30,7 +30,7 @@ var BeastIndex = React.createClass({
   },
 
   _isLiked: function(){
-    debugger;
+    // debugger;
     console.log("Checking _isLiked");
     var likeText = "Like";
     var currentUser = UserStore.currentUser();
@@ -138,7 +138,7 @@ var BeastIndex = React.createClass({
     if(currentBeast){
       beast_image= <img src={currentBeast.image_url}></img>;
     } else {
-      beast_image= <div></div>
+      beast_image= <div></div>;
     }
 
     //<button className="Like" onClick={this.toggleFavorite}> {this._isLiked()}</button>
@@ -154,9 +154,9 @@ var BeastIndex = React.createClass({
           </div>
           <Beast currentBeast={currentBeast}/>
           <div>
-            <div>
+            
               <button className="Like" onClick={this.toggleFavorite}> {this._isLiked()}</button>
-            </div>
+
             <div className="BeastImage">{beast_image}</div>
           </div>
         </div>

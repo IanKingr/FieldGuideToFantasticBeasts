@@ -104,9 +104,13 @@
   z-index: 2;
 }
 
+.error {
+  margin: 10px;
+}
+
 .ReviewListItem div {
   display: flex;
-  min-width: 200px;
+  min-width: 150px;
   margin: 5px;
   /*max-width: 200px;*/
 }
@@ -182,19 +186,17 @@
 
 
 .BeastImage {
-  /*display: flex;*/
-  /*width: 100%;*/
-  /*background: azure;*/
+  position: relative;
   align-self: center;
   opacity: 0.6;
   margin: 35px 0px 35px 35px;
-  /*justify-content: flex-end;*/
   transition: 1s;
   -webkit-transition: 1s;
 }
 
 .BeastImage img {
   max-width: 100%;
+  border-radius: 5px 0 0 0;
   height: auto;
 }
 
@@ -232,6 +234,8 @@ body {
   min-height: 40px;
   align-items: center;
 }
+
+button:focus {outline:0;}
 
 .CreateBeastButton {
   display: flex;
@@ -351,6 +355,27 @@ textarea {
   transform: scale(1.05);
 }
 
+.SignModal {
+  display: flex;
+  margin: auto;
+  margin-top: 65px;
+  width: 50%;
+  height: 50%;
+  border: 4px solid rgb(103, 99, 99);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 30px;
+  z-index: 11;
+  /*background: rgb(255, 242, 231);*/
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
+}
+
+.SignUpInForm{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .Modal {
   display: flex;
   margin: auto;
@@ -409,7 +434,6 @@ textarea {
 }
 
 .NavBar {
-  /*background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462207871/lightleather_fpxlal.jpg');*/
   margin-bottom: 10px;
 }
 
@@ -423,7 +447,7 @@ textarea {
   background: #DE8642;
   padding: 10px 20px 10px 20px;
   /*text-decoration: none;*/
-  margin: 3px 10px 3px 10px;
+  margin: 10px 3px 3px 10px;
 }
 
 .OrangeButton.Centered {
@@ -466,7 +490,7 @@ textarea {
 .ReviewForm {
   display: flex;
   flex-direction: row;
-  min-width: 200px;
+  min-width: 270px;
   width: 89%;
   /*margin-top: 30px;*/
   margin-left: 20px;
@@ -476,7 +500,23 @@ textarea {
 }
 
 .Like {
-  display: flex;
+  position: absolute;
+  margin: 35px 0px 0px 35px;
+  border-radius: 6px;
+  border: 0px;
+  font-family: 'Arial';
+  color: #ffffff;
+  font-size: 15px;
+  background: #615F58;
+  padding: 5px 11px 5px 11px;
+  z-index: 10;
+  transition: 0.7s;
+}
+
+.Like:hover {
+  opacity: 0.8;
+  background-color: #D21B1B;
+  transition: 0.9s;
 }
 
 .ReviewListItem {
@@ -506,6 +546,7 @@ textarea {
 .ReviewFormSpecific {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   padding: 20px;
 }

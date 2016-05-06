@@ -55,32 +55,35 @@ var Signin = React.createClass({
       });
     }
     return (
-      <div>
-        <ul className="error">
-          {errorDisplay}
-        </ul>
-        <form onSubmit={this.handleSubmit}>
-          <label>Username<br />
-            <input
-             type="text"
-             value={this.state.username}
-             onChange={this.usernameChange} />
-          </label>
-         <br /><br />
-         <label>Password<br />
-         <input
-           type="password"
-           value={this.state.password}
-           onChange={this.passwordChange} />
-         </label>
-         <br /><br />
+      <div className="SignUpInForm">
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <label>Username<br />
+              <input
+               type="text"
+               value={this.state.username}
+               onChange={this.usernameChange} />
+            </label>
+           <br /><br />
+           <label>Password<br />
+           <input
+             type="password"
+             value={this.state.password}
+             onChange={this.passwordChange} />
+           </label>
+           <br /><br />
 
-          <input className="OrangeButton" type="Submit" value="Sign In" readOnly/>
-        </form>
-        <br />
-        <button className="OrangeButton GuestSignIn"
-          onClick={this.guestSignIn}>Or sign in as a Guest!
-        </button>
+            <input className="OrangeButton" type="Submit" value="Sign In" readOnly/>
+          </form>
+          <button className="OrangeButton GuestSignIn"
+            onClick={this.guestSignIn}>Or sign in as a Guest!
+          </button>
+        </div>
+        <div>
+          <ul className="error">
+            {errorDisplay}
+          </ul>
+        </div>
       </div>
     );
   }

@@ -106,14 +106,14 @@ var NavBar = React.createClass({
         <Modal
           isOpen={this.state.SignUpModalOpen}
           onRequestClose={this.closeModal}
-          style={style}>
+          className="SignModal">
           <Signup />
         </Modal>
 
         <Modal
           isOpen={this.state.SignInModalOpen}
           onRequestClose={this.closeModal}
-          style={style}>
+          className="SignModal">
           <Signin />
         </Modal>
 
