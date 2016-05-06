@@ -18,10 +18,16 @@ var BeastListItem = React.createClass({
 
   render: function(){
     var beast = this.props.beast;
+    var beastimage;
+    if (this.props.itemclass === "SearchListItem") {
+      beastimage = <div className="SearchBeastImage">&nbsp;</div>;
+    }
+
     return (
       <div  onClick={this.handleClick} className={this.props.itemclass} >
-        <div>{beast.name}</div>
+        <div className="left">{beast.name}</div>
         <div>Not rated</div>
+        {beastimage}
       </div>
     );
   }

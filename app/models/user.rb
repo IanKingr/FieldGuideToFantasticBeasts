@@ -12,7 +12,11 @@ class User < ActiveRecord::Base
     class_name: "Beast"
 
   has_many :reviews
-  has_many :bookmarks
+
+  has_many :likes
+  has_many :liked_beasts,
+    through: :likes,
+    source: :beast
 
   def reset_session_token!
 		self.session_token = new_session_token

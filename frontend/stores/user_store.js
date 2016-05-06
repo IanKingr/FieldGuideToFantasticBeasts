@@ -1,6 +1,7 @@
 var Dispatcher = require('../dispatcher/dispatcher.js');
 var Store = require('flux/utils').Store;
 var UserConstants = require('../constants/user_constants');
+var LikeConstants = require('../constants/like_constants');
 
 var UserStore = new Store(Dispatcher);
 
@@ -21,12 +22,31 @@ UserStore.__onDispatch = function(payload) {
       UserStore.resetErrors(payload.errors);
       UserStore.__emitChange();
       break;
+    case LikeConstants.LIKE_RECEIVED:
+      UserStore.addLike(payload.like.beastId);
+      UserStore.__emitChange();
+      break;
+    case LikeConstants.LIKE_REMOVED:
+      UserStore.removeLike(payload.like.beastId);
+      UserStore.__emitChange();
+      break;
   }
 };
 
 UserStore.guest = function(){
   console.log("Guest login activated!");
   return {username: "GuestUser", password: "beourGuest2theTest"};
+};
+
+UserStore.addLike = function(beastId) {
+  console.log("Adding like [user_store]");
+  _currentUser.liked_beasts.push(parseInt(beastId));
+};
+
+UserStore.removeLike = function(beastId) {
+  console.log("Removing like [user_store]");
+  var beastIdx = _currentUser.liked_beasts.indexOf(parseInt(beastId));
+  _currentUser.liked_beasts.splice(beastIdx, 1);
 };
 
 UserStore.login = function(user){

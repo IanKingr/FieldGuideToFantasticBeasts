@@ -38,7 +38,7 @@ var SearchBar = React.createClass({
     console.log("running filterStore [SearchBar]");
     var results = [];
     var beasts = BeastStore.queryStore();
-    // debugger;
+
     Object.keys(beasts).forEach(function(key){
       if(beasts[key].name.toLowerCase().indexOf(query) !== -1) {
         results.push(beasts[key]);
@@ -51,7 +51,7 @@ var SearchBar = React.createClass({
   render: function(){
     console.log("RevewListItem rendering");
     var queryMessage;
-    // debugger;
+
     if(!this.state.query){
       queryMessage = "Please enter a mythical beast's name here";
     }

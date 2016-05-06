@@ -24,7 +24,10 @@ var AffinityFilterBar = React.createClass({
   },
 
   AnimateOnce: function(event){
-    $(event.target).addClass("AnimateOnce");
+    var affinitysorter = event.target.attributes.class.value.indexOf("AffinitySorter");
+    if(affinitysorter !== -1){
+      $(event.target).addClass("AnimateOnce");
+    }
   },
 
   render: function(){

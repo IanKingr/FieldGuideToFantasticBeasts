@@ -12,6 +12,11 @@ class Beast < ActiveRecord::Base
     through: :reviews,
     source: :user
 
+  has_many :likes
+  has_many :like_users,
+    through: :likes,
+    source: :user
+
   belongs_to :author,
     foreign_key: :author_id,
     primary_key: :id,

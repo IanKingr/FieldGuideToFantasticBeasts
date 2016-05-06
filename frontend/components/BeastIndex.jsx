@@ -1,6 +1,7 @@
 var React = require('react');
 var Beast = require('../components/Beast');
 var BeastStore = require('../stores/beast_store');
+var UserStore = require('../stores/user_store');
 var BeastActions = require('../actions/beastActions');
 var AffinityBeastList = require('../components/AffinityBeastList');
 var BrowserHistory = require('react-router').browserHistory;
@@ -8,12 +9,40 @@ var ReviewForm = require('../components/ReviewForm');
 var ReviewStore = require('../stores/review_store');
 var ReviewActions = require('../actions/reviewActions');
 var ReviewList = require('../components/ReviewList');
-
+var LikeActions = require('../actions/likeActions');
 
 window.BeastStore = BeastStore;
 window.ReviewStore = ReviewStore;
 
 var BeastIndex = React.createClass({
+
+
+  toggleFavorite: function(){
+    // debugger;
+    var data = {beast_id: this.state.currentBeast.id};
+
+    if(this._isLiked() === "Like") {
+      LikeActions.createLike(data);
+    } else {
+      LikeActions.deleteLike(data);
+    }
+
+  },
+
+  _isLiked: function(){
+
+    var likeText = "Like";
+    var currentUser = UserStore.currentUser();
+
+    if (currentUser) {
+      var currentUserLikes = currentUser.liked_beasts;
+      if(currentUserLikes.indexOf(this.state.currentBeast.id) !== -1){
+        likeText = "Unlike";
+      }
+    }
+
+    return likeText;
+  },
 
   handleClickOnBeast: function(){
     console.log("History Pushing the following beast Id " + this.props.beast.id);
@@ -66,6 +95,7 @@ var BeastIndex = React.createClass({
     });
   },
 
+
   getBeast: function(){
     console.log("Triggered getBeast callback [BeastIndex]");
     var currentBeast = BeastStore.currentBeast();
@@ -90,7 +120,6 @@ var BeastIndex = React.createClass({
 
   render: function(){
     var currentBeast = this.state.currentBeast;
-    // debugger;
     console.log("Rendering BeastIndex now with current beast: " + currentBeast);
     return (
       <div className="BeastIndex">
@@ -102,7 +131,12 @@ var BeastIndex = React.createClass({
             <div className="AffinityListHeader AffinityListFooter"></div>
           </div>
           <Beast currentBeast={currentBeast}/>
-          <div className="BeastImage"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.png"></img></div>
+          <div>
+            <div>
+              <button className="Like" onClick={this.toggleFavorite}> {this._isLiked()}</button>
+            </div>
+            <div className="BeastImage"><img src="http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.png"></img></div>
+          </div>
         </div>
         <div>
           <ReviewList reviews={this.state.reviews}/>

@@ -7,10 +7,10 @@ var AffinityBeastList = React.createClass({
     console.log("AffinityBeastList received props and is rendering" + this.props);
 
   },
-
-  AnimateOnce: function(event){
-    $(event.target).addClass("AnimateOnce");
-  },
+  //
+  // AnimateOnce: function(event){
+  //   $(event.target).addClass("AnimateOnce");
+  // },
 
 
   render: function(){
@@ -19,7 +19,6 @@ var AffinityBeastList = React.createClass({
     var itemclass = this.props.itemclass;
 
     if(beasts){
-      debugger;
       beasts = beasts.map(function(beast){
         return <BeastListItem key={beast.id} itemclass={itemclass} beast={beast}/>;
       });
@@ -30,7 +29,7 @@ var AffinityBeastList = React.createClass({
     }
 
     return (
-      <div onMouseLeave={this.AnimateOnce} className={this.props.className}>
+      <div className={this.props.className}>
         {beasts}
       </div>
     );

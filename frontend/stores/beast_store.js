@@ -2,6 +2,8 @@ var Dispatcher = require('../dispatcher/dispatcher.js');
 var Store = require('flux/utils').Store;
 var BeastConstants = require('../constants/beast_constants');
 
+var LikeConstants = require('../constants/like_constants');
+
 var BeastStore = new Store(Dispatcher);
 
 var _currentBeast = [];
@@ -41,6 +43,14 @@ BeastStore.__onDispatch = function(payload) {
       BeastStore.resetErrors(payload.errors);
       BeastStore.__emitChange();
       break;
+    case LikeConstants.LIKE_RECEIVED:
+      BeastStore.addLike(payload.like.beastId, payload.like.userId);
+      BeastStore.__emitChange();
+      break;
+    case LikeConstants.LIKE_REMOVED:
+      BeastStore.removeLike(payload.like.beastId, payload.like.userId);
+      BeastStore.__emitChange();
+      break;
   }
 };
 
@@ -65,6 +75,16 @@ BeastStore.setCurrentBeast = function(beast){
   _currentBeast[0] = beast;
 };
 
+BeastStore.addLike = function(beastId, userId) {
+  _beasts[beastId].like_users.push(parseInt(userId));
+};
+
+BeastStore.removeLike = function(beastId, userId) {
+  var userIdx = _beasts[beastId].like_users.indexOf(parseInt(userId));
+  _beasts[beastId].like_users.splice(userIdx, 1);
+};
+
+
 BeastStore.addBeast = function(beast){
   _beasts[beast.id] = beast;
 },
@@ -73,17 +93,17 @@ BeastStore.resetBeasts = function(beasts){
   //Need to check and see what form the beasts are passed back as from the JSON. If they are an object or not.
   _beasts = {};
 
-  beasts.forEach(function (beast) {
-    _beasts[beast.id] = beast;
+  Object.keys(beasts).forEach(function (key) {
+    _beasts[key] = beasts[key];
   });
 };
 
 //Will be depricated when we switch to single store
 BeastStore.searchStoreBeasts = function(beasts){
   _searchbeasts = {};
-
-  beasts.forEach(function (beast) {
-    _searchbeasts[beast.id] = beast;
+  // debugger;
+  Object.keys(beasts).forEach(function (key) {
+    _searchbeasts[key] = beasts[key];
   });
 };
 

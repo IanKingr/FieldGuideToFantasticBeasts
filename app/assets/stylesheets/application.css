@@ -107,7 +107,8 @@
 .ReviewListItem div {
   display: flex;
   min-width: 200px;
-  max-width: 200px;
+  margin: 5px;
+  /*max-width: 200px;*/
 }
 
 @-webkit-keyframes glow {
@@ -138,7 +139,7 @@
 
 .BeastListItem {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   /*align-items: stretch;*/
@@ -273,6 +274,18 @@ textarea {
   width: 40%;
 }
 
+.SearchBeastImage {
+  border-radius: 5px;
+  background-color: white;
+  width: 20%;
+  min-width: 100px;
+  height: 100%;
+}
+
+.left {
+  margin-right: auto;
+}
+
 .SearchResultList {
   /*display: flex;
   flex-direction: column;*/
@@ -282,6 +295,7 @@ textarea {
   right: 0;
   left: 0;
   width: 60%;
+
   /*margin: auto;*/
   /*align-items: center;*/
 
@@ -289,14 +303,35 @@ textarea {
 
 .SearchListItem {
   display: flex;
-  width: 100%;
-  background-color: beige;
+  flex-direction: row;
+  width: 80%;
+  min-width: 200px;
   height: 60px;
+  margin-bottom: 2px;
+  /*margin: auto;
+  background-color: beige;*/
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224540/subtle_white_mini_waves_f7qx08.png');
+  /*background-image: url("http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.jpg");
+  background-repeat: no-repeat;
+  background-position: 0% 20%;*/
   border-radius: 5px;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 0 20px 0 20px;
+}
+
+.SearchListItem div {
+  margin-left: 10px;
+}
+
+.SearchListItem img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
 }
 
 .SelectAffinity {
@@ -320,14 +355,14 @@ textarea {
 .Modal {
   display: flex;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 65px;
   width: 50%;
   height: 80%;
-  border: 1px solid rgb(204, 204, 204);
+  border: 4px solid rgb(103, 99, 99);
   overflow: auto;
   border-radius: 4px;
   outline: none;
-  padding: 20px;
+  padding: 30px;
   z-index: 11;
   /*background: rgb(255, 242, 231);*/
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
@@ -441,21 +476,32 @@ textarea {
   background-image: url("https://res.cloudinary.com/flyingonclouds/image/upload/v1462187890/ricepaper_v3_zb5rto.png");
 }
 
+.Like {
+  display: flex;
+}
+
 .ReviewListItem {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   min-width: 270px;
   width: 89%;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   box-sizing: border-box;
   padding: 40px;
   border: 5px solid #4b4d52;
+  border-bottom: 0px;
   /*margin-top: 30px;*/
   margin-left: 20px;
   margin-right: 20px;
   /*border-radius: 5px 15px 15px 5px;*/
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224540/subtle_white_mini_waves_f7qx08.png');
+}
+
+
+.ReviewDescription {
+  flex-wrap: wrap;
+  flex: 1;
 }
 
 .ReviewFormSpecific {
