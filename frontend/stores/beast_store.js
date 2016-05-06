@@ -70,12 +70,17 @@ BeastStore.setCurrentBeast = function(beast){
 };
 
 BeastStore.addLike = function(beastId, userId) {
+  // debugger;
   _beasts[beastId].like_users.push(parseInt(userId));
+  _currentBeast[0].like_users.push(parseInt(userId));
 };
 
 BeastStore.removeLike = function(beastId, userId) {
+  // debugger;
   var userIdx = _beasts[beastId].like_users.indexOf(parseInt(userId));
+  var userIdxCurrentBeast = _currentBeast[0].like_users.indexOf(parseInt(userId));
   _beasts[beastId].like_users.splice(userIdx, 1);
+  _currentBeast[0].like_users.splice(userIdxCurrentBeast, 1);
 };
 
 

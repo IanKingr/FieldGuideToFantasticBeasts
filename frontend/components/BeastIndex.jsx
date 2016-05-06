@@ -108,12 +108,13 @@ var BeastIndex = React.createClass({
 
   getBeast: function(){
     var currentBeast = BeastStore.currentBeast();
-
-    if(currentBeast !== this.state.currentBeast) {
+    // console.log("Got beast");
+    // debugger;
+    // if(currentBeast !== this.state.currentBeast) {
       this.setState({
         currentBeast: currentBeast,
       });
-    }
+    // }
 
     if(this.state.beasts !== BeastStore.allStored()){
       this.setState({
