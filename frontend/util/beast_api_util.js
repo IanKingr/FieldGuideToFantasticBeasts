@@ -1,6 +1,5 @@
 var BeastApiUtil = {
   fetchBeast: function(data, success, error){
-    console.log("Fetching a beast [beastApi]");
     $.ajax ({
       type: "GET",
       url: "/api/beasts/" + data.id,
@@ -10,7 +9,6 @@ var BeastApiUtil = {
   },
 
   fetchBeasts: function(data, success, error){
-    console.log("issuing fetchBeasts api GET request");
     $.ajax ({
       type: "GET",
       url: "/api/beasts",
@@ -21,7 +19,6 @@ var BeastApiUtil = {
   },
 
   fetchAllBeastsForSearch: function(data, success, error){
-    console.log("issuing fetchAllSearchBeasts api GET request");
     $.ajax ({
       type: "GET",
       url: "/api/beasts",
@@ -33,7 +30,6 @@ var BeastApiUtil = {
 
 
   createBeast: function(data, success, error){
-    console.log("posting to AJAX [beast_api_util]");
     $.ajax ({
       type: "POST",
       url: "api/beasts",

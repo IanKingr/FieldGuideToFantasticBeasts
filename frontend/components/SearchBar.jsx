@@ -13,15 +13,11 @@ var SearchBar = React.createClass({
   },
 
   componentDidMount: function(){
-    console.log("Search Bar Mounted");
-    // this.searchListener = SearchStore.addListener(getResults);
-    // this.beastListener = BeastStore.addListener(this.getBeasts);
     BeastActions.fetchAllBeastsForSearch({affinity_id: 0});
   },
 
 
   queryChange: function(event){
-    console.log("query Changed");
     event.preventDefault();
     var results;
     if(event.target.value){
@@ -35,7 +31,6 @@ var SearchBar = React.createClass({
   },
 
   filterStore: function(query){
-    console.log("running filterStore [SearchBar]");
     var results = [];
     var beasts = BeastStore.queryStore();
 
@@ -49,7 +44,6 @@ var SearchBar = React.createClass({
 
 
   render: function(){
-    console.log("RevewListItem rendering");
     var queryMessage;
 
     if(!this.state.query){

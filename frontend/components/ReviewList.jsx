@@ -7,7 +7,6 @@ var ReviewForm = require('../components/ReviewForm');
 
 var ReviewList = React.createClass({
   componentWillReceiveProps: function(){
-    console.log("ReviewList received props and is rendering" + this.props);
   },
 
   // getInitialState: function(){
@@ -41,10 +40,8 @@ var ReviewList = React.createClass({
   // },
 
   render: function(){
-    console.log("rendering ReviewList");
     var reviews = this.props.reviews;
     if(reviews){
-      console.log("There are reviews! [ReviewList]");
       // var reviews = beast.reviews;
       var reviewList = reviews.map(function(review){
         return <ReviewListItem key={review.id} review={review}/>;

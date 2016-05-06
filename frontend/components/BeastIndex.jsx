@@ -29,8 +29,6 @@ var BeastIndex = React.createClass({
   },
 
   _isLiked: function(){
-    // debugger;
-    console.log("Checking _isLiked");
     var likeText = "Like";
     var currentUser = UserStore.currentUser();
     var beastId = parseInt(this.props.params.id);
@@ -45,13 +43,10 @@ var BeastIndex = React.createClass({
   },
 
   handleClickOnBeast: function(){
-    console.log("History Pushing the following beast Id " + this.props.beast.id);
-
     BrowserHistory.push("/beasts/"+this.props.beast.affinity_id+"/"+this.props.beast.id);
   },
 
   componentWillMount: function(){
-    console.log("Component Will Mount [BeastIndex]");
     var beastId = parseInt(this.props.params.id);
     var affinityId = parseInt(this.props.params.affinity_id);
 
@@ -64,7 +59,6 @@ var BeastIndex = React.createClass({
   },
 
   componentWillReceiveProps: function(nextProps){
-    console.log("Receiving Props [BeastIndex]");
     var beastId = parseInt(this.props.params.id);
     var beast = BeastStore.find(nextProps.params.id);
 
@@ -76,7 +70,6 @@ var BeastIndex = React.createClass({
   },
 
   componentDidMount: function(){
-    console.log("Component Did Mount [BeastIndex]");
     this.beastListener = BeastStore.addListener(this.getBeast);
 
     this.reviewListener =
@@ -93,15 +86,12 @@ var BeastIndex = React.createClass({
   },
 
   componentWillUnmount: function(){
-    console.log("BeastIndex UNMOUNTED");
     this.beastListener.remove();
     this.userListener.remove();
     this.reviewListener.remove();
   },
 
   getReviews: function(){
-
-    console.log("Get Reviews Callback triggered [BeastIndex]");
     this.setState({
       reviews: ReviewStore.allStored()
     });
@@ -109,38 +99,38 @@ var BeastIndex = React.createClass({
 
 
   getBeast: function(){
-    console.log("Triggered getBeast callback [BeastIndex]");
     var currentBeast = BeastStore.currentBeast();
 
     if(currentBeast !== this.state.currentBeast) {
       this.setState({
         currentBeast: currentBeast,
       });
-      console.log("The currentBeast has been stored [BeastIndex]" );
     }
 
     if(this.state.beasts !== BeastStore.allStored()){
       this.setState({
         beasts: BeastStore.allStored()
       });
-      console.log("AllBeasts have been stored [BeastIndex]" );
     }
 
-    console.log("But may not have triggered setting currentBeast or beasts : allStored");
-    // console.log(this.state.beasts + " the beasts");
   },
 
   render: function(){
     var currentBeast = this.state.currentBeast;
     var beast_image;
-    console.log("Rendering BeastIndex now with current beast: " + currentBeast);
+    var num_likes;
     if(currentBeast){
       beast_image= <img src={currentBeast.image_url}></img>;
+      num_likes = currentBeast.like_users.length;
+      if(num_likes === 1){
+        num_likes = num_likes +" user likes this beast";
+      } else {
+        num_likes = num_likes +" users like this beast";
+      }
     } else {
       beast_image= <div></div>;
     }
 
-    //<button className="Like" onClick={this.toggleFavorite}> {this._isLiked()}</button>
 
     return (
       <div className="BeastIndex">
@@ -155,7 +145,9 @@ var BeastIndex = React.createClass({
           <div>
 
               <button className="Like" onClick={this.toggleFavorite}> {this._isLiked()}</button>
-
+            <div className="numLikes">
+              {num_likes}
+            </div>
             <div className="BeastImage">{beast_image}</div>
           </div>
         </div>
@@ -167,6 +159,5 @@ var BeastIndex = React.createClass({
   }
 });
 
-window.BeastIndex = BeastIndex;
 
 module.exports = BeastIndex;

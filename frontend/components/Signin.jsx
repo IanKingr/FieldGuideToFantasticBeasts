@@ -18,7 +18,6 @@ var Signin = React.createClass({
   },
 
   guestSignIn: function(event) {
-    console.log("Guest sign in clicked");
     var postData = {
       username: UserStore.guest().username,
       password: UserStore.guest().password
@@ -51,7 +50,7 @@ var Signin = React.createClass({
     var errorDisplay = "";
     if(this.state.errors){
       errorDisplay = this.state.errors.map(function(error){
-        return <li>{error}</li>;
+        return <li key={error}>{error}</li>;
       });
     }
     return (

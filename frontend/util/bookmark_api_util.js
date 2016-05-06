@@ -20,7 +20,6 @@ var BookmarkApiUtil = {
   },
 
   createBookmark: function(data, success, error){
-    console.log("posting to AJAX [bookmark_api_util]");
     $.ajax ({
       type: "POST",
       url: "api/bookmarks",
@@ -34,7 +33,6 @@ var BookmarkApiUtil = {
   },
 
   deleteBookmark: function(data, success, error){
-    console.log("posting to AJAX delete request [bookmark_api_util]");
     $.ajax ({
       type: "DELETE",
       url: "api/bookmarks/" + data.id,

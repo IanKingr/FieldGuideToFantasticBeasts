@@ -3,11 +3,9 @@ var React = require('react');
 var Beast = React.createClass({
 
   componentWillReceiveProps: function(){
-    console.log("ReceivedProps [Beast]" + this.props);
   },
 
   render: function(){
-    console.log("Rendering Beast" + this.props.currentBeast);
 
     if(this.props && Boolean(this.props.currentBeast)){
       var beast = this.props.currentBeast;

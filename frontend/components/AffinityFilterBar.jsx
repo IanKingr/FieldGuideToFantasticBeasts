@@ -4,22 +4,18 @@ var BeastActions = require('../actions/beastActions');
 var AffinityFilterBar = React.createClass({
 
   getMountainAffinity: function(){
-    console.log("Get Mountain Affinity");
     BeastActions.fetchBeasts({affinity_id: 1});
   },
 
   getWaterAffinity: function(){
-    console.log("Get Water Affinity");
     BeastActions.fetchBeasts({affinity_id: 2});
   },
 
   getPlainAffinity: function(){
-    console.log("Get Plain Affinity");
     BeastActions.fetchBeasts({affinity_id: 3});
   },
 
   getForestAffinity: function(){
-    console.log("Get Forest Affinity");
     BeastActions.fetchBeasts({affinity_id: 4});
   },
 

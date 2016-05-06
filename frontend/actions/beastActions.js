@@ -4,22 +4,18 @@ var BeastApiUtil = require('../util/beast_api_util');
 
 var BeastActions = {
   fetchBeast: function(data){
-    console.log("Fetching Beast [beastActions]");
     BeastApiUtil.fetchBeast(data, this.receiveBeast, this.handleError);
   },
 
   fetchBeasts: function(data){
-    console.log("Fetching Beasts [beastActions]");
     BeastApiUtil.fetchBeasts(data, this.receiveBeasts, this.handleError);
   },
 
   fetchAllBeastsForSearch: function(data){
-    console.log("Fetching all Beasts for Search [beastActions]");
     BeastApiUtil.fetchBeasts(data, this.receiveSearchBeasts, this.handleError);
   },
 
   createBeast: function(data){
-    console.log("Attempting to create a beast...[beastActions]");
     BeastApiUtil.createBeast(
       data,
       this.receiveCreatedBeast,
@@ -53,8 +49,6 @@ var BeastActions = {
   },
 
   receiveBeast: function(beast){
-    console.log("Receiving a beast");
-    console.log(beast);
     Dispatcher.dispatch({
       actionType: BeastConstants.BEAST_RECEIVED,
       beast: beast
@@ -62,7 +56,6 @@ var BeastActions = {
   },
 
   handleError: function(errors) {
-    console.log("Handling Error callback [beastActions]");
     Dispatcher.dispatch({
       actionType: BeastConstants.ERROR,
       errors: errors

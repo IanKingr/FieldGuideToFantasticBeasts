@@ -51,17 +51,14 @@ var NavBar = React.createClass({
   },
 
   handleSignin: function(){
-    console.log("Sign In Clicked");
     this.setState({SignInModalOpen: true});
   },
 
   handleSignup: function(){
-    console.log("Sign Up Clicked");
     this.setState({SignUpModalOpen: true});
   },
 
   handleSignout: function(){
-    console.log("Sign out Clicked");
     UserActions.logout();
   },
 
@@ -70,15 +67,12 @@ var NavBar = React.createClass({
     this.setState({currentUser: UserStore.currentUser()});
     if(this.state.currentUser){
       this.closeModal();
-      console.log("Current User is " + this.state.currentUser.username);
     } else {
-      console.log("getCurrentUser = none");
       this.setState({errors: UserStore.errors});
     }
   },
 
   closeModal: function(){
-    console.log("Closing User Modal in FieldGuideIndex");
     this.setState({
       SignUpModalOpen: false,
       SignInModalOpen: false,

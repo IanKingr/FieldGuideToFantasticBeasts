@@ -1,6 +1,5 @@
 var ReviewApiUtil = {
   fetchReview: function(data, success, error){
-    console.log("Fetching a review [reviewApi]");
     $.ajax ({
       type: "GET",
       url: "/api/reviews/" + data.id,
@@ -10,7 +9,6 @@ var ReviewApiUtil = {
   },
 
   fetchReviews: function(data, success, error){
-    console.log("issuing fetchReviews api GET request");
     $.ajax ({
       type: "GET",
       url: "/api/reviews",
@@ -21,7 +19,6 @@ var ReviewApiUtil = {
   },
 
   createReview: function(data, success, error){
-    console.log("posting to AJAX [review_api_util]");
     $.ajax ({
       type: "POST",
       url: "/api/reviews",

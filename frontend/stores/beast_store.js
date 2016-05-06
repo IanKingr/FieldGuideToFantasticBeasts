@@ -14,32 +14,26 @@ var _searchbeasts = {};
 BeastStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case BeastConstants.BEAST_RECEIVED:
-      console.log("BEAST_RECEIVED [BeastStore]");
     	BeastStore.setCurrentBeast(payload.beast);
       BeastStore.__emitChange();
       break;
     case BeastConstants.CREATED_BEAST_RECEIVED:
-      console.log("CREATED_BEAST_RECEIVED [BeastStore]");
       BeastStore.setCurrentBeast(payload.beast);
       BeastStore.__emitChange();
       break;
     case BeastConstants.BEASTS_RECEIVED:
-      console.log("BEASTS_RECEIVED [BeastStore]");
       BeastStore.resetBeasts(payload.beasts);
       BeastStore.__emitChange();
       break;
     case BeastConstants.ALL_BEASTS_RECEIVED:
-      console.log("ALL_BEASTS_RECEIVED [BeastStore]");
       BeastStore.searchStoreBeasts(payload.beasts);
       // BeastStore.__emitChange();
       break;
     case BeastConstants.REMOVE_BEAST:
-      console.log("Removing beast from Beast Store");
       BeastStore.__emitChange();
     	// BeastStore.logout();
       break;
     case BeastConstants.ERROR:
-      console.log("BEAST_ERROR [BeastStore]");
       BeastStore.resetErrors(payload.errors);
       BeastStore.__emitChange();
       break;

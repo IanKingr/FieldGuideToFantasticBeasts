@@ -17,27 +17,23 @@ var FieldGuideIndex = React.createClass({
   },
 
   getBeasts: function(){
-    console.log("getBeasts [FieldGuideIndex]");
     this.setState({
       beasts: BeastStore.allStored()
     });
   },
 
   componentDidMount: function(){
-    console.log("mounted [FieldGuideIndex]");
     this.beastListener = BeastStore.addListener(this.getBeasts);
     this.userListener = UserStore.addListener(this.getUser);
   },
 
   getUser: function(){
-    console.log("User changed");
     this.setState({
       signedin: UserStore.currentUser()
     });
   },
 
   componentWillUnmount: function(){
-    console.log("UNMOUNTED [FieldGuideIndex]");
     this.beastListener.remove();
     this.userListener.remove();
   },

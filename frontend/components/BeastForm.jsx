@@ -9,11 +9,9 @@ var BeastForm = React.createClass({
   },
 
   getErrors: function(){
-    console.log("BeastStore beckons and BeastForm stands at the ready");
     if(BeastStore.errors()){
       this.setState({errors: BeastStore.errors()});
     } else {
-      console.log("Closing Modal from BeastForm");
       this.props.closeModal();
     }
   },
@@ -23,7 +21,6 @@ var BeastForm = React.createClass({
   },
 
   componentWillUnmount: function(){
-    console.log("BeastForm Unmounting and removing listener");
     this.beastListener.remove();
   },
 

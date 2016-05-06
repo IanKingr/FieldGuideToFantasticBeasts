@@ -4,12 +4,10 @@ var BeastActions = require('../actions/beastActions');
 var BeastListItem = React.createClass({
 
   componentWillReceiveProps: function(){
-    console.log("ReceivedProps [BeastListItem]");
-    this.render();
+    // this.render(); //Removed at last minute
   },
 
   handleClick: function(){
-    console.log("History Pushing the following beast Id " + this.props.beast.id);
 
     BeastActions.fetchBeast({id: this.props.beast.id});
 

@@ -18,7 +18,6 @@ var Signup = React.createClass({
   },
 
   guestSignIn: function(event) {
-    console.log("Guest sign in clicked");
     var postData = {
       username: UserStore.guest().username,
       password: UserStore.guest().password

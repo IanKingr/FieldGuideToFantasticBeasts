@@ -133,6 +133,12 @@ User.create(
   password: "love2boat"
 )
 
+#22
+User.create(
+  username: "BigFella82",
+  password: "magic4life"
+)
+
 #1
 Beast.create(
   author_id: 1,
@@ -144,7 +150,8 @@ name: "Mountain Troll",
   They are dangerously violent and incredibly aggressive, engaging in unpredictable behaviour, comparable to giants. They are also incredibly low in intelligence, to which giants seem to have more of.",
   avg_height: 150,
   avg_weight: 1160,
-  affinity_id: 1)
+  affinity_id: 1,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462177972/mountain_troll_ohvn37.png")
 
 Review.create(
   user_id: 1,
@@ -198,34 +205,28 @@ Review.create(
 #2
 Beast.create(
   author_id: 1,
-name: "Griffin",
-  description: "The Griffin originated in Greece. It has the front legs, wings and head of a giant eagle, and the body, hind legs, and tail of a lion. The main diet of the Griffin is raw meat. Griffins are known as fierce creatures, however, despite this, skilled Wizards have been able to befriend them. Griffins are often used by wizards as guards of treasure, like Sphinxes.",
+name: "Sphinx",
+  description: "In sacred isolation, a sphinx guards the secrets and treasures of the gods. As it calmly regards each new party that comes before it, the bones of supplicants and quest seekers that failed to pass its tests lie scattered around its lair. Its great wings sweep along its flanks, its tawny leonine body rippling with muscle and possessed of forepaws powerful enough to tear a humanoid in half.
+
+  Sphinxes test the worth of those who seek the treasures of the gods, whether forgotten secrets or mighty spells, artifacts or magical gateways. Creatures that choose to face a sphinx's test are bound to that test unto death, and only those worthy will survive it. The rest the sphinx destroys.",
   avg_height: 89,
-  avg_weight: 500,
+  avg_weight: 1350,
   affinity_id: 3)
 
 Review.create(
   user_id: 12,
   beast_id: 2,
-  rating: 3,
-  description: "A noble beast and elegant stead."
-)
-
-Review.create(
-  user_id: 9,
-  beast_id: 2,
   rating: 4,
-  description: "Such a fascinating creature! Beware the talons though!"
+  description: "A thinker, a schemer, not one to trifle with."
 )
 
 Review.create(
-  user_id: 5,
+  user_id: 19,
   beast_id: 2,
-  rating: 3,
-  description: "His gold eyes dart wild about the room to take in all of the spectators. His beak clicked as he worked it in silence. Then, as the breaking of ice may bring a cascade of water from winter’s falls, the griffin’s voice—no longer held fast, cried forth.
-
-  -- Excerpt from MM's journal"
+  rating: 1,
+  description: "Such a fascinating creature! Easy to deal with if you are keen of intellect! Beware the claws if not!"
 )
+
 
 
 Review.create(
@@ -246,7 +247,8 @@ name: "Gnoll",
   Adding to other races distrust about Gnolls, occasionally a Gnoll's demonic ancestry will result in peculiar physical traits. This might be manifested in the claws of Gnoll Claw Fighters or in abnormal eye or coat colors.",
   avg_height: 80,
   avg_weight: 240,
-  affinity_id: 1)
+  affinity_id: 1,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/gnoll2_hnbvra.jpg")
 
 Review.create(
   user_id: 1,
@@ -275,7 +277,8 @@ name: "Kobold",
   Kobolds shed their skin about once a season, in patches, over the course of a week. They keep themselves well-groomed, regularly polishing their horns, claws, and teeth.",
   avg_height: 45,
   avg_weight: 42,
-  affinity_id: 1)
+  affinity_id: 1,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573995/kobold_ydtymw.jpg")
 
 Review.create(
   user_id: 19,
@@ -293,7 +296,9 @@ name: "Goblin",
   Goblins do not get along well with most other races and are particularly suspicious of other goblinoids. Goblins have a somewhat ambivalent relationship with orcs and half-orcs, who they've worked with on occasion, but the only true allies of the goblin race are worgs, who often act as mounts and fighting companions for goblins. Goblins have a particularly adverse relationship with both Tel-quessir and dwarves.",
   avg_height: 48,
   avg_weight: 58,
-  affinity_id: 1)
+  affinity_id: 1,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/Goblins2_vspr9w.jpg"
+  )
 
 Review.create(
   user_id: 19,
@@ -311,7 +316,8 @@ name: "Hippocampus",
   Hippocampus lay large, semi-transparent eggs through which the young hippocampus, known as a Tadfoal, can be seen. Hippocampus is derived from the words \"hippos\" means \"horse\" and \"kampos\" means \"sea monster\"",
   avg_length: 72,
   avg_weight: 1400,
-  affinity_id: 2)
+  affinity_id: 2,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574568/Breaching_Hippocamp2_rn8nye.jpg")
 
 Review.create(
   user_id: 21,
@@ -339,7 +345,8 @@ name: "Kraken",
 
   Krakens cannot speak the languages of surface dwelling races, but might speak Aquan, or a language of their own similar to that of whales.",
   avg_height: 720,
-  affinity_id: 2)
+  affinity_id: 2,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573957/kraken_pyegbg.jpg")
 
 Review.create(
   user_id: 21,
@@ -482,7 +489,23 @@ name: "Red Dragon",
   glance. A red dragon has a special affection for treasure claimed from powerful enemies it has slain, exhibiting that treasure to prove its superiority. A red dragon knows the value and provenance of
   every item in its hoard, along with each item's exact location. It might notice the absence of a single coin, igniting its rage as it tracks down and slays the thief without mercy. If the thief can't be found, the dragon
   goes on a rampage, laying waste to towns and villages in an attempt to sate its wrath.",
-  affinity_id: 1)
+  affinity_id: 1,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573777/reddragon_gtle3j.jpg")
+
+Review.create(
+  user_id: 8,
+  beast_id: 11,
+  rating: 5,
+  description: "Red dragons smell of smoke and sulfur. The air around them sometimes shimmers, as though viewed through a heat mirage."
+)
+
+Review.create(
+  user_id: 1,
+  beast_id: 11,
+  rating: 5,
+  description: "Red dragons never forgive even the smallest slights. They kill over territorial intrusion, over the tiniest theft from their hoard, over an insult, or because they want to."
+)
+
 
 #12
 Beast.create(
@@ -501,6 +524,14 @@ name: "Silver Dragon",
   avg_weight: 1280000,
   affinity_id: 4)
 
+Review.create(
+  user_id: 9,
+  beast_id: 12,
+  rating: 3,
+  description: "Never have I seen a more beautiful creature!"
+)
+
+
 #13
 Beast.create(
   author_id: 1,
@@ -514,7 +545,8 @@ name: "Bronze Dragon",
   While bronze dragons are often fascinated with battles, especially fighting to defeat evil, they have strong moral compunctions against killing living beings unless absolutely necessary. They will often join good-aligned armies to fight the forces of evil, either in human form or their own. In battle, their weapon of choice is to breathe repulsion gas, which is so putrid that it forces absolutely everything away. They also like to relocate a foe to a remote location where it can do no harm when possible. When forced to kill, the bronze dragon is a deadly combatant, roasting enemies with bursts of lightning or ripping them open with its clawed forelegs.",
     avg_length: 120,
     avg_weight: 160000,
-    affinity_id: 2)
+    affinity_id: 2,
+    image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/bronze-dragon2_nwucvd.jpg")
 
 #14
 Beast.create(
@@ -527,7 +559,8 @@ name: "Gold Dragon",
   Combat-wise, gold dragons prefer to talk rather than to fight. They will never engage in combat if they believe it is unnecessary. Once they believe it is necessary, however, they are amazingly powerful opponents. Their ability to breathe fire rivals that of the eldest red dragons, and they will pour their entire being into a battle against evil. Gold dragons dislike killing, but they do not hesitate to do so if it is necessary in order to defeat an evil foe.",
   avg_length: 264,
   avg_weight: 1280000,
-  affinity_id: 3)
+  affinity_id: 3,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574192/golddragon_pydrot.jpg")
 
 #15
 Beast.create(
@@ -546,7 +579,8 @@ name: "Basilisk",
   Some alchemists are said to know how to process the basilisk's gullet and the fluids contained within. Properly handled, the gullet produces an oil that can return petrified creatures to flesh and life. Unfortunately for such a victim, any parts lost in stone form remain absent if the creature revives. Revivification using the oil is impossible if a vital part of the petrified creature, such as its head, is detached.",
   avg_length: 140,
   avg_weight: 430,
-  affinity_id: 1)
+  affinity_id: 1,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/basilisk2_prnd8m.jpg")
 
 #16
 Beast.create(
@@ -558,7 +592,8 @@ name: "Worg",
   avg_height: 38,
   avg_length: 60,
   avg_weight: 300,
-  affinity_id: 4)
+  affinity_id: 4,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573120/worgpackfinal_unhicm.jpg")
 
 Review.create(
   user_id: 19,
@@ -578,7 +613,8 @@ name: "Cockatrice",
   avg_height: 38,
   avg_length: 60,
   avg_weight: 300,
-  affinity_id: 3)
+  affinity_id: 3,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/cockatrice3_ugcue0.jpg")
 
 #18
 Beast.create(
@@ -591,7 +627,15 @@ name: "Peryton",
   Though they may look like deer, perytons are very different from their earth bond relatives, and hunt any creatures smaller than themselves.",
   avg_height: 60,
   avg_weight: 1100,
-  affinity_id: 4)
+  affinity_id: 4,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573828/peryton_htlprh.jpg")
+
+Review.create(
+  user_id: 20,
+  beast_id: 18,
+  rating: 5,
+  description: "Its strangest trait is that, when the sun strikes it, instead of casting a shadow of its own body, it casts the shadow of a man. From this, some conclude that the Perytons are the spirits of wayfarers who have died far from their homes and from the care of their gods."
+)
 
 #19
 Beast.create(
@@ -604,7 +648,8 @@ name: "Owlbear",
   The owlbear’s reputation for ferocity, aggression, stubbornness, and sheer ill temper makes it one of the most feared predators of the wild. There is little, if anything, that a hungry owlbear fears, and these creatures are often hungry. Even monsters that outmatch an owlbear in size and strength avoid tangling with it, for this creature cares nothing about a foe’s superior strength as it attacks without provocation.",
   avg_height: 88,
   avg_weight: 1400,
-  affinity_id: 4)
+  affinity_id: 4,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573926/owlbear2_fkynpr.jpg")
 
 
 Review.create(
@@ -632,7 +677,8 @@ name: "Bulette",
   Some sages believe the bulette is the result of a mad wizard’s experiments at crossbreeding snapping turtles and armadillos, with infusions of demon ichor. Bulettes have been thought to be extinct at different times, but after years without a sighting, the creatures inevitably reappear. Because their young are almost never seen, some sages suspect that bulettes maintain secret nesting grounds from which adults strike out into the world.",
   avg_height: 120,
   avg_weight: 2100,
-  affinity_id: 3)
+  affinity_id: 3,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574568/bulette3_m0dtyw.jpg")
 
 
 Review.create(
@@ -655,7 +701,8 @@ name: "Griffon",
   ",
   avg_height: 76,
   avg_weight: 500,
-  affinity_id: 3)
+  affinity_id: 3,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574145/griffin3_ixkwmp.jpg")
 
 
 #22
@@ -732,7 +779,8 @@ name: "Centaur",
   can peacefully live out the rest of its days.",
   avg_length: 81,
   avg_weight: 1400,
-  affinity_id: 3)
+  affinity_id: 3,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/centaur3_qozfzw.jpg")
 
 Review.create(
   user_id: 1,
@@ -834,7 +882,8 @@ name: "Aarakocra",
   then cast what is left on the wind for others to use.",
   avg_length: 144,
   avg_weight: 1800,
-  affinity_id: 1)
+  affinity_id: 1,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574568/aarakocra2_bhfzsd.jpg")
 
 #26
 Beast.create(
@@ -863,7 +912,8 @@ name: "Dragon Turtle",
   in exchange for safe passage. Clever sahuagin sometimes ally with dragon turtles, enticing them with treasure to use their blistering breath weapons in sahuagin raids against ships and coastal settlements.",
   avg_height: 120,
   avg_weight: 2100,
-  affinity_id: 2)
+  affinity_id: 2,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/dragon-turtle2_utfece.jpg")
 
 Review.create(
   user_id: 21,
@@ -898,7 +948,38 @@ name: "Hippogriff",
   trained properly.",
     avg_height: 84,
     avg_weight: 1000,
-    affinity_id: 3)
+    affinity_id: 3,
+    image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574103/hippogriff2_o0jvuw.jpg")
+
+
+Review.create(
+  user_id: 22,
+  beast_id: 27,
+  rating: 3,
+  description: "Easily offended, hippogriffs are. Don't never insult one, 'cause it might be the last thing yeh do"
+)
+
+Review.create(
+  user_id: 3,
+  beast_id: 27,
+  rating: 4,
+  description: "Those talons on their front legs were half a foot long and deadly looking!"
+)
+
+Review.create(
+  user_id: 3,
+  beast_id: 27,
+  rating: 3,
+  description: "Once you get over the first shock of seeing something that is half horse and half bird, you start to appreciate the hippogriff's gleaming coats, changing smoothly from feather to hair."
+)
+
+Review.create(
+  user_id: 4,
+  beast_id: 27,
+  rating: 3,
+  description: "Yeh always wait fer the hippogriff ter make the firs' move. Eye contact should be maintained at all times, without a single blink."
+)
+
 
 #28
 Beast.create(
@@ -944,6 +1025,33 @@ name: "Unicorn",
   avg_weight: 1200,
   affinity_id: 4)
 
+Review.create(
+  user_id: 1,
+  beast_id: 28,
+  rating: 1,
+  description: "When a unicorn is slain, men have destroyed again the image of beauty that they seek."
+)
+
+Review.create(
+  user_id: 12,
+  beast_id: 28,
+  rating: 2,
+  description: "The legendary creature, startling white, approached. The legs, so delicately shaped, balanced a body wrought of finest ivory. And as he moved, his coat shone like reflected moonlight. High on his forehead rose the magic horn, the sign of his uniqueness: a tower held upright by his alert, yet gentle, timid gait."
+)
+
+Review.create(
+user_id: 13,
+beast_id: 28,
+rating: 2,
+description: "It is their nature to live alone in one place: usually a forest where there is a pool clear enough for them to see themselves-for they are a little vain, knowing themselves to be the most beautiful creatures in all the world, and magic besides."
+)
+
+Review.create(
+  user_id: 6,
+  beast_id: 28,
+  rating: 2,
+  description: "I thought unicorns were more... Fluffy"
+)
 
 
 

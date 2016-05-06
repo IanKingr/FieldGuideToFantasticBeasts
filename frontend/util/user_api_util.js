@@ -12,7 +12,6 @@ var UserApiUtil = {
   },
 
   createUser: function(data, success, error){
-    console.log("posting to AJAX");
     $.ajax ({
       type: "POST",
       url: "/api/user",
@@ -38,7 +37,6 @@ var UserApiUtil = {
   },
 
   logout: function(success){
-    console.log("Logging out");
     $.ajax ({
       type: "DELETE",
       url: "/api/session",

@@ -29,7 +29,6 @@ var UserActions = {
   },
 
   receiveCurrentUser: function(user){
-    console.log("Receiving Current User [userActions]");
     Dispatcher.dispatch({
       actionType: UserConstants.USER_RECEIVED,
       user: user

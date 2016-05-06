@@ -14,7 +14,6 @@ UserStore.__onDispatch = function(payload) {
       UserStore.__emitChange();
       break;
     case UserConstants.REMOVE_USER:
-      console.log("Removing user from User Store");
     	UserStore.logout();
       UserStore.__emitChange();
       break;
@@ -34,23 +33,19 @@ UserStore.__onDispatch = function(payload) {
 };
 
 UserStore.guest = function(){
-  console.log("Guest login activated!");
   return {username: "GuestUser", password: "beourGuest2theTest"};
 };
 
 UserStore.addLike = function(beastId) {
-  console.log("Adding like [user_store]");
   _currentUser.liked_beasts.push(parseInt(beastId));
 };
 
 UserStore.removeLike = function(beastId) {
-  console.log("Removing like [user_store]");
   var beastIdx = _currentUser.liked_beasts.indexOf(parseInt(beastId));
   _currentUser.liked_beasts.splice(beastIdx, 1);
 };
 
 UserStore.login = function(user){
-  console.log("UserStore logging in " + user.username);
 	_currentUser = user;
   _errors = null;
 };

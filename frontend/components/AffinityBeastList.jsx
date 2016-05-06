@@ -4,7 +4,6 @@ var BeastListItem = require('./BeastListItem');
 
 var AffinityBeastList = React.createClass({
   componentWillReceiveProps: function(){
-    console.log("AffinityBeastList received props and is rendering" + this.props);
 
   },
   //
@@ -14,7 +13,6 @@ var AffinityBeastList = React.createClass({
 
 
   render: function(){
-    console.log("rendering AffinityBeastList");
     var beasts = this.props.beasts;
     var itemclass = this.props.itemclass;
 

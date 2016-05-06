@@ -1,5 +1,6 @@
 var React = require('react');
 var BeastStore = require('../stores/beast_store');
+var UserStore = require('../stores/user_store');
 var BeastActions = require('../actions/beastActions');
 var BeastForm = require('./BeastForm');
 var Modal = require("react-modal");
@@ -41,7 +42,6 @@ var CreateBeastButton = React.createClass({
   },
 
   closeBeastModal: function(){
-    console.log("Closing Beast Modal");
     this.setState({
       CreateBeastModalOpen: false
     });
@@ -49,19 +49,26 @@ var CreateBeastButton = React.createClass({
 
   componentDidMount: function(){
     this.beastListener = BeastStore.addListener(this.getBeast);
+    this.userListener = UserStore.addListener(this.getCurrentUser);
   },
 
   componentWillUnmount: function(){
     this.beastListener.remove();
+    this.userListener.remove();
   },
 
   getBeast: function(){
-    console.log("getBeast [CreateBeastButton]");
     if(!BeastStore.errors){
       this.closeBeastModal();
     } else {
-      console.log("getBeast = none [CreateBeast]");
       this.setState({errors: BeastStore.errors});
+    }
+  },
+
+  getCurrentUser: function(){
+    this.setState({currentUser: UserStore.currentUser()});
+    if(this.state.currentUser){
+      this.closeModal();
     }
   },
 
@@ -79,6 +86,8 @@ var CreateBeastButton = React.createClass({
       SignInModalOpen: false,
     });
   },
+
+
 
   render: function(){
 

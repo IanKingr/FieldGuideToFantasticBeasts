@@ -34,7 +34,6 @@ var style = {
 
 var ReviewForm = React.createClass({
   getInitialState: function (){
-    console.log("Getting InitialState [ReviewForm]");
     return ({
       description: "",
       rating: null,
@@ -46,7 +45,6 @@ var ReviewForm = React.createClass({
   },
 
   getErrors: function(){
-    console.log("ReviewStore beckons and ReviewForm stands at the ready");
     var errors = ReviewStore.errors();
     this.setState({
       errors: errors,
@@ -64,13 +62,20 @@ var ReviewForm = React.createClass({
   },
 
   componentDidMount: function(){
-    console.log("ReviewForm component mounting");
     this.reviewListener = ReviewStore.addListener(this.getErrors);
+    this.userListener = UserStore.addListener(this.getCurrentUser);
+  },
+
+  getCurrentUser: function(){
+    this.setState({currentUser: UserStore.currentUser()});
+    if(this.state.currentUser){
+      this.closeModal();
+    }
   },
 
   componentWillUnmount: function(){
-    console.log("ReviewForm Unmounting and removing listener");
     this.reviewListener.remove();
+    this.userListener.remove();
   },
 
   descriptionChange: function (event) {
@@ -99,7 +104,7 @@ var ReviewForm = React.createClass({
       ReviewActions.createReview(postData);
       this.setState({
         description: "",
-        rating: ""
+        rating: 0,
       });
     } else {
       this.setState({SignInModalOpen: true});

@@ -14,7 +14,6 @@ var BookmarkActions = {
   createBookmark: function(data){
     //Currently what it does is everytime they click the bookmark, it hits the DB and creates an entry and then updates the store. Instead we could just toggle the state in the bookmark component locally or in store and when the componentWillUnmount, POST/DELETE the current status of the bookmark then. Is this more efficient? At the end we would have to iterate over our bookmarks to see which ones are different? If we only had one bookmark we are working with at a time (the current bookmark), then there is no iteration.
 
-    console.log("Attempting to create bookmark...[bookmarkActions]");
     BookmarkApiUtil.createBookmark(
       data,
       this.receiveBookmark,

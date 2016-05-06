@@ -4,7 +4,6 @@ var Dispatcher = require('../dispatcher/dispatcher');
 
 var LikeActions = {
   createLike: function(data, success) {
-    console.log("Posting like");
     $.ajax ({
       type: "POST",
       url: "/api/likes",
@@ -14,7 +13,6 @@ var LikeActions = {
   },
 
   deleteLike: function(data, success) {
-    console.log("Posting Unlike");
     $.ajax ({
       type: "DELETE",
       url: "/api/likes",

@@ -8,12 +8,10 @@ var ReviewActions = {
   },
 
   fetchReviews: function(data){
-    console.log("Fetching Reviews [reviewActions]");
     ReviewApiUtil.fetchReviews(data, this.receiveReviews, this.handleError);
   },
 
   createReview: function(data){
-    console.log("Attempting to create a review...[reviewActions]");
     ReviewApiUtil.createReview(
       data,
       this.receiveCreatedReview,
@@ -46,8 +44,6 @@ var ReviewActions = {
   },
 
   receiveReview: function(review){
-    console.log("Receiving a review");
-    console.log(review);
     Dispatcher.dispatch({
       actionType: ReviewConstants.REVIEW_RECEIVED,
       review: review
@@ -55,7 +51,6 @@ var ReviewActions = {
   },
 
   handleError: function(errors) {
-    console.log("Handling Error callback [reviewActions]");
     Dispatcher.dispatch({
       actionType: ReviewConstants.ERROR,
       errors: errors

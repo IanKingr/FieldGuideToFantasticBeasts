@@ -448,6 +448,12 @@ textarea {
   margin-bottom: 10px;
 }
 
+.numLikes {
+  position: absolute;
+  margin: 15px 47px;
+}
+
+
 .OrangeButton {
   justify-content:flex-end;
   border-radius: 3px;

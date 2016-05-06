@@ -18,7 +18,6 @@ BookmarkStore.__onDispatch = function(payload) {
       BookmarkStore.__emitChange();
       break;
     case BookmarkConstants.REMOVE_BOOKMARK:
-      console.log("Removing bookmark from BookmarkStore");
       BookmarkStore.removeBookmark(payload.bookmark);
       BookmarkStore.__emitChange();
       break;

@@ -11,10 +11,10 @@
 - [x] New account creation, login, and guest/demo login
 - [x] Smooth, bug-free navigation
 - [x] Adequate seed data to demonstrate the site's features
-- [ ] The minimally necessary features for a RateMyProfessor-inspired site: Rating Beasts, Search with Autocomplete, Beasts organized by affinity (biome).
+- [x] The minimally necessary features for a RateMyProfessor-inspired site: Rating Beasts, Search with Autocomplete, Beasts organized by affinity (biome).
 - [x] Hosting on Heroku
-- [ ] CSS styling that is satisfactorily visually appealing
-- [ ] A production README
+- [x] CSS styling that is satisfactorily visually appealing
+- [x] A production README
 
 ## Product Goals and Priorities
 
@@ -25,10 +25,10 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [x] Create an account (MVP)
 - [x] Log in / Log out, including as a Guest/Demo User (MVP)
-- [ ] Search, select matching search results, and autocomplete searches for Beasts (MVP)
-- [ ] Rate Beasts in terms of Danger rating (MVP)
-- [ ] Write full review on Beast entries (MVP)
-- [ ] Like reviews by other users (MVP)
+- [x] Search, select matching search results, and autocomplete searches for Beasts (MVP)
+- [x] Rate Beasts in terms of Danger rating (MVP)
+- [x] Write full review on Beast entries (MVP)
+- [x] Like beasts (MVP)
 - [x] Create Beast entries (MVP)
 - [ ] Search/sort beasts by their danger rating (expected, but not MVP)
 - [ ] Add Beasts to personal bookmarks (bonus, not MVP)
@@ -79,8 +79,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **Objective:** Beasts can be created, selected, bookmarked, and reviewed with the user interface.
 
 - [x] setup React Router
-- [ ] setup `Review` model
-- [ ] setup `Like` model
+- [x] setup `Review` model
+- [x] setup `Like` model
 - [x] setup the flux loop with skeleton files
 - implement each beast component, building out the flux loop as needed.
   - [x] `BeastIndex`
@@ -88,8 +88,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
   - [x] `BeastListItem`
   - [x] `Beast`
   - [x] `BeastForm`
-  - [ ] `Review`
-  - [ ] `Like`
+  - [x] `Review`
+  - [x] `Like`
 
 ### Phase 4: Start Styling (1 days)
 
@@ -108,24 +108,24 @@ progress. Put an x between the brackets for a checkmark: [x] -->
   - [x] Affinity CRUD
   - [x] Sorting beasts by affinity
   - [x] Viewing beasts by affinity
-- [ ] Use CSS to style new views
+- [x] Use CSS to style new views
 
 ### Phase 6: Search (2 days)
 
 **Objective:** User can search for Beasts. Search autocomplete and suggested completion can be done from the user interface.
 
 - build out API, Flux loop, and components for:
-  - [ ] fetching beasts
-  - [ ] searching beasts by name
-  - [ ] displaying selected beast
-- [ ] Style new elements
+  - [x] fetching beasts
+  - [x] searching beasts by name
+  - [x] displaying selected beast
+- [x] Style new elements
 
 ### Phase 7: Affinity NavBar (1.5 day)
 
 **objective:** Implement AffinityFilterBar and associated components on FieldGuideIndex.
 
 - [x] build out AffinityFilterBar Flux loop and components for:
-  - [ ] displaying AffinityDetails.
+  - [x] displaying AffinityDetails.
   - [x] displaying AffinityBeastList and BeastListItems.
 - [x] Style new elements
 
@@ -133,9 +133,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **objective:** Make the site aesthetics more polished.
 
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+- [x] Get feedback on my UI from others
+- [x] Refactor HTML classes & CSS rules
+- [x] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
 - [ ] Users can search/sort beasts by their danger rating
