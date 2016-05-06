@@ -3,6 +3,7 @@ var BeastStore = require('../stores/beast_store');
 var BeastActions = require('../actions/beastActions');
 var BeastForm = require('./BeastForm');
 var Modal = require("react-modal");
+var Signin = require('./Signin');
 
 var style = {
   overlay : {
@@ -32,7 +33,10 @@ var CreateBeastButton = React.createClass({
 
   getInitialState: function(){
     return {
-      CreateBeastModalOpen: false
+      CreateBeastModalOpen: false,
+      signedin: this.props.signedin,
+      SignUpModalOpen: false,
+      SignInModalOpen: false
     };
   },
 
@@ -62,7 +66,18 @@ var CreateBeastButton = React.createClass({
   },
 
   createBeast: function(){
-    this.setState({CreateBeastModalOpen: true});
+    // debugger;
+    if(this.props.signedin){
+      this.setState({CreateBeastModalOpen: true});
+    } else {
+      this.setState({SignInModalOpen: true});
+    }
+  },
+
+  closeModal: function(){
+    this.setState({
+      SignInModalOpen: false,
+    });
   },
 
   render: function(){
@@ -77,8 +92,14 @@ var CreateBeastButton = React.createClass({
           className="Modal">
           <BeastForm closeModal={this.closeBeastModal}/>
         </Modal>
-      </div>
 
+        <Modal
+          isOpen={this.state.SignInModalOpen}
+          onRequestClose={this.closeModal}
+          className="SignModal">
+          <Signin />
+        </Modal>
+      </div>
     );
   }
 });

@@ -77,7 +77,6 @@ var NavBar = React.createClass({
     }
   },
 
-
   closeModal: function(){
     console.log("Closing User Modal in FieldGuideIndex");
     this.setState({

@@ -332,8 +332,8 @@ name: "Waterdog",
 #8
 Beast.create(
   author_id: 1,
-name: "Kracken",
-  description: "The Kracken is a large, ocean-dwelling magical beast. It is akin to a squid the size of a house measuring over 60 feet tall and wide. Its body is similar to that of a squid, with a ring of tentacles surrounding a mouth connected to a conical central body. Two of its 10 tentacles are longer than the rest, and bear deadly barbs. The kraken has very large eyes, and fins protrude from the upper part of its elongated central body.
+name: "Kraken",
+  description: "The Kraken is a large, ocean-dwelling magical beast. It is akin to a squid the size of a house measuring over 60 feet tall and wide. Its body is similar to that of a squid, with a ring of tentacles surrounding a mouth connected to a conical central body. Two of its 10 tentacles are longer than the rest, and bear deadly barbs. The kraken has very large eyes, and fins protrude from the upper part of its elongated central body.
 
   Krakens are highly destructive and evil creatures. With their strong tentacles and massive strength, they can pull an entire ship down into the ocean. They have often completely wiped tropical islands of all life, and deep beneath the ocean, they have cavernous lairs where they keep human slaves to feed and tend them. Krakens were supposedly once the rulers of the sea, but eventually the forces of good drove them back, though legends say they will one day rise again. Krakens attack predominantly with their tentacles. They can both constrict opponents, and bring them into the reaches of the creature's huge jaws. In addition, Krakens can also release an enormous cloud of jet-black ink, and can even cast spells. It also regenerates severed limbs.
 
@@ -359,7 +359,7 @@ Review.create(
   user_id: 4,
   beast_id: 8,
   rating: 5,
-  description: "What a Kracken grasps it does not lose, be it a longship or leviathan."
+  description: "What a Kraken grasps it does not lose, be it a longship or leviathan."
 )
 
 

@@ -4,6 +4,33 @@ var UserStore = require('../stores/user_store');
  //remove if we refactor how we obtain author_id
 var BeastStore = require('../stores/beast_store');
 var ReviewStore = require('../stores/review_store');
+var RatingForm = require('../components/RatingForm');
+var Modal = require("react-modal");
+var Signin = require('./Signin');
+
+var style = {
+  overlay : {
+    position        : 'fixed',
+    top             : 0,
+    left            : 0,
+    right           : 0,
+    bottom          : 0,
+    backgroundColor : 'rgba(255, 255, 255, 0.75)',
+    zIndex         : 10
+  },
+  content : {
+    position        : 'fixed',
+    top             : '100px',
+    left            : '150px',
+    right           : '150px',
+    bottom          : '100px',
+    backgroundColor : '#FFF2E7',
+    border          : '1px solid #ccc',
+    padding         : '20px',
+    zIndex         : 11
+  }
+};
+
 
 var ReviewForm = React.createClass({
   getInitialState: function (){
@@ -12,7 +39,9 @@ var ReviewForm = React.createClass({
       description: "",
       rating: null,
       user_id: UserStore.currentUser(),
-      beast_id: BeastStore.currentBeast()
+      beast_id: BeastStore.currentBeast(),
+      SignUpModalOpen: false,
+      SignInModalOpen: false
     });
   },
 
@@ -22,6 +51,16 @@ var ReviewForm = React.createClass({
     this.setState({
       errors: errors,
     });
+  },
+
+
+  ratingForm: function () {
+		var self = this;
+		return <RatingForm handleRating={self.handleRating} />;
+  },
+
+  handleRating: function (value) {
+  	this.setState({rating: value});
   },
 
   componentDidMount: function(){
@@ -49,18 +88,30 @@ var ReviewForm = React.createClass({
     var userId = UserStore.currentUser() ? UserStore.currentUser().id : null;
     //Remove the above line once we implement onEnter for ReactRouter
     var beastId = BeastStore.currentBeast() ? BeastStore.currentBeast().id : null;
-    var postData = {
-      user_id: userId, //~maybe pass in as a prop when the add review button is clicked
-      beast_id: beastId,
-      description: this.state.description,
-      rating: parseInt(this.state.rating)
-    };
-    ReviewActions.createReview(postData);
+
+    if(userId){
+      var postData = {
+        user_id: userId, //~maybe pass in as a prop when the add review button is clicked
+        beast_id: beastId,
+        description: this.state.description,
+        rating: parseInt(this.state.rating)
+      };
+      ReviewActions.createReview(postData);
+      this.setState({
+        description: "",
+        rating: ""
+      });
+    } else {
+      this.setState({SignInModalOpen: true});
+    }
+  },
+
+  closeModal: function(){
     this.setState({
-      description: "",
-      rating: ""
+      SignInModalOpen: false,
     });
   },
+
 
   render: function(){
     var errorDisplay = "";
@@ -80,15 +131,8 @@ var ReviewForm = React.createClass({
              value={this.state.description}
              onChange={this.descriptionChange} />
 
-          <label className="SelectRating">Danger Rating
-          <select  onChange={this.ratingChange}>
-            <option value=""></option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+           <label className="SelectRating"> Danger Rating:
+            {this.ratingForm()}
           </label>
          <br /><br />
 
@@ -98,6 +142,13 @@ var ReviewForm = React.createClass({
           {errorDisplay}
           {this.state.success}
         </ul>
+
+        <Modal
+          isOpen={this.state.SignInModalOpen}
+          onRequestClose={this.closeModal}
+          className="SignModal">
+          <Signin />
+        </Modal>
       </div>
     );
   }

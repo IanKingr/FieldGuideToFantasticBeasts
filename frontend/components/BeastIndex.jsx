@@ -18,7 +18,6 @@ var BeastIndex = React.createClass({
 
 
   toggleFavorite: function(){
-    // debugger;
     var data = {beast_id: this.state.currentBeast.id};
 
     if(this._isLiked() === "Like") {
@@ -154,7 +153,7 @@ var BeastIndex = React.createClass({
           </div>
           <Beast currentBeast={currentBeast}/>
           <div>
-            
+
               <button className="Like" onClick={this.toggleFavorite}> {this._isLiked()}</button>
 
             <div className="BeastImage">{beast_image}</div>

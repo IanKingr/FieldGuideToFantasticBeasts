@@ -101,7 +101,7 @@
   border: 1px solid;
   height: 25px;
   box-shadow: 6px 8px 5px rgba(0,0,0,0.75);
-  z-index: 2;
+  z-index: 0;
 }
 
 .error {
@@ -239,6 +239,17 @@ button:focus {outline:0;}
 
 .CreateBeastButton {
   display: flex;
+}
+
+.Header {
+  font-family: 'Crimson Text', serif;
+  font-size: 48px;
+  color: #C7AD88;
+  text-shadow: 3px 3px 7px black;
+  align-self: center;
+  opacity: 0.9;
+  margin: 10px 20px 10px 20px;
+  border-radius: 3px;
 }
 
 input {
@@ -399,8 +410,8 @@ textarea {
   align-items: center;
   width: 100%;
   height: 40px;
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 20px;
+  font-family: 'Crimson Text', serif;
+  font-size: 22px;
   color: white;
   background-color: #c7ad88;
   /*border: 1px solid #64706c;*/
