@@ -10,6 +10,8 @@ var ReviewStore = require('../stores/review_store');
 var ReviewActions = require('../actions/reviewActions');
 var ReviewList = require('../components/ReviewList');
 var LikeActions = require('../actions/likeActions');
+var Modal = require("react-modal");
+var Signin = require('./Signin');
 
 window.BeastStore = BeastStore;
 window.ReviewStore = ReviewStore;
@@ -18,14 +20,16 @@ var BeastIndex = React.createClass({
 
 
   toggleFavorite: function(){
-    var data = {beast_id: this.state.currentBeast.id};
-
-    if(this._isLiked() === "Like") {
-      LikeActions.createLike(data);
+    if(UserStore.currentUser()){
+      var data = {beast_id: this.state.currentBeast.id};
+      if(this._isLiked() === "Like") {
+        LikeActions.createLike(data);
+      } else {
+        LikeActions.deleteLike(data);
+      }
     } else {
-      LikeActions.deleteLike(data);
+      this.setState({SignInModalOpen: true});
     }
-
   },
 
   _isLiked: function(){
@@ -83,6 +87,10 @@ var BeastIndex = React.createClass({
     this.setState({
       currentUser: UserStore.currentUser()
     });
+
+    if(this.state.currentUser){
+      this.closeModal();
+    }
   },
 
   componentWillUnmount: function(){
@@ -112,7 +120,12 @@ var BeastIndex = React.createClass({
         beasts: BeastStore.allStored()
       });
     }
+  },
 
+  closeModal: function(){
+    this.setState({
+      SignInModalOpen: false,
+    });
   },
 
   render: function(){
@@ -154,6 +167,13 @@ var BeastIndex = React.createClass({
         <div>
           <ReviewList reviews={this.state.reviews}/>
         </div>
+
+        <Modal
+          isOpen={this.state.SignInModalOpen}
+          onRequestClose={this.closeModal}
+          className="SignModal">
+          <Signin />
+        </Modal>
       </div>
     );
   }
