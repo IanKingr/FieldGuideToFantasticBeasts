@@ -43,43 +43,60 @@ class Api::UsersController < ApplicationController
 
   The UI of "Field Guide" is completely hand-rolled and a personal design:  
 
-![image of notebook index](https://github.com/appacademy/sample-project-proposal/blob/master/docs/noteIndex.png)
+![image of Field Guide index](https://github.com/appacademy/sample-project-proposal/blob/master/docs/FieldGuideIndex.png)
 
-Note editing is implemented using the Quill.js library, allowing for a Word-processor-like user experience.
 
-### Notebooks
+### Searching Beasts
 
-Implementing Notebooks started with a notebook table in the database.  The `Notebook` table contains two columns: `title` and `id`.  Additionally, a `notebook_id` column was added to the `Note` table.  
 
-The React component structure for notebooks mirrored that of notes: the `NotebookIndex` component renders a list of `CondensedNotebook`s as subcomponents, along with one `ExpandedNotebook`, kept track of by `NotebookStore.selectedNotebook()`.  
 
-`NotebookIndex` render method:
+The ability to search through beasts required the building of the BeastStore flux cycle to hold the beast entries. The `SearchBar` component also utilizes a  `AffinityBeastList` subcomponent which houses the list of matching results. Further subcomponents like `BeastListItem` are also passed information about the beast in order to render information about the beast like their average `rating` score. This rating score was generated from an ActiveRecord query that joined our `review` table with our `beasts` table.
+
+Given the size of our database and number of entries, Field Guide is able to front load the beasts to allow for fast querying and a smooth experience while in app. Refactoring this to handle a large number of entries would necessitate more hits to the database and/or selectively querying once a number of characters has been typed for example.  
+
+![image of search results](https://github.com/appacademy/sample-project-proposal/blob/master/docs/searchScreenshot.png)
+
+`SearchBar` render method:
 
 ```javascript
-render: function () {
-  return ({this.state.notebooks.map(function (notebook) {
-    return <CondensedNotebook notebook={notebook} />
-  }
-  <ExpandedNotebook notebook={this.state.selectedNotebook} />)
+render: function(){
+
+  return (
+    <div className="SearchContainer" >
+      <input className="SearchBar" onClick={this.clickQuery} onChange={this.queryChange} type="text" value={this.state.query}></input>
+      <AffinityBeastList beasts={this.state.beasts} itemclass={"SearchListItem"} className="SearchResultList"/>
+    </div>
+  );
 }
 ```
 
-### Tags
+### Likes
 
-As with notebooks, tags are stored in the database through a `tag` table and a join table.  The `tag` table contains the columns `id` and `tag_name`.  The `tagged_notes` table is the associated join table, which contains three columns: `id`, `tag_id`, and `note_id`.  
+Likes are stored in the database in a `likes` table which acts as a join table for Users and Beasts.  The `likes` table contains the columns `id` and `beast_id`, `user_id`.
 
-Tags are maintained on the frontend in the `TagStore`.  Because creating, editing, and destroying notes can potentially affect `Tag` objects, the `NoteIndex` and the `NotebookIndex` both listen to the `TagStore`.  It was not necessary to create a `Tag` component, as tags are simply rendered as part of the individual `Note` components.  
+Tags are passed to the frontend by updating the relevant beast in the `BeastStore`. It was not necessary to create a `Like` component, as likes are simply rendered as part of the individual `Beast` component.  
 
-![tag screenshot](https://github.com/appacademy/sample-project-proposal/blob/master/docs/tagScreenshot.png)
+![like screenshot](https://github.com/appacademy/sample-project-proposal/blob/master/docs/likeScreenshot.png)
+
+
+### Reviews
+
+Stored in a `reviews` table, the columns it contains are `id`, `description`, and `rating`. The rating is used for an ActiveRecord query to generate an average score for each beast.
+
+![image of Reviews](https://github.com/appacademy/sample-project-proposal/blob/master/docs/reviewScreenshot.png)
 
 ## Future Directions for the Project
 
-In addition to the features already implemented, I plan to continue work on this project.  The next steps for Field Guide are outlined below.
+In addition to the features already implemented, here are a few of the stretch goals I plan to work on.
 
-### Search
+### Additional Search Queries
 
-Searching notes is a standard feature of Evernote.  I plan to utilize the Fuse.js library to create a fuzzy search of notes and notebooks.  This search will look go through tags, note titles, notebook titles, and note content.  
+Users can search/sort beasts by their average danger rating. This could be useful for flavor purposes or more practical campaign planning.  
 
-### Direct Messaging
+### Likes and Created Collections
 
-Although this is less essential functionality, I also plan to implement messaging between Field Guide users.  To do this, I will use WebRTC so that notifications of messages happens seamlessly.  
+Allow users to see the beasts they and others have created and liked. Also allow editing and deleting of beast entries and reviews.
+
+### Map
+
+More flavor, leverage Google Map API to plot out coordinates where beasts live.
