@@ -1,144 +1,102 @@
 # Field Guide to Fantastic Beasts
 
-[Heroku link][heroku]
+[Field Guide live][heroku]
 
-[heroku]: https://field-guide-to-beasts.herokuapp.com/
+[heroku]: field-guide-to-beasts.herokuapp.com
 
-## Minimum Viable Product
+"Field Guide To Fantastic Beasts" or 'Field Guide' is a web application inspired by Dungeons and Dragons, Harry Potter, and other fantasy lores. Design replicates key functionalities from sites like RateMyProfessor and was built using Ruby on Rails and React.js.
 
-"Field Guide To Fantastic Beasts" or 'Field Guide' is a web application inspired by Harry Potter, Dungeons and Dragons, and other fantasy lores. Design strives to replicate key functionalities from sites like RateMyProfessor and will be built using Ruby on Rails and React.js. By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+## Features & Implementation
 
-- [x] New account creation, login, and guest/demo login
-- [x] Smooth, bug-free navigation
-- [x] Adequate seed data to demonstrate the site's features
-- [x] The minimally necessary features for a RateMyProfessor-inspired site: Rating Beasts, Search with Autocomplete, Beasts organized by affinity (biome).
-- [x] Hosting on Heroku
-- [x] CSS styling that is satisfactorily visually appealing
-- [x] A production README
+Field Guide is an interactive (proof-of-concept) encyclopedia of mythical beasts. Users can navigate lore entries of various beasts, write reviews with ratings, and create their own beast entries as well. It features the following features and technical implementations.
 
-## Product Goals and Priorities
+* Single-page web application built on Rails, React.js/FLUX, and React-Router
 
-Field Guide will allow users to do the following:
+* Custom and secure User Authentication with BCrypt salted hashing algorithm
 
-<!-- This is a Markdown checklist. Use it to keep track of your
-progress. Put an x between the brackets for a checkmark: [x] -->
+* Users can search for Beasts, or browse by Affinity
 
-- [x] Create an account (MVP)
-- [x] Log in / Log out, including as a Guest/Demo User (MVP)
-- [x] Search, select matching search results, and autocomplete searches for Beasts (MVP)
-- [x] Rate Beasts in terms of Danger rating (MVP)
-- [x] Write full review on Beast entries (MVP)
-- [x] Like beasts (MVP)
-- [x] Create Beast entries (MVP)
-- [ ] Search/sort beasts by their danger rating (expected, but not MVP)
-- [ ] Add Beasts to personal bookmarks (bonus, not MVP)
+* Create and Read reviews for multiple Beasts
 
-## Design Docs
-* [View Wireframes][views]
-* [React Components][components]
-* [Flux Cycles][flux-cycles]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
+* Gated user features and Guest login so visitors can still test the full functionality.
 
-[views]: ./docs/views.md
-[components]: ./docs/components.md
-[flux-cycles]: ./docs/flux-cycles.md
-[api-endpoints]: ./docs/api-endpoints.md
-[schema]: ./docs/schema.md
+* Users can like and unlike Beasts
 
-## Implementation Timeline
+* Create new Beasts for users to Rate.
 
-### Phase 1: Backend setup and User Authentication (1.5 days)
+### Single-Page App
 
-**Objective:** Functioning rails project with Front-End Authentication
+Field Guide is truly a single-page; all content is delivered on one static page. No need to refresh in order to navigate between pages or submit/get information. The root page listens to a `UserStore` and renders content based on a call to `UserStore._currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `UsersController#show`.
 
-- [x] create new project
-- [x] create `User` model
-- [x] front-end authentication
-- [x] CRUD API for user
-- [x] user signup/signin forms
-- [x] setup Webpack & Flux scaffold
-- [x] setup `UserAPIUtil` to interact with the API
-- [x] blank landing page after signin
-- [x] test out API interaction in the console.
+```ruby
+class Api::UsersController < ApplicationController
+  def show
+    @user = current_user
+    render :show
+  end
+ end
+  ```
 
-### Phase 2: Beasts Model, API, and basic BeastAPIUtil (1.5 days)
+### Beast Rendering and Creating
 
-**Objective:** Beasts can be created and read through the API.
+  On the database side, the beasts are stored in one table in the database, which contains columns to describe all of their characteristics as well as their creator. The columns include `id`, `name`, `description`, `affinity_id`, `image_url`, `avg_length`, `avg_height`, `avg_weight` and `author_id`, a foreign key for the user's id.  When attempting to create a beast, front end verification occurs to make sure the user is logged in by checking the UserStore for a current user. Filling out the beasts information and submitting it makes an API call to the database and creates the beast entry, assuming the beast name is unique and passes validation. The beast table can be filtered `affinity_id` which is the environment, the beast is typically found/associated with.  These beasts are held in the `BeastStore` for fast querying.  
 
-- [x] create `Beast` model
-- [x] seed the database with a small amount of test data
-- [x] CRUD API for beast (`BeastsController`)
-- [x] jBuilder views for beasts
-- [x] setup Webpack & Flux scaffold
-- [x] setup `BeastAPIUtil` to interact with the API
-- [x] test out API interaction in the console.
+  The UI of "Field Guide" is completely hand-rolled and a personal design:  
 
-### Phase 3: Flux Architecture and Router (2 days)
+![image of Field Guide index](https://github.com/appacademy/sample-project-proposal/blob/master/docs/FieldGuideIndex.png)
 
-**Objective:** Beasts can be created, selected, bookmarked, and reviewed with the user interface.
 
-- [x] setup React Router
-- [x] setup `Review` model
-- [x] setup `Like` model
-- [x] setup the flux loop with skeleton files
-- implement each beast component, building out the flux loop as needed.
-  - [x] `BeastIndex`
-  - [x] `AffinityBeastList`
-  - [x] `BeastListItem`
-  - [x] `Beast`
-  - [x] `BeastForm`
-  - [x] `Review`
-  - [x] `Like`
+### Searching Beasts
 
-### Phase 4: Start Styling (1 days)
 
-**Objective:** Existing pages (including signup/signin) will look good.
 
-- [x] create a basic style guide
-- [x] position elements on the page
-- [x] add basic colors & styles
+The ability to search through beasts required the building of the BeastStore flux cycle to hold the beast entries. The `SearchBar` component also utilizes a  `AffinityBeastList` subcomponent which houses the list of matching results. Further subcomponents like `BeastListItem` are also passed information about the beast in order to render information about the beast like their average `rating` score. This rating score was generated from an ActiveRecord query that joined our `review` table with our `beasts` table.
 
-### Phase 5: Affinity (1 day)
+Given the size of our database and number of entries, Field Guide is able to front load the beasts to allow for fast querying and a smooth experience while in app. Refactoring this to handle a large number of entries would necessitate more hits to the database and/or selectively querying once a number of characters has been typed for example.  
 
-**Objective:** Beasts belong to an Affinity, and can be viewed by Affinity.
+![image of search results](https://github.com/appacademy/sample-project-proposal/blob/master/docs/searchScreenshot.png)
 
-- [x] create `Affinity` model
-- build out API, Flux loop, and components for:
-  - [x] Affinity CRUD
-  - [x] Sorting beasts by affinity
-  - [x] Viewing beasts by affinity
-- [x] Use CSS to style new views
+`SearchBar` render method:
 
-### Phase 6: Search (2 days)
+```javascript
+render: function(){
 
-**Objective:** User can search for Beasts. Search autocomplete and suggested completion can be done from the user interface.
+  return (
+    <div className="SearchContainer" >
+      <input className="SearchBar" onClick={this.clickQuery} onChange={this.queryChange} type="text" value={this.state.query}></input>
+      <AffinityBeastList beasts={this.state.beasts} itemclass={"SearchListItem"} className="SearchResultList"/>
+    </div>
+  );
+}
+```
 
-- build out API, Flux loop, and components for:
-  - [x] fetching beasts
-  - [x] searching beasts by name
-  - [x] displaying selected beast
-- [x] Style new elements
+### Likes
 
-### Phase 7: Affinity NavBar (1.5 day)
+Likes are stored in the database in a `likes` table which acts as a join table for Users and Beasts.  The `likes` table contains the columns `id` and `beast_id`, `user_id`.
 
-**objective:** Implement AffinityFilterBar and associated components on FieldGuideIndex.
+Tags are passed to the frontend by updating the relevant beast in the `BeastStore`. It was not necessary to create a `Like` component, as likes are simply rendered as part of the individual `Beast` component.  
 
-- [x] build out AffinityFilterBar Flux loop and components for:
-  - [x] displaying AffinityDetails.
-  - [x] displaying AffinityBeastList and BeastListItems.
-- [x] Style new elements
+![like screenshot](https://github.com/appacademy/sample-project-proposal/blob/master/docs/likeScreenshot.png)
 
-### Phase 8: Styling Cleanup and Seeding (3 days)
 
-**objective:** Make the site aesthetics more polished.
+### Reviews
 
-- [x] Get feedback on my UI from others
-- [x] Refactor HTML classes & CSS rules
-- [x] Add modals, transitions, and other styling flourishes.
+Stored in a `reviews` table, the columns it contains are `id`, `description`, and `rating`. The rating is used for an ActiveRecord query to generate an average score for each beast.
 
-### Bonus Features (TBD)
-- [ ] Users can search/sort beasts by their danger rating
-- [ ] Users can bookmark beasts for a collection
-- [ ] Implement map with location markers to indicate where beasts live.
-- [ ] Users can select multiple beasts and create a collection out of them.
+![image of Reviews](https://github.com/appacademy/sample-project-proposal/blob/master/docs/reviewScreenshot.png)
+
+## Future Directions for the Project
+
+In addition to the features already implemented, here are a few of the stretch goals I plan to work on.
+
+### Additional Search Queries
+
+Users can search/sort beasts by their average danger rating. This could be useful for flavor purposes or more practical campaign planning.  
+
+### Likes and Created Collections
+
+Allow users to see the beasts they and others have created and liked. Also allow editing and deleting of beast entries and reviews.
+
+### Map
+
+More flavor, leverage Google Map API to plot out coordinates where beasts live.
