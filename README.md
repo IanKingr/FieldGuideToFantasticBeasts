@@ -43,7 +43,7 @@ class Api::UsersController < ApplicationController
 
   The UI of "Field Guide" is completely hand-rolled and a personal design:  
 
-![image of Field Guide index](https://github.com/appacademy/sample-project-proposal/blob/master/docs/FieldGuideIndex.png)
+![image of Field Guide index](/Users/ian/Desktop/FieldGuideToFantasticBeasts/docs/FieldGuideIndex.png)
 
 
 ### Searching Beasts
@@ -54,7 +54,7 @@ The ability to search through beasts required the building of the BeastStore flu
 
 Given the size of our database and number of entries, Field Guide is able to front load the beasts to allow for fast querying and a smooth experience while in app. Refactoring this to handle a large number of entries would necessitate more hits to the database and/or selectively querying once a number of characters has been typed for example.  
 
-![image of search results](https://github.com/appacademy/sample-project-proposal/blob/master/docs/searchScreenshot.png)
+![image of search results](/Users/ian/Desktop/FieldGuideToFantasticBeasts/docs/searchScreenshot.png)
 
 `SearchBar` render method:
 
@@ -76,14 +76,14 @@ Likes are stored in the database in a `likes` table which acts as a join table f
 
 Tags are passed to the frontend by updating the relevant beast in the `BeastStore`. It was not necessary to create a `Like` component, as likes are simply rendered as part of the individual `Beast` component.  
 
-![like screenshot](https://github.com/appacademy/sample-project-proposal/blob/master/docs/likeScreenshot.png)
+![like screenshot](/Users/ian/Desktop/FieldGuideToFantasticBeasts/docs/likeScreenshot.png)
 
 
 ### Reviews
 
 Stored in a `reviews` table, the columns it contains are `id`, `description`, and `rating`. The rating is used for an ActiveRecord query to generate an average score for each beast.
 
-![image of Reviews](https://github.com/appacademy/sample-project-proposal/blob/master/docs/reviewScreenshot.png)
+![image of Reviews](/Users/ian/Desktop/FieldGuideToFantasticBeasts/docs/reviewScreenshot.png)
 
 ## Future Directions for the Project
 
