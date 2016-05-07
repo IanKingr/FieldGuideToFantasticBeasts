@@ -48,7 +48,7 @@ var FieldGuideIndex = React.createClass({
         <div className="AffinityListHeader AffinityListFooter">&nbsp;</div>
           <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList AffinityBeastListIndex" itemclass="BeastListItem"/>
         <div className="AffinityListHeader AffinityListFooter">&nbsp;</div>
-        <div className="Footer">Footer Goes Here</div>
+        <div className="Footer"></div>
       </div>
     );
   }

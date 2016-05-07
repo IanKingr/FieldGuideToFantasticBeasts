@@ -141,7 +141,7 @@ var ReviewForm = React.createClass({
           </label>
          <br /><br />
 
-          <input className="OrangeButton Centered" type="Submit" value="Submit Review"/>
+          <input className="OrangeButton Centered" type="Submit" defaultValue="Submit Review"/>
         </form>
         <ul className="error">
           {errorDisplay}

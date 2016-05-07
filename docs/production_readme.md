@@ -1,36 +1,47 @@
 # Field Guide to Fantastic Beasts
 
-[Field Guide live][heroku] **NB:** This should be a link to your production site
+[Field Guide live][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: field-guide-to-beasts.herokuapp.com
 
-Field Guide is a full-stack web application inspired by Evernote.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.  
+"Field Guide To Fantastic Beasts" or 'Field Guide' is a web application inspired by Dungeons and Dragons, Harry Potter, and other fantasy lores. Design replicates key functionalities from sites like RateMyProfessor and was built using Ruby on Rails and React.js.
 
 ## Features & Implementation
 
- **NB**: don't copy and paste any of this.  Many folks will implement similar features, and many employers will see the READMEs of a lot of a/A grads.  You must write in a way that distinguishes your README from that of other students', but use this as a guide for what topics to cover.  
+Field Guide is an interactive (proof-of-concept) encyclopedia of mythical beasts. Users can navigate lore entries of various beasts, write reviews with ratings, and create their own beast entries as well. It features the following features and technical implementations.
+
+* Single-page web application built on Rails, React.js/FLUX, and React-Router
+
+* Custom and secure User Authentication with BCrypt salted hashing algorithm
+
+* Users can search for Beasts, or browse by Affinity
+
+* Create and Read reviews for multiple Beasts
+
+* Gated user features and Guest login so visitors can still test the full functionality.
+
+* Users can like and unlike Beasts
+
+* Create new Beasts for users to Rate.
 
 ### Single-Page App
 
-Field Guide is truly a single-page; all content is delivered on one static page.  The root page listens to a `SessionStore` and renders content based on a call to `SessionStore.currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `SessionsController#get_user`.
+Field Guide is truly a single-page; all content is delivered on one static page. No need to refresh in order to navigate between pages or submit/get information. The root page listens to a `UserStore` and renders content based on a call to `UserStore._currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `UsersController#show`.
 
 ```ruby
-class Api::SessionsController < ApplicationController
-    def get_user
-      if current_user
-        render :current_user
-      else
-        render json: errors.full_messages
-      end
-    end
+class Api::UsersController < ApplicationController
+  def show
+    @user = current_user
+    render :show
+  end
  end
   ```
 
-### Note Rendering and Editing
+### Beast Rendering and Creating
 
-  On the database side, the notes are stored in one table in the database, which contains columns for `id`, `user_id`, `content`, and `updated_at`.  Upon login, an API call is made to the database which joins the user table and the note table on `user_id` and filters by the current user's `id`.  These notes are held in the `NoteStore` until the user's session is destroyed.  
+  On the database side, the beasts are stored in one table in the database, which contains columns to describe all of their characteristics as well as their creator. The columns include `id`, `name`, `description`, `affinity_id`, `image_url`, `avg_length`, `avg_height`, `avg_weight` and `author_id`, a foreign key for the user's id.  When attempting to create a beast, front end verification occurs to make sure the user is logged in by checking the UserStore for a current user. Filling out the beasts information and submitting it makes an API call to the database and creates the beast entry, assuming the beast name is unique and passes validation. The beast table can be filtered `affinity_id` which is the environment, the beast is typically found/associated with.  These beasts are held in the `BeastStore` for fast querying.  
 
-  Notes are rendered in two different components: the `CondensedNote` components, which show the title and first few words of the note content, and the `ExpandedNote` components, which are editable and show all note text.  The `NoteIndex` renders all of the `CondensedNote`s as subcomponents, as well as one `ExpandedNote` component, which renders based on `NoteStore.selectedNote()`. The UI of the `NoteIndex` is taken directly from Evernote for a professional, clean look:  
+  The UI of "Field Guide" is completely hand-rolled and a personal design:  
 
 ![image of notebook index](https://github.com/appacademy/sample-project-proposal/blob/master/docs/noteIndex.png)
 
