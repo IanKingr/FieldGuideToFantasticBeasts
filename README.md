@@ -2,7 +2,7 @@
 
 [Field Guide live][heroku]
 
-[heroku]: field-guide-to-beasts.herokuapp.com
+[heroku]: http://field-guide-to-beasts.herokuapp.com
 
 "Field Guide To Fantastic Beasts" or 'Field Guide' is a web application inspired by Dungeons and Dragons, Harry Potter, and other fantasy lores. Design replicates key functionalities from sites like RateMyProfessor and was built using Ruby on Rails and React.js.
 
@@ -26,15 +26,24 @@ Field Guide is an interactive (proof-of-concept) encyclopedia of mythical beasts
 
 ### Single-Page App
 
-Field Guide is truly a single-page; all content is delivered on one static page. No need to refresh in order to navigate between pages or submit/get information. The root page listens to a `UserStore` and renders content based on a call to `UserStore._currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `UsersController#show`.
+Field Guide is truly a single-page; all content is delivered on one static page. No need to refresh in order to navigate between pages or submit/get information. The root page listens to a `UserStore` and renders content based on a call to `UserStore._currentUser()`.  Sensitive information is kept out of the frontend of the app by making an API call to `UsersController#show`. React Router handles the routing of our single page app while allowing users to access a particular page directly via the pushed url.
 
-```ruby
-class Api::UsersController < ApplicationController
-  def show
-    @user = current_user
-    render :show
-  end
- end
+React Router: 
+
+```javascript
+var routes = (
+  <Route path="/" component={App}>
+    <IndexRoute component={FieldGuide} />
+    <Route path="beasts/:affinity_id/:id" component={BeastIndex} />
+  </Route>
+);
+
+document.addEventListener("DOMContentLoaded", function () {
+  var root = document.getElementById("root");
+  Modal.setAppElement(document.body);
+  ReactDOM.render(
+    <Router history={BrowserHistory} routes={routes}/>, root);
+});
   ```
 
 ### Beast Rendering and Creating
