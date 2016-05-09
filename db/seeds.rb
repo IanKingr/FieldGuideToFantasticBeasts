@@ -139,6 +139,12 @@ User.create(
   password: "magic4life"
 )
 
+#23
+User.create(
+  username: "Planeswalker1",
+  password: "letsgoOnAnAdventure"
+)
+
 #1
 Beast.create(
   author_id: 1,

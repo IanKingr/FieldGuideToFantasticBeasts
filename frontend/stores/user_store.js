@@ -33,7 +33,7 @@ UserStore.__onDispatch = function(payload) {
 };
 
 UserStore.guest = function(){
-  return {username: "GuestUser", password: "beourGuest2theTest"};
+  return {username: "Planeswalker1", password: "letsgoOnAnAdventure"};
 };
 
 UserStore.addLike = function(beastId) {
