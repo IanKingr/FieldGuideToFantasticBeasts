@@ -1,6 +1,6 @@
 var React = require('react');
 var BeastActions = require('../actions/beastActions');
-var UserStore = require('../stores/user_store'); //remove if we refactor how we obtain author_id
+var UserStore = require('../stores/user_store');
 var BeastStore = require('../stores/beast_store');
 
 var BeastForm = React.createClass({
@@ -57,9 +57,8 @@ var BeastForm = React.createClass({
   handleSubmit: function (event) {
     event.preventDefault();
     var userId = UserStore.currentUser() ? UserStore.currentUser().id : null;
-    //Remove the above line once we implement onEnter for ReactRouter
     var postData = {
-      author_id: userId, //~maybe pass in as a prop when the add beast button is clicked
+      author_id: userId, 
       name: this.state.name,
       description: this.state.description,
       avg_height: this.state.height,

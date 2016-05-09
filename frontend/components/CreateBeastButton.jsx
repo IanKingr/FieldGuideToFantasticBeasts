@@ -88,7 +88,6 @@ var CreateBeastButton = React.createClass({
   },
 
 
-
   render: function(){
 
     return (

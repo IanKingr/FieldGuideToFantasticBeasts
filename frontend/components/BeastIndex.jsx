@@ -5,14 +5,12 @@ var UserStore = require('../stores/user_store');
 var BeastActions = require('../actions/beastActions');
 var AffinityBeastList = require('../components/AffinityBeastList');
 var BrowserHistory = require('react-router').browserHistory;
-var ReviewForm = require('../components/ReviewForm');
 var ReviewStore = require('../stores/review_store');
 var ReviewActions = require('../actions/reviewActions');
 var ReviewList = require('../components/ReviewList');
 var LikeActions = require('../actions/likeActions');
 var Modal = require("react-modal");
 var Signin = require('./Signin');
-
 
 var BeastIndex = React.createClass({
   toggleFavorite: function(){
@@ -104,13 +102,9 @@ var BeastIndex = React.createClass({
 
   getBeast: function(){
     var currentBeast = BeastStore.currentBeast();
-    // console.log("Got beast");
-    // debugger;
-    // if(currentBeast !== this.state.currentBeast) {
-      this.setState({
-        currentBeast: currentBeast,
-      });
-    // }
+    this.setState({
+      currentBeast: currentBeast,
+    });
 
     if(this.state.beasts !== BeastStore.allStored()){
       this.setState({

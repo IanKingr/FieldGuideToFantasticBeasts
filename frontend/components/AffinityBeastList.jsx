@@ -1,7 +1,6 @@
 var React = require('react');
 var BeastListItem = require('./BeastListItem');
 
-
 var AffinityBeastList = React.createClass({
 
   render: function(){

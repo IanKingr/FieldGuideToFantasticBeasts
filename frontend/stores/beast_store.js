@@ -1,9 +1,7 @@
 var Dispatcher = require('../dispatcher/dispatcher.js');
 var Store = require('flux/utils').Store;
 var BeastConstants = require('../constants/beast_constants');
-
 var LikeConstants = require('../constants/like_constants');
-
 var BeastStore = new Store(Dispatcher);
 
 var _currentBeast = [];

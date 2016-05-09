@@ -1,7 +1,6 @@
 var React = require('react');
 var ReviewActions = require('../actions/reviewActions');
 var UserStore = require('../stores/user_store');
- //remove if we refactor how we obtain author_id
 var BeastStore = require('../stores/beast_store');
 var ReviewStore = require('../stores/review_store');
 var RatingForm = require('../components/RatingForm');
@@ -91,12 +90,11 @@ var ReviewForm = React.createClass({
   handleSubmit: function (event) {
     event.preventDefault();
     var userId = UserStore.currentUser() ? UserStore.currentUser().id : null;
-    //Remove the above line once we implement onEnter for ReactRouter
     var beastId = BeastStore.currentBeast() ? BeastStore.currentBeast().id : null;
 
     if(userId){
       var postData = {
-        user_id: userId, //~maybe pass in as a prop when the add review button is clicked
+        user_id: userId,
         beast_id: beastId,
         description: this.state.description,
         rating: parseInt(this.state.rating)

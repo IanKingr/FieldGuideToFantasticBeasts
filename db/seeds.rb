@@ -211,7 +211,8 @@ name: "Sphinx",
   Sphinxes test the worth of those who seek the treasures of the gods, whether forgotten secrets or mighty spells, artifacts or magical gateways. Creatures that choose to face a sphinx's test are bound to that test unto death, and only those worthy will survive it. The rest the sphinx destroys.",
   avg_height: 89,
   avg_weight: 1350,
-  affinity_id: 3)
+  affinity_id: 3,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462771477/sphinx2_k9rp4f.jpg")
 
 Review.create(
   user_id: 12,
@@ -520,12 +521,13 @@ name: "Pegasus",
   avg_height: 69,
   avg_weight: 1500,
   avg_length: 240,
-  affinity_id: 3)
+  affinity_id: 3,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462771202/pegasus2_n4smj2.jpg")
 
 Review.create(
   user_id: 9,
   beast_id: 10,
-  rating: 5,
+  rating: 2,
   description: "While U'ndere was having dinner on the foredeck, a wild pegasus appeared from nowhere, stampeded over his enchiladas, and flew off again, leaving cheesy hoof prints all across the deck. \"What was that for?\" we hadn't the foggiest."
 )
 
@@ -533,7 +535,7 @@ Review.create(
 Review.create(
   user_id: 5,
   beast_id: 10,
-  rating: 5,
+  rating: 3,
   description: "Perhaps it is a human thing, to look upon such beauty and fail to encompass it."
 )
 
@@ -631,7 +633,8 @@ name: "Silver Dragon",
   Dragons may live for millennia, while humans only live a few decades. This vast difference in time leads to inherent psychological differences concerning time. Dragons tend to think things through for years at a time, using their razor-sharp intellects to hone a plan to perfection, solve incalculable puzzles, or other such things. Silver dragons, however, note that humans are able to accomplish much in their short life spans because of their ambitious drive for success. When a silver dragon can combine its own long-term perspective with a quick and ambitious attitude, the benefit is undeniable.",
   avg_length: 258,
   avg_weight: 1280000,
-  affinity_id: 4)
+  affinity_id: 4,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462772540/silver_dragon5_rqb99i.jpg")
 
 Review.create(
   user_id: 9,
@@ -675,7 +678,7 @@ name: "Gold Dragon",
   avg_length: 264,
   avg_weight: 1280000,
   affinity_id: 3,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574192/golddragon_pydrot.jpg")
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462770968/gold_dragon2_d8nvcv.jpg")
 
 #15
 Beast.create(
@@ -814,7 +817,7 @@ name: "Bulette",
   avg_height: 120,
   avg_weight: 2100,
   affinity_id: 3,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574568/bulette3_m0dtyw.jpg")
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/bulette4_t5p7ba.jpg")
 
 
 Review.create(
@@ -1308,7 +1311,8 @@ name: "Unicorn",
   avg_height: 72,
   avg_length: 96,
   avg_weight: 1200,
-  affinity_id: 4)
+  affinity_id: 4,
+  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462771979/unicorn_vulyyu.jpg")
 
 Review.create(
   user_id: 1,
