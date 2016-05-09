@@ -18,23 +18,17 @@
  .AffinityBeastList {
    display: flex;
    flex-direction: column;
-   /*justify-content: flex-start;*/
    align-items: center;
-   /*border: 1px dotted black;*/
    margin-top: 15px;
-   /*border-radius: 15px 15px 15px 15px;*/
    width: 90%;
    margin: auto;
    margin-top: 0px;
    margin-bottom: 0px;
-   /*z-index: 4;*/
    background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
 
    /*Shadow Transition*/
    box-shadow: 12px 6px 7px rgba(0,0,0,0.75);
    transition: all 0.3s ease-in-out;
-
-
  }
 
 .AffinityBeastListBeast {
@@ -54,20 +48,16 @@
   transition: 2s;
 }
 
-
-
 .AffinityFilterBar {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  /*border: 1px solid;*/
   margin: 10px;
   padding: 15px 10px 15px 10px;
 }
 
 .AffinityListHeader {
-  /*background-color: #b9b1a8;*/
   background-repeat: repeat;
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224961/7f6be3d2743ad84cac47652ad19bc4e9_zi1h8v.jpg');
   border-radius: 3px 3px 3px 3px;
@@ -78,42 +68,12 @@
   border: 1px solid;
   height: 25px;
   box-shadow: 6px 8px 5px rgba(0,0,0,0.75);
-  /*z-index: 2;*/
-
-  /*transition: 1s ease;*/
-}
-
-.ReviewList {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-}
-
-.ReviewListHeader {
-  /*background-color: #b9b1a8;*/
-  background-repeat: repeat;
-  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224961/7f6be3d2743ad84cac47652ad19bc4e9_zi1h8v.jpg');
-  border-radius: 3px 3px 3px 3px;
-  margin: auto;
-  margin-bottom: 0px;
-  width: 90%;
-  border: 1px solid;
-  height: 25px;
-  box-shadow: 6px 8px 5px rgba(0,0,0,0.75);
-  z-index: 0;
 }
 
 .error {
   margin: 10px;
 }
 
-.ReviewListItem div {
-  display: flex;
-  min-width: 150px;
-  margin: 5px;
-  /*max-width: 200px;*/
-}
 
 @-webkit-keyframes glow {
     from {
@@ -128,17 +88,39 @@
 
 .AffinityBeastListIndex:hover {
     background-color: #ccc;
-    /*border: 0px 1px 0px 1px solid transparent;*/
     -webkit-animation: glow 0.7s ease-in infinite alternate linear;
     animation: glow 0.7s ease-in infinite alternate;
 }
 
+.AffinityInfoBox {
+  margin-right: auto;
+  margin-left: auto;
+  right: 0;
+  left: 0;
+  width: 70%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 
+.AffinityInfoItems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 20px 35px 20px;
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
+}
+
+.AffinityInfoHeader {
+  font-size: -webkit-xxx-large;
+  font-family: 'Crimson Text', serif;
+}
 
 .AffinityListFooter {
   border-radius: 3px 3px 3px 3px;
   box-shadow: 11px 8px 7px rgba(0,0,0,0.75);
-  /*z-index: 1;*/
 }
 
 .BeastListItem {
@@ -146,12 +128,10 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  /*align-items: stretch;*/
   margin: 1px;
   padding: 7px;
   width: 80%;
   min-width: 100px;
-  /*background-color: #b9b1a8;*/
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224540/subtle_white_mini_waves_f7qx08.png');
   background-repeat: repeat;
   border-radius: 2px;
@@ -164,7 +144,6 @@
 
 .BeastContainer {
   display: flex;
-  /*height: 100%;*/
   width: 100%;
 }
 
@@ -241,6 +220,19 @@ button:focus {outline:0;}
   display: flex;
 }
 
+.Center {
+  justify-content: center;
+}
+
+.Description {
+  /*margin: 30px 30px 10px 0px;*/
+}
+
+.FieldGuideIndex {
+  display: flex;
+  flex-direction: column;
+}
+
 .Header {
   font-family: 'Crimson Text', serif;
   font-size: 48px;
@@ -264,21 +256,222 @@ input {
   margin: 3px;
 }
 
-textarea {
-  font-family: 'Lora', serif;
+.left {
+  margin-right: 10px;
+}
+
+.logo {
+  float: left;
+  transition: all .2s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.Like {
+  position: absolute;
+  margin: 35px 0px 0px 35px;
+  border-radius: 6px;
+  border: 0px;
+  font-family: 'Arial';
+  color: #ffffff;
   font-size: 15px;
-  /*padding: 10px 20px 10px 20px;*/
-  margin: 10px 20px 10px 20px;
+  background: #615F58;
+  padding: 5px 11px 5px 11px;
+  z-index: 10;
+  transition: 0.7s;
+}
+
+.Like:hover {
+  opacity: 0.8;
+  background-color: #D21B1B;
+  transition: 0.9s;
+}
+
+.Modal {
+  display: flex;
+  margin: auto;
+  margin-top: 65px;
+  width: 50%;
+  height: 80%;
+  border: 4px solid rgb(103, 99, 99);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 30px;
+  z-index: 11;
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
+}
+
+@media (max-width: 450px) {
+  .nav{ flex-direction: column; }
+  .CreateBeastButton{ margin-top: 80px; justify-content: center;}
+}
+
+@media (max-width: 600px) {
+  .BeastIndexInfo{ flex-direction: column; }
+  .ReviewFormSpecific.flexoveride{ flex-direction: column; align-items: flex-start; padding: 2px; min-width: 100px;}
+  .Description{width:100%;}
+  .BeastInfo{ margin-right: auto;}
+}
+
+@media (max-width: 750px) {
+  .ReviewFormSpecific.flexoveride{ flex-direction: column; align-items: flex-start; padding: 2px; min-width: 100px;}
+  .Description{width:100%;}
+  .BeastInfo{ margin-right: auto;}
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  font-family: 'Crimson Text', serif;
+  font-size: 22px;
+  color: white;
+  background-color: #c7ad88;
+  border-radius: 5px;
+  text-shadow: 1px 1px 1px #4b4d52;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+
+.NavBar {
+  margin-bottom: 10px;
+}
+
+.numLikes {
+  position: absolute;
+  margin: 15px 47px;
+}
+
+
+.OrangeButton {
+  justify-content:flex-end;
   border-radius: 3px;
+  border: 0px;
+  font-family: 'Arial';
+  color: #ffffff;
+  font-size: 15px;
+  background: #DE8642;
+  padding: 10px 20px 10px 20px;
+  margin: 10px 3px 3px 10px;
+}
+
+.OrangeButton.Centered {
+  align-items: baseline;
+}
+
+.OrangeButton:hover {
+  background: #FAA96B;
+}
+
+.ReviewList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.ReviewListHeader {
+  background-repeat: repeat;
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224961/7f6be3d2743ad84cac47652ad19bc4e9_zi1h8v.jpg');
+  border-radius: 3px 3px 3px 3px;
+  margin: auto;
+  margin-bottom: 0px;
+  width: 90%;
+  border: 1px solid;
+  height: 25px;
+  box-shadow: 6px 8px 5px rgba(0,0,0,0.75);
+  z-index: 0;
+}
+
+.ReviewListItem div {
+  display: flex;
+  min-width: 150px;
+  margin: 5px;
+}
+
+
+.ReviewLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  min-width: 150px;
+  height: 40px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #b9b1a8;
+  border: 2px solid #180D01;
+  border-radius: 10px 10px 0 0;
+  text-shadow: 1px 1px 1px #4b4d52;
+  flex-wrap: nowrap;
+}
+
+.ReviewForm {
+  display: flex;
+  flex-direction: row;
+  min-width: 270px;
+  width: 89%;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-image: url("https://res.cloudinary.com/flyingonclouds/image/upload/v1462187890/ricepaper_v3_zb5rto.png");
+}
+
+.ReviewListItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 270px;
+  width: 89%;
+  box-sizing: border-box;
+  padding: 40px;
+  border: 5px solid #4b4d52;
+  border-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224540/subtle_white_mini_waves_f7qx08.png');
+}
+
+.ReviewDescription {
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.ReviewFormSpecific {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+}
+
+.Scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  border-radius: 15px 15px 15px 15px;
+  width: 20%;
+  margin: auto;
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
+}
+
+.SelectRating {
+  margin-left: 20px;
 }
 
 .SearchContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
-  /*background-color: beige;*/
   align-items: center;
-  /*justify-content: space-between;*/
   box-sizing: border-box;
   padding: 0px 20px 0px 20px;
   align-items: center;
@@ -297,23 +490,13 @@ textarea {
   height: 100%;
 }
 
-.left {
-  margin-right: auto;
-}
-
 .SearchResultList {
-  /*display: flex;
-  flex-direction: column;*/
   position: absolute;
   margin-right: auto;
   margin-left: auto;
   right: 0;
   left: 0;
   width: 50%;
-
-  /*margin: auto;*/
-  /*align-items: center;*/
-
 }
 
 .SearchListItem {
@@ -322,12 +505,7 @@ textarea {
   min-width: 200px;
   height: 60px;
   margin-bottom: 2px;
-  /*margin: auto;
-  background-color: beige;*/
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224540/subtle_white_mini_waves_f7qx08.png');
-  /*background-image: url("http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.jpg");
-  background-repeat: no-repeat;
-  background-position: 0% 20%;*/
   border-radius: 5px;
   align-items: center;
   justify-content: space-between;
@@ -352,20 +530,6 @@ textarea {
   margin-left: 10px
 }
 
-.FieldGuideIndex {
-  display: flex;
-  flex-direction: column;
-}
-
-.logo {
-  float: left;
-  transition: all .2s ease-in-out;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
 .SignModal {
   display: flex;
   margin: auto;
@@ -378,7 +542,6 @@ textarea {
   outline: none;
   padding: 30px;
   z-index: 11;
-  /*background: rgb(255, 242, 231);*/
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
 }
 
@@ -387,199 +550,11 @@ textarea {
   flex-wrap: wrap;
 }
 
-.Modal {
-  display: flex;
-  margin: auto;
-  margin-top: 65px;
-  width: 50%;
-  height: 80%;
-  border: 4px solid rgb(103, 99, 99);
-  overflow: auto;
-  border-radius: 4px;
-  outline: none;
-  padding: 30px;
-  z-index: 11;
-  /*background: rgb(255, 242, 231);*/
-  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
-}
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 40px;
-  font-family: 'Crimson Text', serif;
-  font-size: 22px;
-  color: white;
-  background-color: #c7ad88;
-  /*border: 1px solid #64706c;*/
-  border-radius: 5px;
-  text-shadow: 1px 1px 1px #4b4d52;
-  flex-wrap: nowrap;
-  /*margin: 10px;*/
-  padding: 10px;
-}
-
-@media (max-width: 450px) {
-  .nav{ flex-direction: column; }
-  .CreateBeastButton{ margin-top: 80px; justify-content: center;}
-}
-
-@media (max-width: 600px) {
-  .BeastIndexInfo{ flex-direction: column; }
-  .ReviewFormSpecific.flexoveride{ flex-direction: column; align-items: flex-start; padding: 2px; min-width: 100px;}
-  .Description{width:100%;}
-  .BeastInfo{ margin-right: auto;}
-}
-
-@media (max-width: 750px) {
-  .ReviewFormSpecific.flexoveride{ flex-direction: column; align-items: flex-start; padding: 2px; min-width: 100px;}
-  .Description{width:100%;}
-  .BeastInfo{ margin-right: auto;}
-}
-
-.SelectRating {
-  margin-left: 20px;
-}
-
-.NavBar {
-  margin-bottom: 10px;
-}
-
-.numLikes {
-  position: absolute;
-  margin: 15px 47px;
-}
-
-
-.OrangeButton {
-  justify-content:flex-end;
+textarea {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  margin: 10px 20px 10px 20px;
   border-radius: 3px;
-  border: 0px;
-  font-family: 'Arial';
-  color: #ffffff;
-  font-size: 15px;
-  background: #DE8642;
-  padding: 10px 20px 10px 20px;
-  /*text-decoration: none;*/
-  margin: 10px 3px 3px 10px;
-}
-
-.OrangeButton.Centered {
-  align-items: baseline;
-}
-
-.Center {
-  justify-content: center;
-}
-
-.Description {
-  /*margin: 30px 30px 10px 0px;*/
-}
-
-.OrangeButton:hover {
-  background: #FAA96B;
-  /*text-decoration: none;*/
-}
-
-.ReviewLabel {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 40%;
-  min-width: 150px;
-  height: 40px;
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 20px;
-  color: white;
-  background-color: #b9b1a8;
-  border: 2px solid #180D01;
-  border-radius: 10px 10px 0 0;
-  text-shadow: 1px 1px 1px #4b4d52;
-  flex-wrap: nowrap;
-  /*margin: 10px;*/
-  /*padding: 20px;*/
-}
-
-.ReviewForm {
-  display: flex;
-  flex-direction: row;
-  min-width: 270px;
-  width: 89%;
-  /*margin-top: 30px;*/
-  margin-left: 20px;
-  margin-right: 20px;
-  /*border-radius: 5px 15px 15px 5px;*/
-  background-image: url("https://res.cloudinary.com/flyingonclouds/image/upload/v1462187890/ricepaper_v3_zb5rto.png");
-}
-
-.Like {
-  position: absolute;
-  margin: 35px 0px 0px 35px;
-  border-radius: 6px;
-  border: 0px;
-  font-family: 'Arial';
-  color: #ffffff;
-  font-size: 15px;
-  background: #615F58;
-  padding: 5px 11px 5px 11px;
-  z-index: 10;
-  transition: 0.7s;
-}
-
-.Like:hover {
-  opacity: 0.8;
-  background-color: #D21B1B;
-  transition: 0.9s;
-}
-
-.ReviewListItem {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  min-width: 270px;
-  width: 89%;
-  /*justify-content: space-between;*/
-  box-sizing: border-box;
-  padding: 40px;
-  border: 5px solid #4b4d52;
-  border-bottom: 0px;
-  /*margin-top: 30px;*/
-  margin-left: 20px;
-  margin-right: 20px;
-  /*border-radius: 5px 15px 15px 5px;*/
-  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224540/subtle_white_mini_waves_f7qx08.png');
-}
-
-
-.ReviewDescription {
-  flex-wrap: wrap;
-  flex: 1;
-}
-
-.ReviewFormSpecific {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 20px;
-}
-
-.Scroll {
-  display: flex;
-  flex-direction: column;
-  /*justify-content: flex-start;*/
-  align-items: center;
-  /*border: 1px dotted black;*/
-  margin-top: 15px;
-  border-radius: 15px 15px 15px 15px;
-  width: 20%;
-  margin: auto;
-  /*z-index: 1;*/
-  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
 }
 
 .AffinitySorter {
@@ -596,19 +571,15 @@ textarea {
 
 @-webkit-keyframes glowfade {
     0% {
-      /*border-color: black;*/
       box-shadow: 0 0 5px 5px #FFE993;
     }
     50% {
-      /*border-color: black;*/
       box-shadow: 0 0 4px 3px #FFE993;
     }
     90% {
-      /*border-color: #black;*/
       box-shadow: 0 0 3px 1px #FFE993;
     }
     100% {
-      /*border-color: #black;*/
       box-shadow: 0 0 1px 0px #FFE993;
     }
 }

@@ -17,11 +17,6 @@ var Link = require('react-router').Link;
 var IndexRoute = require('react-router').IndexRoute;
 var BrowserHistory = require('react-router').browserHistory;
 
-
-//Windows purely for testing
-// window.BeastActions = BeastActions;
-// window.BeastStore = BeastStore;
-
 var App = React.createClass({
   render: function () {
     return (

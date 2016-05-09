@@ -3,12 +3,7 @@ var BrowserHistory = require('react-router').browserHistory;
 var BeastActions = require('../actions/beastActions');
 var BeastListItem = React.createClass({
 
-  componentWillReceiveProps: function(){
-    // this.render(); //Removed at last minute
-  },
-
   handleClick: function(){
-
     BeastActions.fetchBeast({id: this.props.beast.id});
 
     BrowserHistory.push("/beasts/" + this.props.beast.affinity_id + "/" + this.props.beast.id);
@@ -16,30 +11,32 @@ var BeastListItem = React.createClass({
 
   render: function(){
     var beast = this.props.beast;
-    var beastimage;
+    var item_class = this.props.itemclass;
+    var beast_image;
     var average;
 
     if(beast){
-      average = beast.average ? beast.average : "Not Rated";
+      average = beast.average ? "★" + beast.average : "Not Rated";
     }
 
-    if (this.props.itemclass === "SearchListItem") {
+    if (item_class === "SearchListItem") {
       if(beast){
         // var divStyle= {
         //   backgroundImage: 'url('+beast.image_url+')',
         // };
-        // beastimage = <div style={divStyle}>&nbsp;</div>;
-        // // beastimage = <img src={beast.image_url}></img>;
+        // beast_image = <div style={divStyle}>&nbsp;</div>;
+        // beast_image = <img src={beast.image_url}></img>;
       } else {
-        beastimage = <div className="SearchBeastImage">&nbsp;</div>;
+        beast_image = <div className="SearchBeastImage">&nbsp;</div>;
       }
     }
 
     return (
-      <div  onClick={this.handleClick} className={this.props.itemclass} >
+      <div  onClick={this.handleClick} className={item_class} >
         <div className="left">{beast.name}</div>
         <div>{average}</div>
-        {beastimage}
+
+        {beast_image}
       </div>
     );
   }

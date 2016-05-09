@@ -3,14 +3,6 @@ var BeastListItem = require('./BeastListItem');
 
 
 var AffinityBeastList = React.createClass({
-  componentWillReceiveProps: function(){
-
-  },
-  //
-  // AnimateOnce: function(event){
-  //   $(event.target).addClass("AnimateOnce");
-  // },
-
 
   render: function(){
     var beasts = this.props.beasts;
@@ -20,7 +12,7 @@ var AffinityBeastList = React.createClass({
       beasts = beasts.map(function(beast){
         return <BeastListItem key={beast.id} itemclass={itemclass} beast={beast}/>;
       });
-    } else if (itemclass === "SearchListItem") {
+    } else if (itemclass === "SearchListItem"){
       beasts = <div></div>;
     } else {
       beasts = <div className="BeastListItem Center">Select an Affinity Above</div>;

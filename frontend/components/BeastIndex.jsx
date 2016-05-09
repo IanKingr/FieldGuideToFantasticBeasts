@@ -13,12 +13,8 @@ var LikeActions = require('../actions/likeActions');
 var Modal = require("react-modal");
 var Signin = require('./Signin');
 
-window.BeastStore = BeastStore;
-window.ReviewStore = ReviewStore;
 
 var BeastIndex = React.createClass({
-
-
   toggleFavorite: function(){
     if(UserStore.currentUser()){
       var data = {beast_id: this.state.currentBeast.id};

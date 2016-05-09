@@ -28,7 +28,6 @@ var BeastApiUtil = {
     });
   },
 
-
   createBeast: function(data, success, error){
     $.ajax ({
       type: "POST",

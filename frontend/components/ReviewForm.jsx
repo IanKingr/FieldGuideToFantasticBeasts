@@ -52,7 +52,7 @@ var ReviewForm = React.createClass({
   },
 
 
-  ratingForm: function () {
+  _ratingForm: function () {
 		var self = this;
 		return <RatingForm handleRating={self.handleRating} />;
   },
@@ -117,15 +117,18 @@ var ReviewForm = React.createClass({
     });
   },
 
-
-  render: function(){
-    var errorDisplay = "";
+  _errorDisplay: function(){
     if(this.state.errors){
-      errorDisplay = this.state.errors.map(function(error){
-        if(error === "User has already been taken"){ error = "You have already submitted a review!"; }
-        return <li>{error}</li>;
+      return this.state.errors.map(function(error){
+        if(error === "User has already been taken"){
+          error = "You have already submitted a review!";
+        }
+        return <li key={error}>{error}</li>;
       });
     }
+  },
+
+  render: function(){
     return (
       <div className="ReviewForm">
         <form onSubmit={this.handleSubmit} className="ReviewFormSpecific flexoveride">
@@ -137,14 +140,14 @@ var ReviewForm = React.createClass({
              onChange={this.descriptionChange} />
 
            <label className="SelectRating"> Danger Rating:
-            {this.ratingForm()}
+            {this._ratingForm()}
           </label>
          <br /><br />
 
           <input className="OrangeButton Centered" type="Submit" defaultValue="Submit Review"/>
         </form>
         <ul className="error">
-          {errorDisplay}
+          {this._errorDisplay()}
           {this.state.success}
         </ul>
 

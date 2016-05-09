@@ -4,9 +4,8 @@ var React = require('react'),
     AffinityFilterBar = require('./AffinityFilterBar'),
     CreateBeastButton = require('./CreateBeastButton'),
     SearchBar = require('./SearchBar'),
-    UserStore = require('../stores/user_store');
-
-window.UserStore= UserStore;
+    UserStore = require('../stores/user_store'),
+    AffinityDetails = require('./AffinityDetails');
 
 var FieldGuideIndex = React.createClass({
   getInitialState: function(){
@@ -18,7 +17,8 @@ var FieldGuideIndex = React.createClass({
 
   getBeasts: function(){
     this.setState({
-      beasts: BeastStore.allStored()
+      beasts: BeastStore.allStored(),
+      details: BeastStore.details()
     });
   },
 
@@ -38,16 +38,26 @@ var FieldGuideIndex = React.createClass({
     this.userListener.remove();
   },
 
+  setAffinity: function(affinity){
+    this.setState({
+      affinity: affinity
+    });
+  },
+
   render: function () {
     return (
       <div className="FieldGuideIndex">
         <div className="Header">Discover fanastic beasts!</div>
         <SearchBar beasts={this.state.beasts} />
         <CreateBeastButton signedin={this.state.signedin}/>
-        <AffinityFilterBar />
-        <div className="AffinityListHeader AffinityListFooter">&nbsp;</div>
-          <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList AffinityBeastListIndex" itemclass="BeastListItem"/>
-        <div className="AffinityListHeader AffinityListFooter">&nbsp;</div>
+        <AffinityFilterBar setAffinity={this.setAffinity}/>
+        <AffinityDetails affinity={this.state.affinity} details={this.state.details} />
+        <div className="AffinityListHeader AffinityListFooter" id="list">&nbsp;</div>
+          <AffinityBeastList
+            className="AffinityBeastList AffinityBeastListIndex"
+            beasts={this.state.beasts}
+            itemclass="BeastListItem"/>
+        <div className="AffinityListHeader AffinityListFooter" >&nbsp;</div>
         <div className="Footer"></div>
       </div>
     );

@@ -35,8 +35,25 @@ class Api::BeastsController < ApplicationController
     else
       @beasts = Beast.where("affinity_id = ?", params[:data][:affinity_id].to_i)
     end
+    # For refactor, I need to create an affinity model to house these calculations
+    @total_beasts = @beasts.length
     @averages = @beasts.joins(:reviews).group("beasts.id").average("reviews.rating")
-    # @averages = Beast.find_by_sql("SELECT BEAST_ID, ROUND(AVG(RATING), 2) FROM REVIEWS JOIN BEASTS ON BEASTS.id =  REVIEWS.BEAST_ID GROUP BY REVIEWS.BEAST_ID")
+    sum = 0
+    length = 0
+    best_avg = nil
+    @best_beast = nil
+    @averages.keys.each do |key|
+      if @averages[key]
+        sum += @averages[key]
+        if best_avg.nil? || @averages[key] > best_avg
+          best_avg = @averages[key]
+          @best_beast = @beasts.where(id:key)[0].name
+        end
+        length += 1
+      end
+    end
+    @query_average = sum.to_f/length
+
     render :index
   end
 end

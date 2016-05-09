@@ -10,6 +10,7 @@ var _currentBeast = [];
 var _errors;
 var _beasts = {};
 var _searchbeasts = {};
+var _queryDetails;
 
 BeastStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
@@ -22,16 +23,16 @@ BeastStore.__onDispatch = function(payload) {
       BeastStore.__emitChange();
       break;
     case BeastConstants.BEASTS_RECEIVED:
-      BeastStore.resetBeasts(payload.beasts);
+      // debugger;
+      BeastStore.resetBeasts(payload.beasts.beasts);
+      BeastStore.resetDetails(payload.beasts.queryDetails);
       BeastStore.__emitChange();
       break;
     case BeastConstants.ALL_BEASTS_RECEIVED:
-      BeastStore.searchStoreBeasts(payload.beasts);
-      // BeastStore.__emitChange();
+      BeastStore.searchStoreBeasts(payload.beasts.beasts);
       break;
     case BeastConstants.REMOVE_BEAST:
       BeastStore.__emitChange();
-    	// BeastStore.logout();
       break;
     case BeastConstants.ERROR:
       BeastStore.resetErrors(payload.errors);
@@ -54,8 +55,16 @@ BeastStore.currentBeast = function(){
   }
 };
 
+BeastStore.details = function(){
+  return _queryDetails;
+};
+
+BeastStore.resetDetails = function(details){
+  _queryDetails = details;
+};
+
 BeastStore.find = function(id){
-  return _beasts[id]; //check this
+  return _beasts[id];
 };
 
 BeastStore.allStored = function(){
@@ -70,13 +79,11 @@ BeastStore.setCurrentBeast = function(beast){
 };
 
 BeastStore.addLike = function(beastId, userId) {
-  // debugger;
   _beasts[beastId].like_users.push(parseInt(userId));
   _currentBeast[0].like_users.push(parseInt(userId));
 };
 
 BeastStore.removeLike = function(beastId, userId) {
-  // debugger;
   var userIdx = _beasts[beastId].like_users.indexOf(parseInt(userId));
   var userIdxCurrentBeast = _currentBeast[0].like_users.indexOf(parseInt(userId));
   _beasts[beastId].like_users.splice(userIdx, 1);
@@ -89,7 +96,6 @@ BeastStore.addBeast = function(beast){
 },
 
 BeastStore.resetBeasts = function(beasts){
-  //Need to check and see what form the beasts are passed back as from the JSON. If they are an object or not.
   _beasts = {};
 
   Object.keys(beasts).forEach(function (key) {
@@ -97,10 +103,8 @@ BeastStore.resetBeasts = function(beasts){
   });
 };
 
-//Will be depricated when we switch to single store
 BeastStore.searchStoreBeasts = function(beasts){
   _searchbeasts = {};
-  // debugger;
   Object.keys(beasts).forEach(function (key) {
     _searchbeasts[key] = beasts[key];
   });

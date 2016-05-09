@@ -74,7 +74,7 @@ var BeastForm = React.createClass({
     var errorDisplay = "";
     if(this.state.errors){
       errorDisplay = this.state.errors.map(function(error){
-        return <li>{error}</li>;
+        return <li key={error}>{error}</li>;
       });
     }
     return (
@@ -131,7 +131,7 @@ var BeastForm = React.createClass({
          </label>
          <br /><br />
 
-          <input className="OrangeButton" type="Submit" value="Create the Beast"/>
+          <input className="OrangeButton" type="Submit" defaultValue="Create the Beast"/>
         </form>
       </div>
     );

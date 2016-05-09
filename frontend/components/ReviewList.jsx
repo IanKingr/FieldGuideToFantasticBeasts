@@ -6,38 +6,6 @@ var ReviewActions = require('../actions/reviewActions');
 var ReviewForm = require('../components/ReviewForm');
 
 var ReviewList = React.createClass({
-  componentWillReceiveProps: function(){
-  },
-
-  // getInitialState: function(){
-  //   return ({
-  //     reviews: null
-  //   });
-  // },
-
-  // componentDidMount: function(){
-  //   console.log("Component Did Mount [ReviewList]");
-  //   this.reviewListener = ReviewStore.addListener(this.getReviews);
-  // },
-
-  // componentWillUnmount: function(){
-  //   console.log("ReviewList UNMOUNTED");
-  //   this.reviewListener.remove();
-  // },
-  //
-  // getReviews: function(){
-  //   console.log("Triggered getReview callback [ReviewList]");
-  //
-  //   if(this.state.reviews !== ReviewStore.allStored()){
-  //     this.setState({
-  //       reviews: ReviewStore.allStored()
-  //     });
-  //     console.log("AllReviews have been stored [ReviewList]" );
-  //   }
-  //
-  //   console.log("But may not have triggered setting currentReview or reviews : allStored");
-  //   // console.log(this.state.reviews + " the reviews");
-  // },
 
   render: function(){
     var reviews = this.props.reviews;
@@ -55,7 +23,7 @@ var ReviewList = React.createClass({
         <div className="ReviewListHeader">&nbsp;</div>
           <ReviewForm className="ReviewForm"/>
           {reviewList}
-        <div className="ReviewListHeader">&nbsp;</div>
+        <div className="ReviewListHeader" id="ReviewsFooter">&nbsp;</div>
       </div>
     );
   }
