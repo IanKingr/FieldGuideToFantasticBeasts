@@ -18,15 +18,47 @@ var Signin = React.createClass({
   },
 
   guestSignIn: function(event) {
-    var postData = {
-      username: UserStore.guest().username,
-      password: UserStore.guest().password
-    };
-    UserActions.login(postData);
+    var username = UserStore.guest().username.split("");
+    var password = UserStore.guest().password.split("");
+    var time = 50;
+    var self = this;
+
+    this.setState({
+      username: "",
+      password: ""
+    });
+
+    username.forEach(function(letter){
+      time += 100;
+      document.getElementById("usernamebox").focus();
+      setTimeout(function() {
+        self.setState({
+          username: self.state.username + letter
+        });
+      }, time);
+    });
+
+    time += 500;
+
+    password.forEach(function(letter){
+      time += 60;
+      setTimeout(function() {
+        document.getElementById("password").focus();
+        self.setState({
+          password: self.state.password + letter
+        });
+      }, time);
+    });
+
+    time += 650;
+
+    setTimeout(this.handleSubmit, time);
   },
 
   handleSubmit: function (event) {
-    event.preventDefault();
+    if(event){
+      event.preventDefault();
+    }
     var postData = {
       username: this.state.username,
       password: this.state.password
@@ -60,6 +92,7 @@ var Signin = React.createClass({
             <label>Username<br />
               <input
                type="text"
+               id="usernamebox"
                value={this.state.username}
                onChange={this.usernameChange} />
             </label>
@@ -67,6 +100,7 @@ var Signin = React.createClass({
            <label>Password<br />
            <input
              type="password"
+             id="password"
              value={this.state.password}
              onChange={this.passwordChange} />
            </label>
