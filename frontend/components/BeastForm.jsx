@@ -131,7 +131,7 @@ var BeastForm = React.createClass({
          </label>
          <br /><br />
 
-          <input className="OrangeButton" type="Submit" defaultValue="Create the Beast"/>
+          <input className="CreateBeastButton" type="Submit" defaultValue="Create the Beast"/>
         </form>
       </div>
     );

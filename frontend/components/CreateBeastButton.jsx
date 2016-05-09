@@ -92,7 +92,7 @@ var CreateBeastButton = React.createClass({
   render: function(){
 
     return (
-      <div className="CreateBeastButton">
+      <div >
         <button className="OrangeButton" onClick={this.createBeast}>Create Beast</button>
 
         <Modal

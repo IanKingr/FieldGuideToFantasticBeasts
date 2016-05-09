@@ -227,13 +227,11 @@ Review.create(
   description: "Such a fascinating creature! Easy to deal with if you are keen of intellect! Beware the claws if not!"
 )
 
-
-
 Review.create(
   user_id: 8,
   beast_id: 2,
-  rating: 1,
-  description: "Note to future riders, do not eat beforehand..."
+  rating: 4,
+  description: "Doesn't appreciate a good joke..."
 )
 
 #3
@@ -264,6 +262,13 @@ Review.create(
   description: "Creatures of darkness cannot stand before the light, praise the sun!"
 )
 
+Review.create(
+  user_id: 4,
+  beast_id: 3,
+  rating: 4,
+  description: "Vile lot these ones. They come in droves."
+)
+
 #4
 Beast.create(
   author_id: 1,
@@ -285,6 +290,13 @@ Review.create(
   beast_id: 4,
   rating: 3,
   description: "Entry #34: Cultural note. They do not like to be called lizards. Not one bit."
+)
+
+Review.create(
+  user_id: 1,
+  beast_id: 4,
+  rating: 2,
+  description: "Each community of kobolds is different, some friendly, some aggressive. Be sure to evaluate appropriately."
 )
 
 #5
@@ -326,6 +338,13 @@ Review.create(
   description: "Harmless mares. Make one heck of a racket during migrations."
 )
 
+Review.create(
+  user_id: 5,
+  beast_id: 6,
+  rating: 1,
+  description: "Fell from a ship once with my garments bringing me low. Then I saw the beast, and thought it meant to save me! Instead, the bugger nipped my hat and made off whinnying happily!"
+)
+
 #7
 Beast.create(
   author_id: 1,
@@ -334,6 +353,13 @@ name: "Waterdog",
   avg_height: 40,
   avg_weight: 80,
   affinity_id: 2)
+
+Review.create(
+  user_id: 22,
+  beast_id: 7,
+  rating: 1,
+  description: "Jus' like a puppy!"
+)
 
 #8
 Beast.create(
@@ -410,7 +436,7 @@ name: "Roc",
 Review.create(
   user_id: 4,
   beast_id: 9,
-  rating: 5,
+  rating: 4,
   description: "It was for all the world like an eagle, but one indeed of enormous size; so big in fact that its quills were twelve paces long and thick in proportion. And it is so strong that it will seize an elephant in its talons and carry him high into the air and drop him so that he is smashed to pieces; having so killed him, the bird swoops down on him and eats him at leisure."
 )
 
@@ -419,6 +445,13 @@ Review.create(
   beast_id: 9,
   rating: 5,
   description: "As if a mountain was hovering in the air above us, ready to crash down in an avalanche of feathers."
+)
+
+Review.create(
+  user_id: 10,
+  beast_id: 9,
+  rating: 5,
+  description: "Legends tell of birds large enough to cover the sky. I tell you they are true."
 )
 
 #10
@@ -506,6 +539,13 @@ Review.create(
   description: "Red dragons never forgive even the smallest slights. They kill over territorial intrusion, over the tiniest theft from their hoard, over an insult, or because they want to."
 )
 
+Review.create(
+  user_id: 5,
+  beast_id: 11,
+  rating: 5,
+  description: "One of the most dangerous dragons. Nearly burned my face off!"
+)
+
 
 #12
 Beast.create(
@@ -531,6 +571,12 @@ Review.create(
   description: "Never have I seen a more beautiful creature!"
 )
 
+Review.create(
+  user_id: 11,
+  beast_id: 12,
+  rating: 4,
+  description: "A silver dragon can be the most stalwart of companions. Perhaps the most gentle of the dragons yet a dragon nonetheless. Take care not to get on it's bad side."
+)
 
 #13
 Beast.create(
@@ -637,6 +683,13 @@ Review.create(
   description: "Its strangest trait is that, when the sun strikes it, instead of casting a shadow of its own body, it casts the shadow of a man. From this, some conclude that the Perytons are the spirits of wayfarers who have died far from their homes and from the care of their gods."
 )
 
+Review.create(
+  user_id: 13,
+  beast_id: 18,
+  rating: 4,
+  description: "The Sibyl of Erythraea, it is said, foretold that the city of Rome would finally be destroyed by the Perytons."
+)
+
 #19
 Beast.create(
   author_id: 1,
@@ -703,6 +756,35 @@ name: "Griffon",
   avg_weight: 500,
   affinity_id: 3,
   image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574145/griffin3_ixkwmp.jpg")
+
+
+Review.create(
+  user_id: 10,
+  beast_id: 21,
+  rating: 4,
+  description: "Many large mountains are inhabited by Griffins. These are four-footed birds as large as a wolf, their legs and claws resemble those of a lion; their breast feathers are red, those of the rest of the body black. Although there is abundance of gold in the mountains, it is difficult to get it because of these birds."
+)
+
+Review.create(
+  user_id: 3,
+  beast_id: 21,
+  rating: 2,
+  description: "I also heard some Griffins have spots like a leopard."
+)
+
+Review.create(
+  user_id: 5,
+  beast_id: 21,
+  rating: 4,
+  description: "Some say griffin's are half eagle and half lion and while that is their shape, one griffin is stronger than eight lions and stronger than a hundred eagles!"
+)
+
+Review.create(
+  user_id: 1,
+  beast_id: 21,
+  rating: 4,
+  description: "Do not set out in quest of the gold by day, but arrive by night, for at that season they are less likely to be detected."
+)
 
 
 #22
@@ -922,6 +1004,19 @@ Review.create(
   description: "Won't forget the day. The beast rose form the depths, striking our bow and throwing our craft into a spiral. The skiff, still attached to the ship's plating, was likewise carried around at dizzying speed. I could feel us whirling. I was experiencing that accompanying nausea that follows such continuous spinning motions. We were in dread, in the last stages of sheer horror, our blood frozen in our veins, our nerves numb, drenched in cold sweat as if from the throes of dying! And what a noise around our frail vessel! What roars echoing from the bowels of sea-borne horror! What crashes from the ship splinters breaking against sharp claws, where the hardest objects are smashed, where strong bows and wood are worn down and worked into \"a shaggy fur,\" as sailors express it! I was lucky to survive the day."
 )
 
+Review.create(
+  user_id: 1,
+  beast_id: 26,
+  rating: 4,
+  description: "If ever facing one, it's best to just pay the tribute. You might escape with half your party."
+)
+
+Review.create(
+  user_id: 12,
+  beast_id: 26,
+  rating: 5,
+  description: "Leaving Nephalia bound for Havengul, our fleet had the ill-luck of encountering one. 5 fully armed vessles were reduced to splinters, and our men and cargo dragged to the depths of the sea."
+)
 
 #27
 Beast.create(

@@ -98,8 +98,11 @@
   right: 0;
   left: 0;
   width: 70%;
+  border-radius: 5px;
   margin-bottom: 10px;
   margin-top: 10px;
+  opacity: 0.9;
+  background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
 }
 
 .AffinityInfoItems {
@@ -205,7 +208,9 @@ body {
   background-color: #FFF2E7;
   font-family: 'Fjalla One', sans-serif;
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462207270/tj-foo-grand-library_soujcw.jpg');
-
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0% 50%;
 }
 
 .ButtonsComponent {
@@ -218,6 +223,15 @@ button:focus {outline:0;}
 
 .CreateBeastButton {
   display: flex;
+  justify-content: flex-end;
+  border-radius: 3px;
+  border: 0px;
+  font-family: 'Arial';
+  color: #ffffff;
+  font-size: 15px;
+  background: #DE8642;
+  padding: 10px 20px 10px 20px;
+  margin: 10px 3px 25px 10px;
 }
 
 .Center {

@@ -33,7 +33,7 @@ var AffinityFilterBar = React.createClass({
   handleClickonAffinity: function(){
     $('html, body').animate({
        scrollTop: $("#list").offset().top
-    }, 2000);
+    }, 1500);
   },
 
   render: function(){
