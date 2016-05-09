@@ -269,6 +269,11 @@ Review.create(
   description: "Vile lot these ones. They come in droves."
 )
 
+Like.create(
+  user_id: 5,
+  beast_id: 3
+)
+
 #4
 Beast.create(
   author_id: 1,
@@ -297,6 +302,26 @@ Review.create(
   beast_id: 4,
   rating: 2,
   description: "Each community of kobolds is different, some friendly, some aggressive. Be sure to evaluate appropriately."
+)
+
+Like.create(
+  user_id: 5,
+  beast_id: 4
+)
+
+Like.create(
+  user_id: 6,
+  beast_id: 4
+)
+
+Like.create(
+  user_id: 8,
+  beast_id: 4
+)
+
+Like.create(
+  user_id: 9,
+  beast_id: 4
 )
 
 #5
@@ -361,6 +386,26 @@ Review.create(
   description: "Jus' like a puppy!"
 )
 
+Like.create(
+  user_id: 5,
+  beast_id: 7
+)
+
+Like.create(
+  user_id: 6,
+  beast_id: 7
+)
+
+Like.create(
+  user_id: 8,
+  beast_id: 7
+)
+
+Like.create(
+  user_id: 9,
+  beast_id: 7
+)
+
 #8
 Beast.create(
   author_id: 1,
@@ -395,6 +440,15 @@ Review.create(
   description: "What a Kraken grasps it does not lose, be it a longship or leviathan."
 )
 
+Like.create(
+  user_id: 5,
+  beast_id: 8
+)
+
+Like.create(
+  user_id: 6,
+  beast_id: 8
+)
 
 #9
 Beast.create(
@@ -481,6 +535,21 @@ Review.create(
   beast_id: 10,
   rating: 5,
   description: "Perhaps it is a human thing, to look upon such beauty and fail to encompass it."
+)
+
+Like.create(
+  user_id: 5,
+  beast_id: 10
+)
+
+Like.create(
+  user_id: 6,
+  beast_id: 10
+)
+
+Like.create(
+  user_id: 8,
+  beast_id: 10
 )
 
 #11
@@ -662,6 +731,20 @@ name: "Cockatrice",
   affinity_id: 3,
   image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/cockatrice3_ugcue0.jpg")
 
+Review.create(
+  user_id: 1,
+  beast_id: 17,
+  rating: 3,
+  description: "Unlikely to attack unprovoked. That said, only a fool would test this."
+)
+
+Review.create(
+  user_id: 19,
+  beast_id: 17,
+  rating: 4,
+  description: "Entry #42: Had the intern challenge one to a staring contest. The creature did not back down. Neither did my intern, but he hasn't moved since."
+)
+
 #18
 Beast.create(
   author_id: 1,
@@ -741,6 +824,13 @@ Review.create(
   description: "Their humors are extremely useful. Would be willing to pay handsomely for fresh vials of it!"
 )
 
+Review.create(
+  user_id: 13,
+  beast_id: 20,
+  rating: 4,
+  description: "Fierce and covered in thick, layered armor plates from head to toe."
+)
+
 #21
 Beast.create(
   author_id: 1,
@@ -786,6 +876,20 @@ Review.create(
   description: "Do not set out in quest of the gold by day, but arrive by night, for at that season they are less likely to be detected."
 )
 
+Like.create(
+  user_id: 1,
+  beast_id: 21
+)
+
+Like.create(
+  user_id: 3,
+  beast_id: 21
+)
+
+Like.create(
+  user_id: 2,
+  beast_id: 21
+)
 
 #22
 Beast.create(
@@ -821,6 +925,41 @@ name: "Couatl",
   affinity_id: 4,
   image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.jpg"
   )
+
+Like.create(
+  user_id: 1,
+  beast_id: 22
+)
+
+Like.create(
+  user_id: 2,
+  beast_id: 22
+)
+
+Like.create(
+  user_id: 3,
+  beast_id: 22
+)
+
+Like.create(
+  user_id: 4,
+  beast_id: 22
+)
+
+Like.create(
+  user_id: 5,
+  beast_id: 22
+)
+
+Like.create(
+  user_id: 6,
+  beast_id: 22
+)
+
+Like.create(
+  user_id: 7,
+  beast_id: 22
+)
 
 #23
 Beast.create(
@@ -877,6 +1016,17 @@ Review.create(
   rating: 5,
   description: "I asked one for a ride..."
 )
+
+Like.create(
+  user_id: 1,
+  beast_id: 23
+)
+
+Like.create(
+  user_id: 2,
+  beast_id: 23
+)
+
 
 #24
 Beast.create(
@@ -967,6 +1117,22 @@ name: "Aarakocra",
   affinity_id: 1,
   image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574568/aarakocra2_bhfzsd.jpg")
 
+
+Like.create(
+  user_id: 5,
+  beast_id: 25
+)
+
+Like.create(
+  user_id: 6,
+  beast_id: 25
+)
+
+Like.create(
+  user_id: 8,
+  beast_id: 25
+)
+
 #26
 Beast.create(
   author_id: 1,
@@ -996,6 +1162,11 @@ name: "Dragon Turtle",
   avg_weight: 2100,
   affinity_id: 2,
   image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/dragon-turtle2_utfece.jpg")
+
+Like.create(
+  user_id: 5,
+  beast_id: 26
+)
 
 Review.create(
   user_id: 21,
@@ -1075,6 +1246,25 @@ Review.create(
   description: "Yeh always wait fer the hippogriff ter make the firs' move. Eye contact should be maintained at all times, without a single blink."
 )
 
+Like.create(
+  user_id: 5,
+  beast_id: 27
+)
+
+Like.create(
+  user_id: 6,
+  beast_id: 27
+)
+
+Like.create(
+  user_id: 8,
+  beast_id: 27
+)
+
+Like.create(
+  user_id: 9,
+  beast_id: 27
+)
 
 #28
 Beast.create(
@@ -1148,7 +1338,25 @@ Review.create(
   description: "I thought unicorns were more... Fluffy"
 )
 
+Like.create(
+  user_id: 5,
+  beast_id: 28
+)
 
+Like.create(
+  user_id: 6,
+  beast_id: 28
+)
+
+Like.create(
+  user_id: 8,
+  beast_id: 28
+)
+
+Like.create(
+  user_id: 9,
+  beast_id: 28
+)
 
 # componentDidMount --> fetchCurrentUser
 #
