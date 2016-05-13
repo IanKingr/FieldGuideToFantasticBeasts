@@ -14,6 +14,13 @@
  *= require_self
  */
 
+ .Like.Active {
+   background-color: #D21B1B;
+ }
+
+ .Like.Active:hover {
+   background-color: #615F58;
+ }
 
  .AffinityBeastList {
    display: flex;

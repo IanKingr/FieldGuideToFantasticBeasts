@@ -34,6 +34,9 @@ var BeastIndex = React.createClass({
       var currentUserLikes = currentUser.liked_beasts;
       if(currentUserLikes.indexOf(beastId) !== -1){
         likeText = "Unlike";
+        $("#Like").addClass("Active");
+      } else {
+        $("#Like").removeClass("Active");
       }
     }
 
@@ -134,7 +137,7 @@ var BeastIndex = React.createClass({
     } else {
       beast_image= <div></div>;
     }
-
+    this._isLiked(); //Determines the color of the like button upon rendering
 
     return (
       <div className="BeastIndex">
@@ -147,8 +150,7 @@ var BeastIndex = React.createClass({
           </div>
           <Beast currentBeast={currentBeast}/>
           <div>
-
-              <button className="Like" onClick={this.toggleFavorite}> {this._isLiked()}</button>
+            <button id="Like" className="Like" onClick={this.toggleFavorite}>Like</button>
             <div className="numLikes">
               {num_likes}
             </div>
