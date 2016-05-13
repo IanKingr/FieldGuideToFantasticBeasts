@@ -170,6 +170,7 @@
 .BeastImage {
   position: relative;
   align-self: center;
+  line-height: 0px;
   opacity: 0.6;
   margin: 35px 0px 35px 35px;
   transition: 1s;
@@ -201,6 +202,16 @@
   margin-top: 35px;
   margin-bottom: 35px;
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
+}
+
+.BeastInfoHeader ul {
+  font-size: larger;
+  margin: 0.4em 0 0.4em 0;
+}
+
+.BeastInfoHeader h2 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 body {
@@ -288,6 +299,7 @@ input {
   margin: 35px 0px 0px 35px;
   border-radius: 6px;
   border: 0px;
+  box-shadow: 1px 1px 1px 1px black;
   font-family: 'Arial';
   color: #ffffff;
   font-size: 15px;
