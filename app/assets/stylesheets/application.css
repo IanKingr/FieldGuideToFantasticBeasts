@@ -303,6 +303,12 @@ input {
   transition: 0.9s;
 }
 
+.LogoAndButton {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .Modal {
   display: flex;
   margin: auto;
@@ -355,6 +361,8 @@ input {
 
 .NavBar {
   margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .numLikes {
@@ -508,6 +516,7 @@ input {
   position: absolute;
   margin-right: auto;
   margin-left: auto;
+  z-index: 5;
   right: 0;
   left: 0;
   width: 50%;
@@ -602,8 +611,8 @@ textarea {
 
 
 .AnimateOnce {
-  -webkit-animation: glowfade 2s ease-in alternate linear;
-  animation: glowfade 2s 1 ease-in alternate;
+  -webkit-animation: glowfade 1.5s ease-in alternate linear;
+  animation: glowfade 1.5s 1 ease-in alternate;
 }
 
 .AffinitySorter:hover {

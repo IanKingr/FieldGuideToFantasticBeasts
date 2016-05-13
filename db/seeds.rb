@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
 #1
 User.create(
   username: "VeteranHunter42",
@@ -157,7 +148,7 @@ name: "Mountain Troll",
   avg_height: 150,
   avg_weight: 1160,
   affinity_id: 1,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462177972/mountain_troll_ohvn37.png")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462177972/mountain_troll_ohvn37.png")
 
 Review.create(
   user_id: 1,
@@ -218,7 +209,7 @@ name: "Sphinx",
   avg_height: 89,
   avg_weight: 1350,
   affinity_id: 3,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462771477/sphinx2_k9rp4f.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462771477/sphinx2_k9rp4f.jpg")
 
 Review.create(
   user_id: 12,
@@ -253,7 +244,7 @@ name: "Gnoll",
   avg_height: 80,
   avg_weight: 240,
   affinity_id: 1,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/gnoll2_hnbvra.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/gnoll2_hnbvra.jpg")
 
 Review.create(
   user_id: 1,
@@ -295,7 +286,7 @@ name: "Kobold",
   avg_height: 45,
   avg_weight: 42,
   affinity_id: 1,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573995/kobold_ydtymw.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462573995/kobold_ydtymw.jpg")
 
 Review.create(
   user_id: 19,
@@ -341,7 +332,7 @@ name: "Goblin",
   avg_height: 48,
   avg_weight: 58,
   affinity_id: 1,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/Goblins2_vspr9w.jpg"
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/Goblins2_vspr9w.jpg"
   )
 
 Review.create(
@@ -361,7 +352,7 @@ name: "Hippocampus",
   avg_length: 72,
   avg_weight: 1400,
   affinity_id: 2,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574568/Breaching_Hippocamp2_rn8nye.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574568/Breaching_Hippocamp2_rn8nye.jpg")
 
 Review.create(
   user_id: 21,
@@ -384,7 +375,8 @@ name: "Waterdog",
   description: "Affectionately called \"waterpups\" by locals, these playful creatures live near large bodies of water and subsist mostly on fish and kelp. Their fur is thickly coated with oils in order to reduce drag when diving.",
   avg_height: 40,
   avg_weight: 80,
-  affinity_id: 2)
+  affinity_id: 2,
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1463096436/waterdog_b8pvuw.jpg")
 
 Review.create(
   user_id: 22,
@@ -424,7 +416,7 @@ name: "Kraken",
   Krakens cannot speak the languages of surface dwelling races, but might speak Aquan, or a language of their own similar to that of whales.",
   avg_height: 720,
   affinity_id: 2,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573957/kraken_pyegbg.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462573957/kraken_pyegbg.jpg")
 
 Review.create(
   user_id: 21,
@@ -492,7 +484,8 @@ name: "Roc",
   infrequent mating.",
   avg_length: 360,
   avg_weight: 8000,
-  affinity_id: 1)
+  affinity_id: 1,
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1463096089/roc_alt2_fybue3.jpg")
 
 Review.create(
   user_id: 4,
@@ -528,7 +521,7 @@ name: "Pegasus",
   avg_weight: 1500,
   avg_length: 240,
   affinity_id: 3,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462771202/pegasus2_n4smj2.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462771202/pegasus2_n4smj2.jpg")
 
 Review.create(
   user_id: 9,
@@ -600,7 +593,7 @@ name: "Red Dragon",
   every item in its hoard, along with each item's exact location. It might notice the absence of a single coin, igniting its rage as it tracks down and slays the thief without mercy. If the thief can't be found, the dragon
   goes on a rampage, laying waste to towns and villages in an attempt to sate its wrath.",
   affinity_id: 1,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573777/reddragon_gtle3j.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462573777/reddragon_gtle3j.jpg")
 
 Review.create(
   user_id: 8,
@@ -640,7 +633,7 @@ name: "Silver Dragon",
   avg_length: 258,
   avg_weight: 1280000,
   affinity_id: 4,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462772540/silver_dragon5_rqb99i.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462772540/silver_dragon5_rqb99i.jpg")
 
 Review.create(
   user_id: 9,
@@ -670,7 +663,14 @@ name: "Bronze Dragon",
     avg_length: 120,
     avg_weight: 160000,
     affinity_id: 2,
-    image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/bronze-dragon2_nwucvd.jpg")
+    image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/bronze-dragon2_nwucvd.jpg")
+
+Review.create(
+  user_id: 23,
+  beast_id: 13,
+  rating: 4,
+  description: "A bronze dragon is a welcome friend on the frontiers. Strong and resilient, they are compatriots to all things living and good."
+)
 
 #14
 Beast.create(
@@ -684,7 +684,15 @@ name: "Gold Dragon",
   avg_length: 264,
   avg_weight: 1280000,
   affinity_id: 3,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462770968/gold_dragon2_d8nvcv.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462770968/gold_dragon2_d8nvcv.jpg")
+
+Review.create(
+  user_id: 12,
+  beast_id: 14,
+  rating: 5,
+  description: "Truly the mightest of dragons, the legends do not do it justice."
+)
+
 
 #15
 Beast.create(
@@ -704,7 +712,14 @@ name: "Basilisk",
   avg_length: 140,
   avg_weight: 430,
   affinity_id: 1,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/basilisk2_prnd8m.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/basilisk2_prnd8m.jpg")
+
+Review.create(
+  user_id: 6,
+  beast_id: 15,
+  rating: 4,
+  description: "Over drinks, I bet Harold 5 pence that I could stare down a whole swarm of Basilisks. One look at 'em, and I owed Harold 5 pence."
+)
 
 #16
 Beast.create(
@@ -717,7 +732,7 @@ name: "Worg",
   avg_length: 60,
   avg_weight: 300,
   affinity_id: 4,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573120/worgpackfinal_unhicm.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462573120/worgpackfinal_unhicm.jpg")
 
 Review.create(
   user_id: 19,
@@ -738,7 +753,7 @@ name: "Cockatrice",
   avg_length: 60,
   avg_weight: 300,
   affinity_id: 3,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/cockatrice3_ugcue0.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/cockatrice3_ugcue0.jpg")
 
 Review.create(
   user_id: 1,
@@ -766,7 +781,7 @@ name: "Peryton",
   avg_height: 60,
   avg_weight: 1100,
   affinity_id: 4,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573828/peryton_htlprh.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462573828/peryton_htlprh.jpg")
 
 Review.create(
   user_id: 20,
@@ -794,7 +809,7 @@ name: "Owlbear",
   avg_height: 88,
   avg_weight: 1400,
   affinity_id: 4,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462573926/owlbear2_fkynpr.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462573926/owlbear2_fkynpr.jpg")
 
 
 Review.create(
@@ -823,7 +838,7 @@ name: "Bulette",
   avg_height: 120,
   avg_weight: 2100,
   affinity_id: 3,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/bulette4_t5p7ba.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/bulette4_t5p7ba.jpg")
 
 
 Review.create(
@@ -854,7 +869,7 @@ name: "Griffon",
   avg_height: 76,
   avg_weight: 500,
   affinity_id: 3,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574145/griffin3_ixkwmp.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574145/griffin3_ixkwmp.jpg")
 
 
 Review.create(
@@ -932,8 +947,15 @@ name: "Couatl",
   avg_length: 144,
   avg_weight: 1800,
   affinity_id: 4,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.jpg"
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462355490/fea3c330780e39e372c5414b83671321_ehzru5.jpg"
   )
+
+Review.create(
+  user_id: 11,
+  beast_id: 22,
+  rating: 4,
+  description: "Almost dragonlike, these winged serpents are rarely seen but a sight to behold."
+)
 
 Like.create(
   user_id: 1,
@@ -1010,7 +1032,7 @@ name: "Centaur",
   avg_length: 81,
   avg_weight: 1400,
   affinity_id: 3,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/centaur3_qozfzw.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/centaur3_qozfzw.jpg")
 
 Review.create(
   user_id: 1,
@@ -1059,10 +1081,10 @@ name: "Pseudodragon",
   ability, and resistance to magic make them superior
   familiars. Pseudodragons are selective when it comes
   to choosing companions, but they can sometimes
-  be won o~er with gifts of food or treasure. When
+  be won over with gifts of food or treasure. When
   a pseudodragon finds an agreeable companion, it
   bonds with that person as long as it is treated fairly.
-  A pseudodr.agon puts up with no ill treatment, and
+  A pseudodragon puts up with no ill treatment, and
   it abandons a manipulative or abusive companion
   without warning.
 
@@ -1079,15 +1101,18 @@ name: "Pseudodragon",
   desire, and a growl always means anger or discontent.",
   avg_length: 15,
   avg_weight: 7,
-  affinity_id: 4)
+  affinity_id: 4,
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1463096728/pseudodragon_rhtu8w.jpg")
+
 
 
 Review.create(
   user_id: 20,
-  beast_id: 26,
-  rating: 5,
+  beast_id: 24,
+  rating: 3,
   description: "If anyone should happen to acquire a scale, tooth, or other clipping from one, please do contact me! I have needs for it."
 )
+
 
 #25
 Beast.create(
@@ -1124,8 +1149,16 @@ name: "Aarakocra",
   avg_length: 144,
   avg_weight: 1800,
   affinity_id: 1,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574568/aarakocra2_bhfzsd.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574568/aarakocra2_bhfzsd.jpg")
 
+
+
+Review.create(
+  user_id: 23,
+  beast_id: 25,
+  rating: 3,
+  description: "Glad to call those of the North Highlands' brood my feathered friends."
+)
 
 Like.create(
   user_id: 5,
@@ -1170,7 +1203,7 @@ name: "Dragon Turtle",
   avg_height: 120,
   avg_weight: 2100,
   affinity_id: 2,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/dragon-turtle2_utfece.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462574569/dragon-turtle2_utfece.jpg")
 
 Like.create(
   user_id: 5,
@@ -1202,10 +1235,7 @@ Review.create(
 Beast.create(
   author_id: 1,
 name: "Hippogriff",
-  description: "A beast whose magical origins are lost to history, a
-  hippogriff possesses the wings and forelimbs of an
-  eagle, the hindquarters of a horse, and a head that
-  combines the features of both animals.
+  description: "A beast whose magical origins are lost to history, a hippogriff possesses the wings and forelimbs of an eagle, the hindquarters of a horse, and a head that combines the features of both animals.
 
   Reclusive and omnivorous, hippogriffs mate for life
   and seldom venture more than a few miles from their
@@ -1224,7 +1254,7 @@ name: "Hippogriff",
     avg_height: 84,
     avg_weight: 1000,
     affinity_id: 3,
-    image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462574103/hippogriff2_o0jvuw.jpg")
+    image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1463076706/hippogriffalt_bem4dl.jpg")
 
 
 Review.create(
@@ -1318,7 +1348,7 @@ name: "Unicorn",
   avg_length: 96,
   avg_weight: 1200,
   affinity_id: 4,
-  image_url: "http://res.cloudinary.com/flyingonclouds/image/upload/v1462771979/unicorn_vulyyu.jpg")
+  image_url: "https://res.cloudinary.com/flyingonclouds/image/upload/v1462771979/unicorn_vulyyu.jpg")
 
 Review.create(
   user_id: 1,
@@ -1367,26 +1397,3 @@ Like.create(
   user_id: 9,
   beast_id: 28
 )
-
-# componentDidMount --> fetchCurrentUser
-#
-# check if user is logged in with componentWillMount(occurs before render and before DidMount)
-#
-#
-# ajax cookies still send the cookies stored on your computer locally. So basically we need to fetchCurrentUser and return a user to the store. If nothing gets returned, then we aren't logged in. If something gets returned, then we are logged in.
-#
-# can still use session[:session_token] in Rails
-#
-# User.fetchCurrentUser at the top of the first page.
-#
-# In Sessions Controller
-#
-# show
-#   token = session[:session_token]
-#     @user = User.find_by({session_token: token})
-#     if @user
-#       response = {loggen_in: true, username: @user.username}
-#       render json: response
-#     else
-#       render json: {logged_in: false}
-#     end

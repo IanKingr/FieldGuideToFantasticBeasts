@@ -49,7 +49,6 @@ var FieldGuideIndex = React.createClass({
       <div className="FieldGuideIndex">
         <div className="Header">Discover fanastic beasts!</div>
         <SearchBar beasts={this.state.beasts} />
-        <CreateBeastButton signedin={this.state.signedin}/>
         <AffinityFilterBar setAffinity={this.setAffinity}/>
         <AffinityDetails affinity={this.state.affinity} details={this.state.details} />
         <div className="AffinityListHeader AffinityListFooter" id="list">&nbsp;</div>

@@ -6,6 +6,8 @@ var Buttons = require('./buttons');
 var UserStore = require('../stores/user_store');
 var Modal = require("react-modal");
 var Link = require('react-router').Link;
+var CreateBeastButton = require('./CreateBeastButton');
+
 
 var style = {
   overlay : {
@@ -85,9 +87,12 @@ var NavBar = React.createClass({
     return (
       <div className="NavBar">
         <div className="nav">
-          <Link to="/" class="active">
-            <img className="logo" src="https://res.cloudinary.com/flyingonclouds/image/upload/v1462209268/field_guide_logo4_lrwlzw.png"/>
-          </Link>
+          <div className="LogoAndButton">
+            <Link to="/" class="active">
+              <img className="logo" src="https://res.cloudinary.com/flyingonclouds/image/upload/v1462209268/field_guide_logo4_lrwlzw.png"/>
+            </Link>
+            <CreateBeastButton signedin={this.state.currentUser}/>
+          </div>
         <Buttons
           signed_in={this.state.currentUser}
           signOutCallback={this.handleSignout}
