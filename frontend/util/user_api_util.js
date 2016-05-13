@@ -15,10 +15,10 @@ var UserApiUtil = {
     $.ajax ({
       type: "POST",
       url: "/api/user",
-      data: {
+      data: {user: {
         username: data.username,
         password: data.password
-      },
+      } },
       success: success,
       error: error
     });
@@ -28,9 +28,9 @@ var UserApiUtil = {
     $.ajax ({
       type: "POST",
       url: "/api/session",
-      data: {
+      data: {session: {
         username: loginData.username,
-        password: loginData.password},
+        password: loginData.password} },
       success: success,
       error: error
     });

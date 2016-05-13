@@ -21,7 +21,6 @@ BeastStore.__onDispatch = function(payload) {
       BeastStore.__emitChange();
       break;
     case BeastConstants.BEASTS_RECEIVED:
-      // debugger;
       BeastStore.resetBeasts(payload.beasts.beasts);
       BeastStore.resetDetails(payload.beasts.queryDetails);
       BeastStore.__emitChange();

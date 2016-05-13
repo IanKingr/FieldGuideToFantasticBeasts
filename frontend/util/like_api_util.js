@@ -7,7 +7,7 @@ var LikeActions = {
     $.ajax ({
       type: "POST",
       url: "/api/likes",
-      data: data,
+      data: {like:data},
       success: success
     });
   },

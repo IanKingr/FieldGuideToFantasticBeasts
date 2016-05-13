@@ -12,7 +12,7 @@ var ReviewApiUtil = {
     $.ajax ({
       type: "GET",
       url: "/api/reviews",
-      data: {data: data},
+      data: {review: data},
       success: success,
       error: error
     });
@@ -22,12 +22,12 @@ var ReviewApiUtil = {
     $.ajax ({
       type: "POST",
       url: "/api/reviews",
-      data: {
+      data: {review: {
         user_id: data.user_id,
         beast_id: data.beast_id,
         rating: data.rating,
         description: data.description,
-      },
+      } },
       success: success,
       error: error
     });

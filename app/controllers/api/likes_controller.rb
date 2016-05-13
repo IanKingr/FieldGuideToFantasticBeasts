@@ -3,20 +3,19 @@ class Api::LikesController < ApplicationController
   def create
     @like = Like.new(
       user_id: current_user.id,
-      beast_id: params[:beast_id].to_i,
+      beast_id: like_params[:beast_id].to_i,
     )
 
     if @like.save
       render json: {
         userId: current_user.id,
-        beastId: params[:beast_id].to_i
+        beastId: like_params[:beast_id].to_i
       }, status: 200
     else
       @errors = @like.errors.full_messages
       render "api/shared/error", status: 422
     end
   end
-
 
   def destroy
     like = Like.find_by(

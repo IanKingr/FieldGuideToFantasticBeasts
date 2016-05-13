@@ -5,9 +5,7 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(
-      username: params[:username],
-      password: params[:password])
+    @user = User.new(user_params)
     if(@user.save)
       sign_in(@user)
       render :show #We are sending back JSON data from this view as a response to the API request

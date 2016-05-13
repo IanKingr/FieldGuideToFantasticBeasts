@@ -12,7 +12,7 @@ var BeastApiUtil = {
     $.ajax ({
       type: "GET",
       url: "/api/beasts",
-      data: {data: data},
+      data: {beast: data},
       success: success,
       error: error
     });
@@ -22,7 +22,7 @@ var BeastApiUtil = {
     $.ajax ({
       type: "GET",
       url: "/api/beasts",
-      data: {data: data},
+      data: {beast: data},
       success: success,
       error: error
     });
@@ -31,8 +31,8 @@ var BeastApiUtil = {
   createBeast: function(data, success, error){
     $.ajax ({
       type: "POST",
-      url: "api/beasts",
-      data: {
+      url: "/api/beasts",
+      data: {beast: {
         author_id: data.author_id,
         name: data.name,
         description: data.description,
@@ -40,7 +40,7 @@ var BeastApiUtil = {
         avg_height: data.avg_height,
         avg_weight: data.avg_weight,
         affinity_id: data.affinity_id,
-      },
+      } },
       success: success,
       error: error
     });
