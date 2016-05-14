@@ -1,6 +1,8 @@
 var Dispatcher = require('../dispatcher/dispatcher.js');
 var Store = require('flux/utils').Store;
 var ReviewConstants = require('../constants/review_constants');
+var BeastConstants = require('../constants/beast_constants');
+
 
 var ReviewStore = new Store(Dispatcher);
 
@@ -27,6 +29,10 @@ ReviewStore.__onDispatch = function(payload) {
     //   ReviewStore.__emitChange();
     // 	// ReviewStore.logout();
     //   break;
+    case BeastConstants.CREATED_BEAST_RECEIVED:
+      ReviewStore.resetErrors();
+      ReviewStore.__emitChange();
+      break;
     case ReviewConstants.RESET_ERRORS:
       ReviewStore.resetErrors();
       ReviewStore.__emitChange();

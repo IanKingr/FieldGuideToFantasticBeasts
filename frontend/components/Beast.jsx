@@ -7,7 +7,6 @@ var Beast = React.createClass({
   },
 
   render: function(){
-
     if(this.props && Boolean(this.props.currentBeast)){
       var beast = this.props.currentBeast;
       // var result = "<p>" + beast.description + "</p>";

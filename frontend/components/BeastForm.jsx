@@ -2,6 +2,7 @@ var React = require('react');
 var BeastActions = require('../actions/beastActions');
 var UserStore = require('../stores/user_store');
 var BeastStore = require('../stores/beast_store');
+var BrowserHistory = require('react-router').browserHistory;
 
 var BeastForm = React.createClass({
   getInitialState: function (){
@@ -13,6 +14,7 @@ var BeastForm = React.createClass({
       this.setState({errors: BeastStore.errors()});
     } else {
       this.props.closeModal();
+      BrowserHistory.push("/beasts/"+ BeastStore.currentBeast().affinity_id + "/" + BeastStore.currentBeast().id);
     }
   },
 
@@ -58,7 +60,7 @@ var BeastForm = React.createClass({
     event.preventDefault();
     var userId = UserStore.currentUser() ? UserStore.currentUser().id : null;
     var postData = {
-      author_id: userId, 
+      author_id: userId,
       name: this.state.name,
       description: this.state.description,
       avg_height: this.state.height,

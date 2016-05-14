@@ -50,7 +50,7 @@ var BeastIndex = React.createClass({
   componentWillMount: function(){
     var beastId = parseInt(this.props.params.id);
     var affinityId = parseInt(this.props.params.affinity_id);
-
+    console.log("will mount BeastIndex");
     BeastActions.fetchBeast({id: beastId});
     BeastActions.fetchBeasts({affinity_id: affinityId});
     this.setState({
@@ -61,14 +61,22 @@ var BeastIndex = React.createClass({
 
   componentWillReceiveProps: function(nextProps){
     var beastId = parseInt(this.props.params.id);
-    var beast = BeastStore.find(nextProps.params.id);
+    var beast;
+    if(parseInt(nextProps.params.id) === BeastStore.currentBeast().id){
+      beast = BeastStore.currentBeast();
+    } else {
+      beast = BeastStore.find(nextProps.params.id);
+    }
 
-    ReviewActions.resetReviewErrors();
+    ReviewStore.resetErrors(); //
+
     this.setState({
       currentBeast: beast,
       reviews: ReviewActions.fetchReviews({beast_id: nextProps.params.id})
     });
   },
+
+
 
   componentDidMount: function(){
     this.beastListener = BeastStore.addListener(this.getBeast);
@@ -104,10 +112,13 @@ var BeastIndex = React.createClass({
 
 
   getBeast: function(){
+    console.log("getting Beast [BeastIndex]");
     var currentBeast = BeastStore.currentBeast();
     this.setState({
-      currentBeast: currentBeast,
+      currentBeast: BeastStore.currentBeast(),
     });
+
+    // this.getReviews();
 
     if(this.state.beasts !== BeastStore.allStored()){
       this.setState({
@@ -123,6 +134,7 @@ var BeastIndex = React.createClass({
   },
 
   render: function(){
+    debugger;
     var currentBeast = this.state.currentBeast;
     var beast_image;
     var num_likes;
@@ -172,5 +184,6 @@ var BeastIndex = React.createClass({
   }
 });
 
+window.BeastStore = BeastStore;
 
 module.exports = BeastIndex;

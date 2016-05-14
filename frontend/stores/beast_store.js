@@ -13,11 +13,13 @@ var _queryDetails;
 BeastStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case BeastConstants.BEAST_RECEIVED:
-    	BeastStore.setCurrentBeast(payload.beast);
+    	BeastStore.setCurrentBeast(payload.beast.beast);
       BeastStore.__emitChange();
       break;
     case BeastConstants.CREATED_BEAST_RECEIVED:
-      BeastStore.setCurrentBeast(payload.beast);
+      BeastStore.resetBeasts(payload.beast.beasts);
+      BeastStore.setCurrentBeast(payload.beast.beast);
+      // BeastStore.addBeast(payload.beast.beast);
       BeastStore.__emitChange();
       break;
     case BeastConstants.BEASTS_RECEIVED:
@@ -61,6 +63,7 @@ BeastStore.resetDetails = function(details){
 };
 
 BeastStore.find = function(id){
+  debugger;
   return _beasts[id];
 };
 
@@ -94,7 +97,7 @@ BeastStore.addBeast = function(beast){
 
 BeastStore.resetBeasts = function(beasts){
   _beasts = {};
-
+  debugger;
   Object.keys(beasts).forEach(function (key) {
     _beasts[key] = beasts[key];
   });

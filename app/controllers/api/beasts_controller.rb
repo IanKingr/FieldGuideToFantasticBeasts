@@ -7,7 +7,7 @@ class Api::BeastsController < ApplicationController
 
   def create
     @beast = Beast.new(beast_params)
-
+    @beasts = Beast.where("affinity_id = ?", beast_params[:affinity_id].to_i)
     if @beast.save
       render :show
     else
@@ -18,6 +18,7 @@ class Api::BeastsController < ApplicationController
 
   def show
     @beast = Beast.find(params[:id])
+    @beasts = [];
     render :show
   end
 
