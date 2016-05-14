@@ -73,7 +73,6 @@ var CreateBeastButton = React.createClass({
   },
 
   createBeast: function(){
-    // debugger;
     if(this.props.signedin){
       this.setState({CreateBeastModalOpen: true});
     } else {

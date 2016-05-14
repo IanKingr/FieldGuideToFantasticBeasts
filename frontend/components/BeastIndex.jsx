@@ -68,7 +68,7 @@ var BeastIndex = React.createClass({
       beast = BeastStore.find(nextProps.params.id);
     }
 
-    ReviewStore.resetErrors(); //
+    ReviewStore.resetErrors();
 
     this.setState({
       currentBeast: beast,
@@ -134,7 +134,6 @@ var BeastIndex = React.createClass({
   },
 
   render: function(){
-    debugger;
     var currentBeast = this.state.currentBeast;
     var beast_image;
     var num_likes;

@@ -63,7 +63,6 @@ BeastStore.resetDetails = function(details){
 };
 
 BeastStore.find = function(id){
-  debugger;
   return _beasts[id];
 };
 
@@ -97,7 +96,6 @@ BeastStore.addBeast = function(beast){
 
 BeastStore.resetBeasts = function(beasts){
   _beasts = {};
-  debugger;
   Object.keys(beasts).forEach(function (key) {
     _beasts[key] = beasts[key];
   });
