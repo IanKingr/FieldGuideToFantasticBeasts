@@ -6,7 +6,7 @@ var BrowserHistory = require('react-router').browserHistory;
 
 var BeastForm = React.createClass({
   getInitialState: function (){
-    return ({ name: "", description: "", errors: "", height: "" });
+    return ({ name: "", description: "", errors: "", height: "", length: "", weight: "" });
   },
 
   getErrors: function(){
@@ -100,25 +100,25 @@ var BeastForm = React.createClass({
            onChange={this.descriptionChange} />
          </label>
          <br /><br />
-         <label>Height<br />
+         <label>Height (in)<br />
          <input
            type="number"
            value={this.state.height}
            onChange={this.heightChange} />
          </label>
          <br /><br />
-         <label>Weight<br />
-         <input
-           type="number"
-           value={this.state.weight}
-           onChange={this.weightChange} />
-         </label>
-         <br /><br />
-         <label>Length<br />
+         <label>Length (in)<br />
          <input
            type="number"
            value={this.state.length}
            onChange={this.lengthChange} />
+         </label>
+         <br /><br />
+         <label>Weight (lbs)<br />
+         <input
+           type="number"
+           value={this.state.weight}
+           onChange={this.weightChange} />
          </label>
          <br /><br />
          <label>Affinity
