@@ -183,6 +183,6 @@ var BeastIndex = React.createClass({
   }
 });
 
-window.BeastStore = BeastStore;
+// window.BeastStore = BeastStore;
 
 module.exports = BeastIndex;

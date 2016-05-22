@@ -23,10 +23,14 @@ class Api::BeastsController < ApplicationController
   end
 
   def index
-    if(beast_params[:affinity_id].to_i == 0)
-      @beasts = Beast.all
+    if beast_params[:liked_beasts] == "true"
+      @beasts = current_user.liked_beasts
     else
-      @beasts = Beast.where("affinity_id = ?", beast_params[:affinity_id].to_i)
+      if(beast_params[:affinity_id].to_i == 0)
+        @beasts = Beast.all
+      else
+        @beasts = Beast.where("affinity_id = ?", beast_params[:affinity_id].to_i)
+      end
     end
     # For refactor, I need to create an affinity model to house these calculations
     @total_beasts = @beasts.length
@@ -52,7 +56,7 @@ class Api::BeastsController < ApplicationController
 
   private
   def beast_params
-    params.require(:beast).permit(:id, :author_id,:name,:description,:avg_height,:avg_weight,:avg_length,:affinity_id)
+    params.require(:beast).permit(:id, :author_id,:name,:description,:avg_height,:avg_weight,:avg_length,:affinity_id, :liked_beasts)
   end
 
 end

@@ -1,8 +1,8 @@
 var React = require('react');
 var BrowserHistory = require('react-router').browserHistory;
 var BeastActions = require('../actions/beastActions');
-var BeastListItem = React.createClass({
 
+var BeastListItem = React.createClass({
   handleClick: function(){
     BeastActions.fetchBeast({id: this.props.beast.id});
 

@@ -9,7 +9,8 @@ var React = require('react'),
     FieldGuideIndex = require('./components/FieldGuideIndex'),
     CreateBeastButton = require('./components/CreateBeastButton'),
     BeastStore = require('./stores/beast_store'),
-    BeastForm = require('./components/BeastForm');
+    BeastForm = require('./components/BeastForm'),
+    UserProfile = require('./components/UserProfile');
 
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
@@ -57,6 +58,7 @@ var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={FieldGuide} />
     <Route path="beasts/:affinity_id/:id" component={BeastIndex} />
+    <Route path="user" component={UserProfile} />
   </Route>
 );
 

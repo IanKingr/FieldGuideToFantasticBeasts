@@ -126,4 +126,6 @@ BeastStore.errors = function(){
   }
 };
 
+window.BeastStore = BeastStore;
+
 module.exports = BeastStore;

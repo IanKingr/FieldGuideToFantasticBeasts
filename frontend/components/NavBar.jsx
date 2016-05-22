@@ -7,7 +7,7 @@ var UserStore = require('../stores/user_store');
 var Modal = require("react-modal");
 var Link = require('react-router').Link;
 var CreateBeastButton = require('./CreateBeastButton');
-
+var BrowserHistory = require('react-router').browserHistory;
 
 var style = {
   overlay : {
@@ -64,7 +64,6 @@ var NavBar = React.createClass({
     UserActions.logout();
   },
 
-
   getCurrentUser: function(){
     this.setState({currentUser: UserStore.currentUser()});
     if(this.state.currentUser){
@@ -81,8 +80,12 @@ var NavBar = React.createClass({
     });
   },
 
+  handleClick: function(){
+    BrowserHistory.push("/user");
+  },
+
   render: function(){
-    var username = this.state.currentUser ? this.state.currentUser.username : null;
+    var username = this.state.currentUser ? <div onClick={this.handleClick}>{this.state.currentUser.username}</div> : null;
 
     return (
       <div className="NavBar">

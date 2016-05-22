@@ -72,4 +72,6 @@ UserStore.errors = function(){
   }
 };
 
+window.UserStore = UserStore;
+
 module.exports = UserStore;
