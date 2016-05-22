@@ -27,6 +27,10 @@ class Api::SessionsController < ApplicationController
     token = session[:session_token]
     @user = User.find_by({session_token: token})
 		if @user
+      @reviews = Beast.select("reviews.description, reviews.rating, beasts.name, beasts.id").
+      joins(:reviews).
+      where("reviews.user_id = ?", @user.id)
+      debugger
 			render :show
 		else
 			@errors = nil
