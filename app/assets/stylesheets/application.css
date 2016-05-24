@@ -27,6 +27,8 @@
    flex-direction: column;
    align-items: center;
    margin-top: 15px;
+   max-height: 450px;
+   overflow-y: scroll;
    width: 90%;
    margin: auto;
    margin-top: 0px;
@@ -43,6 +45,11 @@
   flex-direction: column;
   width: 40%;
   margin: 20px 15px 20px 10px
+}
+
+.AffinityBeastListBeast h3{
+  margin-bottom: 0;
+  align-self: center;
 }
 
 .AffinityBeastListBeast .AffinityListHeader {
@@ -141,6 +148,7 @@
   margin: 1px;
   padding: 7px;
   width: 80%;
+  min-height: 22px;
   min-width: 100px;
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224540/subtle_white_mini_waves_f7qx08.png');
   background-repeat: repeat;
@@ -465,7 +473,7 @@ input {
   background-image: url("https://res.cloudinary.com/flyingonclouds/image/upload/v1462187890/ricepaper_v3_zb5rto.png");
 }
 
-.ReviewListItem {
+.ReviewListItem, .UserReview {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -535,6 +543,8 @@ input {
   position: absolute;
   margin-right: auto;
   margin-left: auto;
+  max-height: 400px;
+  overflow-y: scroll;
   z-index: 5;
   right: 0;
   left: 0;
@@ -588,7 +598,7 @@ input {
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
 }
 
-.SignUpInForm{
+.SignUpInForm {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -599,6 +609,26 @@ textarea {
   font-size: 15px;
   margin: 10px 20px 10px 20px;
   border-radius: 3px;
+}
+
+.UserReview {
+  padding: 10px;
+  border: 2px solid #4b4d52;
+  border-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.UserReview div {
+  padding: 0 0.7em 0 0.7em;
+}
+
+.UserReviews {
+  display: flex;
+  flex-direction: row;
+  max-height: 25em;
+  overflow-y: scroll;
+  flex-wrap: wrap;
 }
 
 .AffinitySorter {

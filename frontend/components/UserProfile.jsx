@@ -46,13 +46,16 @@ var UserProfile = React.createClass({
 
   render: function(){
     var user = UserStore.currentUser();
-    console.log(user);
+    if (user){
+      var likedBeasts = user.liked_beasts.length;
+    }
+
     return (
       <div>
         <div className="BeastIndex">
           <div className="BeastIndexInfo">
             <div className="AffinityBeastListBeast">
-              Liked Beasts
+              <h3>Liked Beasts: {likedBeasts}</h3>
               <div className="AffinityListHeader">&nbsp;</div>
               <AffinityBeastList beasts={this.state.beasts} className="AffinityBeastList"
                 itemclass="BeastListItem"/>

@@ -10,6 +10,7 @@ var _currentUser, _errors;
 UserStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case UserConstants.USER_RECEIVED:
+      debugger;
     	UserStore.login(payload.user);
       UserStore.__emitChange();
       break;

@@ -10,12 +10,11 @@ var ReviewList = React.createClass({
   render: function(){
     var reviews = this.props.reviews;
     if(reviews){
-      // var reviews = beast.reviews;
+      debugger;
       var reviewList = reviews.map(function(review){
         return <ReviewListItem key={review.id} review={review}/>;
       });
     }
-
 
     return (
       <div className="ReviewList">
