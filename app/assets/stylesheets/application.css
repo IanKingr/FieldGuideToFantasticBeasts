@@ -653,6 +653,7 @@ textarea {
   background-color: tan;
   color: white;
   border-radius: 50%;
+  margin-bottom: 0.7em;
   width: 200px;
   height: 200px;
   cursor:url('http://res.cloudinary.com/flyingonclouds/image/upload/v1464054419/custom_cursor_oxwylf.png'), auto;
