@@ -27,14 +27,14 @@
    flex-direction: column;
    align-items: center;
    margin-top: 15px;
-   max-height: 450px;
-   overflow-y: scroll;
+   /*max-height: 450px;
+   overflow-y: scroll;*/
    width: 90%;
    margin: auto;
    margin-top: 0px;
    margin-bottom: 0px;
    background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462181215/sayagata-400px_x2apip.png');
-
+   cursor:url('http://res.cloudinary.com/flyingonclouds/image/upload/v1464054419/custom_cursor_oxwylf.png'), auto;
    /*Shadow Transition*/
    box-shadow: 12px 6px 7px rgba(0,0,0,0.75);
    transition: all 0.3s ease-in-out;
@@ -58,6 +58,7 @@
 
 .AffinityBeastListIndex {
   width: 50%;
+  cursor:url('http://res.cloudinary.com/flyingonclouds/image/upload/v1464054419/custom_cursor_oxwylf.png'), auto;
   -webkit-transition: 2s;
   transition: 2s;
 }
@@ -148,6 +149,7 @@
   margin: 1px;
   padding: 7px;
   width: 80%;
+  overflow-x: hidden;
   min-height: 22px;
   min-width: 100px;
   background-image: url('https://res.cloudinary.com/flyingonclouds/image/upload/v1462224540/subtle_white_mini_waves_f7qx08.png');
@@ -245,6 +247,10 @@ body {
   align-items: center;
 }
 
+button {
+  cursor:url('http://res.cloudinary.com/flyingonclouds/image/upload/v1464054419/custom_cursor_oxwylf.png'), auto;
+}
+
 button:focus {outline:0;}
 
 .CreateBeastButton {
@@ -258,6 +264,7 @@ button:focus {outline:0;}
   background: #DE8642;
   padding: 10px 20px 10px 20px;
   margin: 10px 3px 25px 10px;
+  cursor:url('http://res.cloudinary.com/flyingonclouds/image/upload/v1464054419/custom_cursor_oxwylf.png'), auto;
 }
 
 .Center {
@@ -303,6 +310,7 @@ input {
 .logo {
   float: left;
   transition: all .2s ease-in-out;
+  cursor:url('http://res.cloudinary.com/flyingonclouds/image/upload/v1464054419/custom_cursor_oxwylf.png'), auto;
 }
 
 .logo:hover {
@@ -408,6 +416,7 @@ input {
   background: #DE8642;
   padding: 10px 20px 10px 20px;
   margin: 10px 3px 3px 10px;
+  cursor:url('http://res.cloudinary.com/flyingonclouds/image/upload/v1464054419/custom_cursor_oxwylf.png'), auto;
 }
 
 .OrangeButton.Centered {
@@ -549,6 +558,7 @@ input {
   right: 0;
   left: 0;
   width: 50%;
+  cursor:url('http://res.cloudinary.com/flyingonclouds/image/upload/v1464054419/custom_cursor_oxwylf.png'), auto;
 }
 
 .SearchListItem {
@@ -611,6 +621,11 @@ textarea {
   border-radius: 3px;
 }
 
+.Username {
+  cursor:url('http://res.cloudinary.com/flyingonclouds/image/upload/v1464054419/custom_cursor_oxwylf.png'), auto;
+}
+
+
 .UserReview {
   padding: 10px;
   border: 2px solid #4b4d52;
@@ -640,7 +655,7 @@ textarea {
   border-radius: 50%;
   width: 200px;
   height: 200px;
-
+  cursor:url('http://res.cloudinary.com/flyingonclouds/image/upload/v1464054419/custom_cursor_oxwylf.png'), auto;
 }
 
 @-webkit-keyframes glowfade {

@@ -15,11 +15,6 @@ var UserProfile = React.createClass({
       beasts: undefined
     };
   },
-  //
-  // componentWillMount: function(){
-  //   console.log("mounted UserProfile");
-  //   UserActions.fetchCurrentUser();
-  // },
 
   getBeasts: function(){
     this.setState({

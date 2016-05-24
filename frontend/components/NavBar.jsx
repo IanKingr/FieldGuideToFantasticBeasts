@@ -85,7 +85,7 @@ var NavBar = React.createClass({
   },
 
   render: function(){
-    var username = this.state.currentUser ? <div onClick={this.handleClick}>{this.state.currentUser.username}</div> : null;
+    var username = this.state.currentUser ? <div onClick={this.handleClick} className="Username">{this.state.currentUser.username}</div> : null;
 
     return (
       <div className="NavBar">

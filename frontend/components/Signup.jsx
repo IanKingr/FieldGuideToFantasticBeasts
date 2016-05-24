@@ -52,7 +52,12 @@ var Signup = React.createClass({
 
     time += 650;
 
-    setTimeout(this.handleLogin, time);
+    setTimeout(function(){
+      UserActions.login({
+        username: UserStore.guest().username,
+        password: UserStore.guest().password
+      });
+    }, time);
   },
 
   handleLogin: function () {
@@ -95,6 +100,9 @@ var Signup = React.createClass({
     return (
       <div className="SignUpInForm">
         <div>
+          <div className="error">
+            {errorDisplay}
+          </div>
           <form onSubmit={this.handleSubmit}>
             <label>Username<br />
               <input
@@ -118,11 +126,6 @@ var Signup = React.createClass({
           <button className="OrangeButton GuestSignIn"
             onClick={this.guestSignIn}>Or sign in as a Guest!
           </button>
-        </div>
-        <div>
-          <ul className="error">
-            {errorDisplay}
-          </ul>
         </div>
       </div>
     );
