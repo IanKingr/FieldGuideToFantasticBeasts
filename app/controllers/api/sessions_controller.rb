@@ -5,6 +5,7 @@ class Api::SessionsController < ApplicationController
 
     if(@user)
       sign_in(@user)
+      @reviews = @user.reviews.includes(:beast)
       render :show
     else
       @errors = ['Invalid Username or Password']
@@ -28,7 +29,6 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by({session_token: token})
 		if @user
       @reviews = @user.reviews.includes(:beast)
-  
 			render :show
 		else
 			@errors = nil
